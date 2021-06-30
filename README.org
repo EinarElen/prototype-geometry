@@ -3,15 +3,14 @@
 * Structure of the geometry description
 
 The geometry is divided into several files to make working with it easier.
-- [[./detector.gdml]] This is the entrypoint of the geometry. Contains the actual implementation of the prototype geometry using the definitions from [[./absorber_volume.gdml]] and [[./scintillator_volume.gdml]]
-- [[./constants.gdml]] Contains variable definitions used elsewhere in the
+- [[./detector.gdml][detector.gdml]] This is the entrypoint of the geometry. Contains the actual implementation of the prototype geometry using the definitions from [[./absorber_volume.gdml][absorber_volume.gdml]] and [[./scintillator_volume.gdml][scintillator_volume.gdml]]
+- [[./constants.gdml][constants.gdml]] Contains variable definitions used elsewhere in the
   geometry such as positions and geometrical properties of different volumes.
-- [[./materials.gdml]] Contains definitions of isotopes and materials
-- [[./userinfo.gdml]] Contains auxillary information (see the
+- [[./materials.gdml][materials.gdml]] Contains definitions of isotopes and materials
+- [[./userinfo.gdml][userinfo.gdml]] Contains auxillary information (see the
   [[https://gdml.web.cern.ch/GDML/doc/GDMLmanual.pdf][GDML manual]] for
   details), such as sensitive detector volumes, visualization information,
   version and author information.
-- [[./hcal_solids.gdml]] Contains definitions of the absorber, scintillator, and parent boxes
-- [[./absorber_volume.gdml]] Contains the definition of the absorber volume
-- [[./scintillator_volume.gdml]] Contains the definition of the scintillator volumes
-
+- [[./hcal_solids.gdml][hcal_solids.gdml]] Contains definitions of the absorber, scintillator, and parent boxes
+- [[./absorber_volume.gdml][absorber_volume.gdml]] Contains the definition of the absorber volume
+- [[./scintillator_volume.gdml][scintillator_volume.gdml]] Contains the definition of the scintillator volumes
