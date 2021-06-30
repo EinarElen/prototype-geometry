@@ -9,6 +9,10 @@
 <!ENTITY back_vertical_scintillator SYSTEM "back_vertical_scintillator.gdml">
 <!ENTITY back_horizontal_scintillator SYSTEM "back_horizontal_scintillator.gdml">
 ]>
+
+
+<!-- testing github desktop -->
+
 <gdml xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://service-spi.web.cern.ch/service-spi/app/releases/GDML/schema/gdml.xsd">
 
   <define>
