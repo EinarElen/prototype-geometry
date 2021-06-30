@@ -8,8 +8,6 @@
 <!ENTITY front_horizontal_scintillator SYSTEM "front_horizontal_scintillator.gdml">
 <!ENTITY back_vertical_scintillator SYSTEM "back_vertical_scintillator.gdml">
 <!ENTITY back_horizontal_scintillator SYSTEM "back_horizontal_scintillator.gdml">
-<!-- <!ENTITY back_horizontal_scintillator SYSTEM "trigger.gdml"> -->
-
 ]>
 <gdml xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://service-spi.web.cern.ch/service-spi/app/releases/GDML/schema/gdml.xsd">
 
@@ -101,14 +99,6 @@
           <volumeref ref="prototype_volume"/>
           <positionref ref="hadron_calorimeter_pos"/>
           <rotationref ref="identity"/>
-        </physvol>
-		
-		<physvol copynumber="2">
-                <!-- <file name="/home/petergy/workdir/gdml-build/G01/prot-and-trigger/trigger.gdml"  /> -->
-                <!-- <file name="prot-and-trigger/trigger.gdml"  /> -->
-                <file name="trigger.gdml"  />
-                <positionref ref="center" />
-                <rotationref ref="identity"   /> 
         </physvol>
 
       <auxiliary auxtype="DetElem" auxvalue="Top"/>
