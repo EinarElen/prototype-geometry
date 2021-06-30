@@ -1,0 +1,6 @@
+#+TITLE: Readme
+
+* Structure of the geometry description
+
+The geometry is divided into several files to make working with it easier.
+- [[detector.gdml]] This is the entrypoint of the geometry
