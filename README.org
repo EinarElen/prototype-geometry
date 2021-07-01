@@ -81,10 +81,12 @@ The following is a list of all the variables defined in the protoype geometry de
 ** Solids
 Solids are objects with purely geometrical properties such as a box, a sphere,
 or a more complicated geometry
-- =absorberBox= is the solid that represents the absorber layer. It is a
+- =absorberBox= is the solid that represents the absorber layer.
   + TODO: Document this @petergy
 - There are four boxes representing the four different types of scintillator
-  layers (front vertical, front horizontal, back vertical, back horizontal). These are defined using the corresponding width/height from [[*Constants][Constants]], e.g.
+  layers (front vertical, front horizontal, back vertical, back horizontal).
+  These are defined using the corresponding width/height from
+  [[*Constants][Constants]], e.g.
   + =frontV_ScintBox= has width =scint_FrontV_x= (400 mm) and height
     =scint_FrontV_y= (2000 mm)
   + =frontH_ScintBox= has width =scint_FrontH_x= (2000 mm) and height
@@ -97,5 +99,5 @@ or a more complicated geometry
   (3000 mm), height =dy= (3000 mm), and depth =air_thick= (2 mm)
 - =prototype_Box= is the parent volume for the prototype and is defined as a box
   with width =dx= (3000 mm), height =dy= (3000 mm), and depth =dz= (931 mm)
-- =world_box= is the parent volume for all the other parts of the geometry and is defined as a box with all sides having length =world_dim= (10 m)
-
+- =world_box= is the parent volume for all the other parts of the geometry and
+  is defined as a box with all sides having length =world_dim= (10 m)
