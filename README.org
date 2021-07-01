@@ -7,7 +7,7 @@ The geometry is divided into several files to make working with it easier.
 - [[./constants.gdml][constants.gdml]] Contains variable definitions used elsewhere in the
   geometry such as positions and geometrical properties of different volumes.
 - [[./materials.gdml][materials.gdml]] Contains definitions of isotopes and materials
-- [[./userinfo.gdml][userinfo.gdml]] Contains auxillary information (see the
+- [[./userinfo.gdml][userinfo.gdml]] Contains auxiliary information (see the
   [[https://gdml.web.cern.ch/GDML/doc/GDMLmanual.pdf][GDML manual]] for
   details), such as sensitive detector volumes, visualization information,
   version and author information.
@@ -101,3 +101,70 @@ or a more complicated geometry
   with width =dx= (3000 mm), height =dy= (3000 mm), and depth =dz= (931 mm)
 - =world_box= is the parent volume for all the other parts of the geometry and
   is defined as a box with all sides having length =world_dim= (10 m)
+
+** Logical volumes
+
+In Geant4, a logical volume can contain all of the information about a volume
+except for its position. This allows you to use one logical volume to create
+several distinct daughter physical volumes. The position and rotation of a
+daughter volume is defined in terms for the mother volume. The logical volumes
+that we use in this geometry can contain the following tags
+- =<solidref>= is a reference to one of the solids defined in
+  [[./hcal_solids.gdml][hcal_solids.gdml]]
+- =<materialref>= is a reference to a material defined in
+  [[./materials.gdml][materials.gdml]]
+- =<auxiliary>= allows us to add any other kind of information that is used by
+  the simulation, such as defining if a volume is supposed to be a sensitive
+  element or how the volume should be visualized by default. Most auxiliary tags will be references to groups of properties defined in [[*User information][User information]].
+- =<physvol>= any daughter volumes that are to be placed within the logical
+  volume, see [[*Physical volumes][Physical volumes]]
+
+Furthermore, each logical volume has a name as part of the =<volume>= tag which
+can be used to refer to the volume using the =<volumeref>= tag. At least one logical volume has to be the "World" volume. This volume determines the global coordinate system and has to completly contain all other volumes, sharing surfaces with none of them.
+
+- =World= is the "World" volume. It is defined in
+  [[./detector.gdml][detector.gdml]]
+  + Material: =G4_AIR=
+  + Solid: =world_box=
+  + Daughter volumes:
+    - =prototype_volume=
+  + Auxiliary information:
+    - "DetElem": "Top"
+- =prototype_volume= represents the entire prototype and is defined in
+  [[./detector.gdml][detector.gdml]]
+  + Material: =G4_AIR=
+  + Solid: =prototype_Box=
+  + Daughter volumes:
+    - =absorber_physvol=
+    - =frontH_scint_physvol=
+    - =frontV_scint_physvol=
+    - =back_H_scint_physvol=
+    - =back_V_scint_physvol=
+  + Auxiliary information:
+    - "Region": "CalorimeterRegion"
+    - "VisAttributes": "HcalVis"
+    - "DetElem": "Hcal"
+- =absorber_volume= represents one layer of the steel absorber and is defined in [[./absorber_volume.gdml][absorber_volume.gdml]]
+  + Material: =Steel=
+  + Solid: =absorberBox=
+  + Auxiliary information:
+    - "Color": "Red"
+    - "VisAttributes": "HcalVis"
+- There are four volumes representing each of the four different types of
+  scintillator layers called =frontV_ScintBox_volume=, =frontH_ScintBox_volume=,
+  =backV_ScintBox_volume=, and =backH_ScintBox_volume=, all defined in
+  [[./scintillator_volume.gdml][scintillator_volume.gdml]]. They differ in name
+  and which corresponding solid they make use of
+- Material: "Scintillator"
+- Solid: One of =frontV_ScintBox=, =frontH_ScintBox=, =backV_ScintBox=, and
+  =backH_ScintBox=
+- Auxiliary information:
+  + "SensDet": "HcalSD"
+  + "Color": "Blue"
+  + "VisAttributes": "HcalVis"
+
+
+** Physical volumes
+
+
+** User information
