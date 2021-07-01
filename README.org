@@ -55,6 +55,8 @@ The following is a list of all the variables defined in the protoype geometry de
 - =numDoubleLayersBack= is the number of horizontal or vertical layers in the
   back region. It is set to *5* so the total number of layers in the back region
   is *10*
+- =numLayers= is the total number of layers. It is set to *19* and corresponds
+  to =numLayers + 2 * numDoubleLayersBack=.
 - =back_start= is the location of the first layer in the back region. It is set
   to =numLayersFront * layer_thick=, i.e. *441 mm*.
 - The length of the sides of the various scintillator layers are defined as
