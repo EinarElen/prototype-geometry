@@ -43,9 +43,8 @@ The following is a list of all the variables defined in the protoype geometry de
   layer while in vertical layers it is equivalent to the height (\Delta
   y_{scintillator}) of the layer. It is set to *2000 mm*.
 - =layer_thick= is the combined thickness of a layer (\Delta z_{layer}). It consists
-  of one layer of absorber, =absorber_thickness=, one layer of scintillators,
-  =scint_thick= and /two/ layers of air, =air_thick=. The resulting layer
-  thickness one layer of scintillators, =scint_thick= and /two/ layers of air,
+  of one layer of absorber, =absorber_thickness=, one layer of scintillators, and /two/ layers and /two/ layers of air, =air_thick=. The resulting layer
+  thickness is thus given by =absorber_thickness + scint_thick + 2 * air_thick=, *49 mm*
 - =double_layer_thick= is twice the thickness of one layer, i.e. *98 mm*. It is
   currently only used in defining the total depth of the prototype, =dz=.
 - =numLayersFront= is the total number of layers in the front region of the
