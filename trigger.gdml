@@ -30,13 +30,7 @@
 <!-- we need just one pad, so only use up one -->
 <!-- also change number of bars -->
 
-        <volume name="trigger_pad_up_bar_volume">
-            <materialref ref="Polyvinyltoluene"/>
-            <solidref ref="trigger_bar_box"/>
-            <auxiliary auxtype="SensDet" auxvalue="TriggerPadUpSD"/>
-            <auxiliary auxtype="VisAttributes" auxvalue="TriggerPadVis"/>
-            <auxiliary auxtype="DetElem" auxvalue="TriggerPad"/>
-        </volume>
+
 
 
 
