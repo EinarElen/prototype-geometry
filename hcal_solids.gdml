@@ -24,7 +24,7 @@
     <box lunit="mm" name="airBox"      x="dx"          y="dy"          z="air_thick"/>
 
     <!-- - - - - - - - - Parent Volumes - - - - - - - -->
-    <box lunit="mm" name="prototype_Box" x="dx" y="dy" z="dz"/>
+    <box lunit="mm" name="prototype_Box" x="dx" y="dy" z="dz+100"/> <!-- +100 to z to accomodate trigger bars--> 
 
     <box lunit="mm" name="world_box" x="world_dim" y="world_dim" z="world_dim"/>
 	
