@@ -16,7 +16,8 @@ The geometry is divided into several files to make working with it easier.
 - [[./scintillator_volume.gdml][scintillator_volume.gdml]] Contains the definition of the scintillator volumes
 
 
-* Variables
+
+* Reference
 
 The following is a list of all the variables defined in the protoype geometry description.
 
@@ -259,7 +260,7 @@ in turn depends on the CopyNumber. An even CopyNumber means a vertical layer
 
 
 ** User information
-* Python code with all variables for testing
+** Python code with all variables for testing
 
 The following is a short python script containing definitions for all of the
 variables used to describe the physical volumes that can be used to test or
@@ -387,3 +388,5 @@ def backH_depths():
 def backV_depths():
     return [backV_scint_physvols[i].depth  for i in range(0, numDoubleLayersBack)]
 #+end_src
+
+
