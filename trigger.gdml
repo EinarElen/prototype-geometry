@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE gdml [
-<!ENTITY constants SYSTEM "constants_for_trigger.gdml">
+<!ENTITY constants SYSTEM "constants_for_eared_absorber.gdml">
 ]>
 <gdml xmlns:gdml="http://cern.ch/2001/Schemas/GDML" 
       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
