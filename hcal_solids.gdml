@@ -27,3 +27,14 @@
     <box lunit="mm" name="prototype_Box" x="dx" y="dy" z="dz"/>
 
     <box lunit="mm" name="world_box" x="world_dim" y="world_dim" z="world_dim"/>
+	
+	
+
+
+	<box lunit="mm" name="target_area_box" x="target_area_envelope_x" y="target_area_envelope_y" z="target_area_envelope_z" />
+	<box lunit="mm" name="target_box" x="target_dim_x" y="target_dim_y" z="target_thickness"/> 
+	<box lunit="mm" name="trigger_pad_box" x="trigger_pad_dim_x" y="trigger_pad_dim_y" z="trigger_pad_thickness"/>
+	<box lunit="mm" name="trigger_bar_box" x="trigger_bar_dx" y="trigger_bar_dy" z="trigger_pad_bar_thickness" /> 
+
+
+ 
