@@ -20,13 +20,10 @@
 The geometry is divided into several files to make working with it easier.
 
 -   [detector.gdml](./detector.gdml) This is the entrypoint of the geometry. Contains the actual implementation of the prototype geometry using the definitions from [absorber_volume.gdml](./absorber_volume.gdml) and [scintillator_volume.gdml](./scintillator_volume.gdml)
--   [constants.gdml](./constants.gdml) Contains variable definitions used elsewhere in the
-    geometry such as positions and geometrical properties of different volumes.
+-   [constants.gdml](./constants.gdml) Contains variable definitions used elsewhere in the geometry such as positions and geometrical properties of different volumes.
 -   [materials.gdml](./materials.gdml) Contains definitions of isotopes and materials
 -   [userinfo.gdml](./userinfo.gdml) Contains auxiliary information (see the
-    [GDML manual](https://gdml.web.cern.ch/GDML/doc/GDMLmanual.pdf) for
-    details), such as sensitive detector volumes, visualization information,
-    version and author information.
+    [GDML manual](https://gdml.web.cern.ch/GDML/doc/GDMLmanual.pdf) for details), such as sensitive detector volumes, visualization information, version and author information.
 -   [hcal_solids.gdml](./hcal_solids.gdml) Contains definitions of the absorber, scintillator, and parent boxes
 -   [absorber_volume.gdml](./absorber_volume.gdml) Contains the definition of the absorber volume
 -   [scintillator_volume.gdml](./scintillator_volume.gdml) Contains the definition of the scintillator volumes
@@ -43,62 +40,28 @@ The following is a list of all the variables defined in the protoype geometry de
 
 ## Constants
 
--   `center`, `identity`, and `hadron_calorimeter_pos` are positions that are all
-    defined as **(x,y,z) = (0,0,0)**. `hadron_calorimeter_pos` is used to place the
-    `prototype_volume` physical volume within the `World` volume.
+-   `center`, `identity`, and `hadron_calorimeter_pos` are positions that are all defined as **(x,y,z) = (0,0,0)**. `hadron_calorimeter_pos` is used to place the `prototype_volume` physical volume within the `World` volume.
 -   `world_dim` is the size of the sides of the &ldquo;world_box&rdquo; box, set to **10 m**
--   `air_thick` is the thickness (&Delta; z<sub>air</sub>) of the layers of air in between the
-    absorber and scintillator bars. The thickness of each region is set to **2 mm**,
-    which contributes twice to the thickness of an individual layer.
--   `absorber_width` is the width (&Delta; x<sub>absorber</sub>,&Delta; y<sub>absorber</sub>) of an absorber
-    layer, set to **800 mm**
+-   `air_thick` is the thickness (&Delta; z<sub>air</sub>) of the layers of air in between the absorber and scintillator bars. The thickness of each region is set to **2 mm**, which contributes twice to the thickness of an individual layer.
+-   `absorber_width` is the width (&Delta; x<sub>absorber</sub>,&Delta; y<sub>absorber</sub>) of an absorber layer, set to **800 mm**
 -   `absorber_ears`, TODO: Document this, set to **50 mm**
--   `absorber_thickness` is the thickness (&Delta; z<sub>absorber</sub>) of an absorber layer,
-    set to **25 mm**
--   `scint_thick` is the thickness of a scintillator bar layer (&Delta;
-    z<sub>scintillator</sub>). This is equivalent to the thickness of an individual
-    scintillator bar and is set to **20 mm**
--   `scint_bar_length` is the length of an individual scintillator bar. In
-    horizontal layers, this is equivalent to the width (&Delta; x<sub>scintillator</sub>) of the
-    layer while in vertical layers it is equivalent to the height (&Delta;
-    y<sub>scintillator</sub>) of the layer. It is set to **2000 mm**.
--   `layer_thick` is the combined thickness of a layer (&Delta;
-    z<sub>layer</sub>). It consists of one layer of absorber,
-    `absorber_thickness`, one layer of scintillators, and *two* layers and *two*
-    layers of air, `air_thick`. The resulting layer thickness is thus given by
-    `absorber_thickness + scint_thick + 2 * air_thick`, **49 mm**
--   `double_layer_thick` is twice the thickness of one layer, i.e. **98 mm**. It is
-    currently only used in defining the total depth of the prototype, `dz`.
--   `numLayersFront` is the total number of layers in the front region of the
-    prototype and is set to **9**
--   `numLayersFront_vert` and `numLayersFront_hori` are the number of
-    vertical/horizontal layers in the front region. They are set to **4** and **5**
-    respectively
--   `numDoubleLayersBack` is the number of horizontal or vertical layers in the
-    back region. It is set to **5** so the total number of layers in the back region
-    is **10**
--   `numLayers` is the total number of layers. It is set to **19** and corresponds
-    to `numLayers + 2 * numDoubleLayersBack`
--   `back_start` is the location of the first layer in the back region. It is set
-    to `numLayersFront * layer_thick`, i.e. **441 mm**
+-   `absorber_thickness` is the thickness (&Delta; z<sub>absorber</sub>) of an absorber layer, set to **25 mm**
+-   `scint_thick` is the thickness of a scintillator bar layer (&Delta; z<sub>scintillator</sub>). This is equivalent to the thickness of an individual scintillator bar and is set to **20 mm**
+-   `scint_bar_length` is the length of an individual scintillator bar. In horizontal layers, this is equivalent to the width (&Delta; x<sub>scintillator</sub>) of the layer while in vertical layers it is equivalent to the height (&Delta; y<sub>scintillator</sub>) of the layer. It is set to **2000 mm**.
+-   `layer_thick` is the combined thickness of a layer (&Delta; z<sub>layer</sub>). It consists of one layer of absorber, `absorber_thickness`, one layer of scintillators, and *two* layers and *two* layers of air, `air_thick`. The resulting layer thickness is thus given by `absorber_thickness + scint_thick + 2 * air_thick`, **49 mm**
+-   `double_layer_thick` is twice the thickness of one layer, i.e. **98 mm**. It is currently only used in defining the total depth of the prototype, `dz`.
+-   `numLayersFront` is the total number of layers in the front region of the prototype and is set to **9**
+-   `numLayersFront_vert` and `numLayersFront_hori` are the number of vertical/horizontal layers in the front region. They are set to **4** and **5** respectively
+-   `numDoubleLayersBack` is the number of horizontal or vertical layers in the back region. It is set to **5** so the total number of layers in the back region is **10**
+-   `numLayers` is the total number of layers. It is set to **19** and corresponds to `numLayers + 2 * numDoubleLayersBack`
+-   `back_start` is the location of the first layer in the back region. It is set to `numLayersFront * layer_thick`, i.e. **441 mm**
 -   The length of the sides of the various scintillator layers are defined as
-    -   Front vertical layers have `scint_FrontV_x` which is **400 mm**,
-        `scint_FrontV_y` which is the bar length, **2000 mm**. The 400 mm corresponds
-        to 8 bars each having a width of **50 mm**
-    -   Front horizontal layers have `scint_FrontH_y` which is **400 mm**,
-        `scint_FrontH_x` which is the bar length, **2000 mm**. The 400 mm corresponds
-        to 8 bars each having a width of **50 mm**
-    -   Back vertical layers have `scint_BackV_x` which is **600 mm**, `scint_BackV_y`
-        which is the bar length, **2000 mm**. The 600 mm corresponds to 12 bars each
-        having a width of **50 mm**
-    -   Back horizontal layers have `scint_BackH_y` which is **600 mm**,
-        `scint_BackH_x` which is the bar length, **2000 mm**. The 600 mm corresponds
-        to 12 bars each having a width of **50 mm**
--   `dx` and `dy`, the width and height of the prototype respectively are both set
-    to **3000 mm**
--   `dz` is the depth of the prototype and is defined as `numLayersFront *
-      layer_thick + numDoubleLayersBack * double_layer_thick` which correpsonds to
-    **931 mm**
+    -   Front vertical layers have `scint_FrontV_x` which is **400 mm**, `scint_FrontV_y` which is the bar length, **2000 mm**. The 400 mm corresponds to 8 bars each having a width of **50 mm**
+    -   Front horizontal layers have `scint_FrontH_y` which is **400 mm**, `scint_FrontH_x` which is the bar length, **2000 mm**. The 400 mm corresponds to 8 bars each having a width of **50 mm**
+    -   Back vertical layers have `scint_BackV_x` which is **600 mm**, `scint_BackV_y` which is the bar length, **2000 mm**. The 600 mm corresponds to 12 bars each having a width of **50 mm**
+    -   Back horizontal layers have `scint_BackH_y` which is **600 mm**, `scint_BackH_x` which is the bar length, **2000 mm**. The 600 mm corresponds to 12 bars each having a width of **50 mm**
+-   `dx` and `dy`, the width and height of the prototype respectively are both set to **3000 mm**
+-   `dz` is the depth of the prototype and is defined as `numLayersFront * layer_thick + numDoubleLayersBack * double_layer_thick` which correpsonds to **931 mm**
 
 
 <a id="org6caa71f"></a>
