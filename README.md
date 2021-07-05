@@ -143,8 +143,7 @@ A physical volume is a logical volume with a position and, optionally, a name an
     -   Logical volume: `prototype_volume`
     -   Position: `hadron_calorimeter_pos`
     -   Rotation: `identity`
--   `absorber_physvol`: There are 19 physical volumes representing the absorber
-    layers
+-   `absorber_physvol`: There are 19 physical volumes representing the absorber layers
     -   Logical volume: `absorber_volume`
     -   Mother volume: `prototype_volume`
     -   CopyNumbers: [1 .. 19]
@@ -153,43 +152,34 @@ A physical volume is a logical volume with a position and, optionally, a name an
         -   y: **-400 mm**
         -   z: `-dz/2`, i.e. **-465.5 mm**
     -   Distance (z) to subsequent layer: `layer_thick`, i.e. **49 mm**
--   `frontH_scint_physvol`: There are 5 physical volumes representing the
-    horizontal scintillator layers in the front region. They all have odd
-    CopyNumbers.
+-   `frontH_scint_physvol`: There are 5 physical volumes representing the horizontal scintillator layers in the front region. They all have odd CopyNumbers.
     -   Logical volume: `frontH_ScintBox_volume`
     -   Mother volume: `prototype_volume`
     -   CopyNumbers: [1,3,5,7,9]
     -   Position of the first layer:
         -   x: **0 mm**
         -   y: **0 mm**
-        -   z: `-dz/2 + absorber_thickness + air_thick + scint_thick/2`, i.e. **-428.5
-            mm**
+        -   z: `-dz/2 + absorber_thickness + air_thick + scint_thick/2`, i.e. **-428.5 mm**
     -   Distance (z) to subsequent layer: `double_layer_thick`, i.e. **98 mm**
--   `frontV_scint_physvol`: There are 4 physical volumes representing the vertical
-    scintillator layers in the front region. They all have even CopyNumbers.
+-   `frontV_scint_physvol`: There are 4 physical volumes representing the vertical scintillator layers in the front region. They all have even CopyNumbers.
     -   Logical volume: `frontV_ScintBox_volume`
     -   Mother volume: `prototype_volume`
     -   CopyNumbers: [2,4,6,8]
     -   Position of the first layer:
         -   x: **0 mm**
         -   y: **0 mm**
-        -   z: `-dz/2 + absorber_thickness + air_thick + scint_thick/2 + layer_thick`,
-            i.e. **-379.5 mm**
+        -   z: `-dz/2 + absorber_thickness + air_thick + scint_thick/2 + layer_thick`, i.e. **-379.5 mm**
     -   Distance (z) to subsequent layer: `double_layer_thick`, i.e. **98 mm**
--   `backV_scint_physvol`: There are 5 physical volumes representing the vertical
-    scintillator layers in the back region. They all have even CopyNumbers.
+-   `backV_scint_physvol`: There are 5 physical volumes representing the vertical scintillator layers in the back region. They all have even CopyNumbers.
     -   Logical volume: `backV_ScintBox_volume`
     -   Mother volume: `prototype_volume`
     -   CopyNumbers: [10, 12, 14, 16, 18]
     -   Position of the first layer:
         -   x: **0 mm**
         -   y: **0 mm**
-        -   z: `-dz/2 + back_start + absorber_thickness + air_thick + scint_thick/2`,
-            i.e. **12.5 mm**
+        -   z: `-dz/2 + back_start + absorber_thickness + air_thick + scint_thick/2`, i.e. **12.5 mm**
     -   Distance (z) to subsequent layer: `double_layer_thick`, i.e. **98 mm**
--   `backH_scint_physvol`: There are 5 physical volumes representing the
-    horizontal scintillator layers in the back region. They all have odd
-    CopyNumbers.
+-   `backH_scint_physvol`: There are 5 physical volumes representing the horizontal scintillator layers in the back region. They all have odd CopyNumbers.
     -   Logical volume: `backH_ScintBox_volume`
     -   Mother volume: `prototype_volume`
     -   CopyNumbers: [11, 13, 15, 17, 19]
@@ -204,22 +194,13 @@ A physical volume is a logical volume with a position and, optionally, a name an
 
 ### Notes on the CopyNumber
 
-For the hadronic calorimeter, the CopyNumber encodes the layer number and the
-section number of the scintillators. The section number refers to the five
-distinct sections of the full LDMX Hcal (Back, Top, Bottom, Left, Right). The
-prototype geometry consists entirely of the &ldquo;Back&rdquo; section of the Hcal which has
-section number **0**. The section number is derived from the CopyNumber by taking
-the modulo of the CopyNumber with **1000**
+For the hadronic calorimeter, the CopyNumber encodes the layer number and the section number of the scintillators. The section number refers to the five distinct sections of the full LDMX Hcal (Back, Top, Bottom, Left, Right). The prototype geometry consists entirely of the &ldquo;Back&rdquo; section of the Hcal which has section number **0**. The section number is derived from the CopyNumber by taking the modulo of the CopyNumber with **1000**
 
-The layers of the protoype are numbered from 1 to 19 (note the non-zero based
-indexing). The layer number is derived from the CopyNumber by dividing the CopyNumber with **1000** and taking the remainder.
+The layers of the protoype are numbered from 1 to 19 (note the non-zero based indexing). The layer number is derived from the CopyNumber by dividing the CopyNumber with **1000** and taking the remainder.
 
-TODO: @PeterGy, document the CopyNumber requirements for the trigger
-scintillator.
+TODO: @PeterGy, document the CopyNumber requirements for the trigger scintillator.
 
-Furthermore, the rotation of the layer is determined by the layer number, which
-in turn depends on the CopyNumber. An even CopyNumber means a vertical layer
-(length of the bars is along the y-axis) while an odd CopyNumber
+Furthermore, the rotation of the layer is determined by the layer number, which in turn depends on the CopyNumber. An even CopyNumber means a vertical layer (length of the bars is along the y-axis) while an odd CopyNumber
 
 
 <a id="orgf1ba2d9"></a>
