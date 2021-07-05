@@ -73,62 +73,38 @@ or a more complicated geometry
 
 -   `absorberBox` is the solid that represents the absorber layer.
     -   TODO: Document this @petergy
--   There are four boxes representing the four different types of scintillator
-    layers (front vertical, front horizontal, back vertical, back horizontal).
-    These are defined using the corresponding width/height from
+-   There are four boxes representing the four different types of scintillator layers (front vertical, front horizontal, back vertical, back horizontal). These are defined using the corresponding width/height from
     [Constants](#org2461180), e.g.
-    -   `frontV_ScintBox` has width `scint_FrontV_x` (400 mm) and height
-        `scint_FrontV_y` (2000 mm)
-    -   `frontH_ScintBox` has width `scint_FrontH_x` (2000 mm) and height
-        `scint_FrontH_y` (400 mm)
-    -   `backV_ScintBox` has width `scint_BackV_x` (600 mm) and height
-        `scint_BackV_y` (2000 mm)
-    -   `backH_ScintBox` has width `scint_BackH_x` (2000 mm) and height
-        `scint_BackH_y` (600 mm)
--   `air_box` is the a box representing a single air layer and has width `dx`
-    (3000 mm), height `dy` (3000 mm), and depth `air_thick` (2 mm)
--   `prototype_Box` is the parent volume for the prototype and is defined as a box
-    with width `dx` (3000 mm), height `dy` (3000 mm), and depth `dz` (931 mm)
--   `world_box` is the parent volume for all the other parts of the geometry and
-    is defined as a box with all sides having length `world_dim` (10 m)
+    -   `frontV_ScintBox` has width `scint_FrontV_x` (400 mm) and height `scint_FrontV_y` (2000 mm)
+    -   `frontH_ScintBox` has width `scint_FrontH_x` (2000 mm) and height `scint_FrontH_y` (400 mm)
+    -   `backV_ScintBox` has width `scint_BackV_x` (600 mm) and height `scint_BackV_y` (2000 mm)
+    -   `backH_ScintBox` has width `scint_BackH_x` (2000 mm) and height `scint_BackH_y` (600 mm)
+-   `air_box` is the a box representing a single air layer and has width `dx` (3000 mm), height `dy` (3000 mm), and depth `air_thick` (2 mm)
+-   `prototype_Box` is the parent volume for the prototype and is defined as a box with width `dx` (3000 mm), height `dy` (3000 mm), and depth `dz` (931 mm)
+-   `world_box` is the parent volume for all the other parts of the geometry and is defined as a box with all sides having length `world_dim` (10 m)
 
 
 <a id="org8e47593"></a>
 
 ## Logical volumes
 
-In Geant4, a logical volume can contain all of the information about a volume
-except for its position. This allows you to use one logical volume to create
-several distinct daughter physical volumes. The position and rotation of a
-daughter volume is defined in terms for the mother volume. The logical volumes
-that we use in this geometry can contain the following tags
+In Geant4, a logical volume can contain all of the information about a volume except for its position. This allows you to use one logical volume to create several distinct daughter physical volumes. The position and rotation of a daughter volume is defined in terms for the mother volume. The logical volumes that we use in this geometry can contain the following tags
 
--   `<solidref>` is a reference to one of the solids defined in
-    [hcal_solids.gdml](./hcal_solids.gdml)
--   `<materialref>` is a reference to a material defined in
-    [materials.gdml](./materials.gdml)
--   `<auxiliary>` allows us to add any other kind of information that is used by
-    the simulation, such as defining if a volume is supposed to be a sensitive
-    element or how the volume should be visualized by default. Most auxiliary
-    tags will be references to groups of properties defined in [User
-    information](#orgf1ba2d9).
+-   `<solidref>` is a reference to one of the solids defined in [hcal_solids.gdml](./hcal_solids.gdml)
+-   `<materialref>` is a reference to a material defined in [materials.gdml](./materials.gdml)
+-   `<auxiliary>` allows us to add any other kind of information that is used by the simulation, such as defining if a volume is supposed to be a sensitive element or how the volume should be visualized by default. Most auxiliary tags will be references to groups of properties defined in [User information](#orgf1ba2d9).
+-   `<physvol>` any daughter volumes that are to be placed within the logical volume, see [Physical volumes](#org39199a2)
 
--   `<physvol>` any daughter volumes that are to be placed within the logical
-    volume, see [Physical volumes](#org39199a2)
+Furthermore, each logical volume has a name as part of the `<volume>` tag which can be used to refer to the volume using the `<volumeref>` tag. At least one logical volume has to be the &ldquo;World&rdquo; volume. This volume determines the global coordinate system and has to completly contain all other volumes, sharing surfaces with none of them.
 
-Furthermore, each logical volume has a name as part of the `<volume>` tag which
-can be used to refer to the volume using the `<volumeref>` tag. At least one logical volume has to be the &ldquo;World&rdquo; volume. This volume determines the global coordinate system and has to completly contain all other volumes, sharing surfaces with none of them.
-
--   `World` is the &ldquo;World&rdquo; volume. It is defined in
-    [detector.gdml](./detector.gdml)
+-   `World` is the &ldquo;World&rdquo; volume. It is defined in [detector.gdml](./detector.gdml)
     -   Material: `G4_AIR`
     -   Solid: `world_box`
     -   Daughter volumes:
         -   `prototype_volume`
     -   Auxiliary information:
         -   &ldquo;DetElem&rdquo;: &ldquo;Top&rdquo;
--   `prototype_volume` represents the entire prototype and is defined in
-    [detector.gdml](./detector.gdml)
+-   `prototype_volume` represents the entire prototype and is defined in [detector.gdml](./detector.gdml)
     -   Material: `G4_AIR`
     -   Solid: `prototype_Box`
     -   Daughter volumes:
@@ -147,14 +123,9 @@ can be used to refer to the volume using the `<volumeref>` tag. At least one log
     -   Auxiliary information:
         -   &ldquo;Color&rdquo;: &ldquo;Red&rdquo;
         -   &ldquo;VisAttributes&rdquo;: &ldquo;HcalVis&rdquo;
--   There are four volumes representing each of the four different types of
-    scintillator layers called `frontV_ScintBox_volume`, `frontH_ScintBox_volume`,
-    `backV_ScintBox_volume`, and `backH_ScintBox_volume`, all defined in
-    [scintillator_volume.gdml](./scintillator_volume.gdml). They differ in name
-    and which corresponding solid they make use of
+-   There are four volumes representing each of the four different types of scintillator layers called `frontV_ScintBox_volume`, `frontH_ScintBox_volume`, `backV_ScintBox_volume`, and `backH_ScintBox_volume`, all defined in [scintillator_volume.gdml](./scintillator_volume.gdml). They differ in name and which corresponding solid they make use of
 -   Material: &ldquo;Scintillator&rdquo;
--   Solid: One of `frontV_ScintBox`, `frontH_ScintBox`, `backV_ScintBox`, and
-    `backH_ScintBox`
+-   Solid: One of `frontV_ScintBox`, `frontH_ScintBox`, `backV_ScintBox`, and `backH_ScintBox`
 -   Auxiliary information:
     -   &ldquo;SensDet&rdquo;: &ldquo;HcalSD&rdquo;
     -   &ldquo;Color&rdquo;: &ldquo;Blue&rdquo;
@@ -165,12 +136,7 @@ can be used to refer to the volume using the `<volumeref>` tag. At least one log
 
 ## Physical volumes
 
-A physical volume is a logical volume with a position and, optionally, a name
-and a so-called CopyNumber. The CopyNumber should be *unique* for each physical
-volume. In LDMX-sw, the CopyNumber is used to identify which readout-channels a
-given physical volume corresponds to so some care must be taken when working on
-the geometry to ensure that the position of the physical volume and the
-corresponding CopyNumber aligns. For details see [Notes on the CopyNumber](#orgdd24d48).
+A physical volume is a logical volume with a position and, optionally, a name and a so-called CopyNumber. The CopyNumber should be *unique* for each physical volume. In LDMX-sw, the CopyNumber is used to identify which readout-channels a given physical volume corresponds to so some care must be taken when working on the geometry to ensure that the position of the physical volume and the corresponding CopyNumber aligns. For details see [Notes on the CopyNumber](#orgdd24d48).
 
 -   The physical volume representing the prototype volume is unnamed
     -   Mother volume: `World`
