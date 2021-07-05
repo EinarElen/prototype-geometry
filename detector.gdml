@@ -1,16 +1,14 @@
 <!DOCTYPE gdml [
-<!ENTITY constants SYSTEM "constants_for_eared_absorber.gdml">
+<!ENTITY constants SYSTEM "constants.gdml">
 <!ENTITY materials SYSTEM "materials.gdml">
 <!ENTITY userinfo SYSTEM "userinfo.gdml">
 <!ENTITY hcal_solids SYSTEM "hcal_solids.gdml">
 <!ENTITY absorber_volume SYSTEM "absorber_volume.gdml">
-<!ENTITY front_vertical_scintillator SYSTEM "front_vertical_scintillator.gdml">
-<!ENTITY front_horizontal_scintillator SYSTEM "front_horizontal_scintillator.gdml">
-<!ENTITY back_vertical_scintillator SYSTEM "back_vertical_scintillator.gdml">
-<!ENTITY back_horizontal_scintillator SYSTEM "back_horizontal_scintillator.gdml">
 <!ENTITY trigger SYSTEM "trigger.gdml">
 <!ENTITY trigger_bar_volume SYSTEM "trigger_bar_volume.gdml">
+<!ENTITY scintillator_volume SYSTEM "scintillator_volume.gdml">
 ]>
+
 <gdml xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://service-spi.web.cern.ch/service-spi/app/releases/GDML/schema/gdml.xsd">
 
   <define>
@@ -39,11 +37,8 @@
   <structure>
 
       &absorber_volume;
-      &front_vertical_scintillator;
-      &front_horizontal_scintillator;
-      &back_vertical_scintillator;
-      &back_horizontal_scintillator;
       &trigger_bar_volume;
+      &scintillator_volume;
 
 
 

@@ -1,6 +1,6 @@
     <!-- detector version -->
     <auxiliary auxtype="DetectorVersion" auxvalue="0">
-      <auxiliary auxtype="DetectorName" auxvalue="ldmx-hcal-prototype-v2"/>
+      <auxiliary auxtype="DetectorName" auxvalue="ldmx-hcal-prototype"/>
       <auxiliary auxtype="Author" auxvalue="Ruth Poettgen"/>
       <auxiliary auxtype="Description" auxvalue="A first attempt of an HCal prototype geometry."/>
     </auxiliary>
