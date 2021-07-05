@@ -19,7 +19,7 @@
 
 The geometry is divided into several files to make working with it easier.
 
--   [detector.gdml](./detector.gdml) This is the entrypoint of the geometry. Contains the actual implementation of the prototype geometry using the definitions from [absorber<sub>volume.gdml</sub>](./absorber_volume.gdml) and [scintillator<sub>volume.gdml</sub>](./scintillator_volume.gdml)
+-   [detector.gdml](./detector.gdml) This is the entrypoint of the geometry. Contains the actual implementation of the prototype geometry using the definitions from [absorber_volume.gdml](./absorber_volume.gdml) and [scintillator_volume.gdml](./scintillator_volume.gdml)
 -   [constants.gdml](./constants.gdml) Contains variable definitions used elsewhere in the
     geometry such as positions and geometrical properties of different volumes.
 -   [materials.gdml](./materials.gdml) Contains definitions of isotopes and materials
@@ -27,9 +27,9 @@ The geometry is divided into several files to make working with it easier.
     [GDML manual](https://gdml.web.cern.ch/GDML/doc/GDMLmanual.pdf) for
     details), such as sensitive detector volumes, visualization information,
     version and author information.
--   [hcal<sub>solids.gdml</sub>](./hcal_solids.gdml) Contains definitions of the absorber, scintillator, and parent boxes
--   [absorber<sub>volume.gdml</sub>](./absorber_volume.gdml) Contains the definition of the absorber volume
--   [scintillator<sub>volume.gdml</sub>](./scintillator_volume.gdml) Contains the definition of the scintillator volumes
+-   [hcal_solids.gdml](./hcal_solids.gdml) Contains definitions of the absorber, scintillator, and parent boxes
+-   [absorber_volume.gdml](./absorber_volume.gdml) Contains the definition of the absorber volume
+-   [scintillator_volume.gdml](./scintillator_volume.gdml) Contains the definition of the scintillator volumes
 
 
 <a id="org0b0aa54"></a>
@@ -46,7 +46,7 @@ The following is a list of all the variables defined in the protoype geometry de
 -   `center`, `identity`, and `hadron_calorimeter_pos` are positions that are all
     defined as **(x,y,z) = (0,0,0)**. `hadron_calorimeter_pos` is used to place the
     `prototype_volume` physical volume within the `World` volume.
--   `world_dim` is the size of the sides of the &ldquo;world<sub>box</sub>&rdquo; box, set to **10 m**
+-   `world_dim` is the size of the sides of the &ldquo;world_box&rdquo; box, set to **10 m**
 -   `air_thick` is the thickness (&Delta; z<sub>air</sub>) of the layers of air in between the
     absorber and scintillator bars. The thickness of each region is set to **2 mm**,
     which contributes twice to the thickness of an individual layer.
@@ -141,7 +141,7 @@ daughter volume is defined in terms for the mother volume. The logical volumes
 that we use in this geometry can contain the following tags
 
 -   `<solidref>` is a reference to one of the solids defined in
-    [hcal<sub>solids.gdml</sub>](./hcal_solids.gdml)
+    [hcal_solids.gdml](./hcal_solids.gdml)
 -   `<materialref>` is a reference to a material defined in
     [materials.gdml](./materials.gdml)
 -   `<auxiliary>` allows us to add any other kind of information that is used by
@@ -177,7 +177,7 @@ can be used to refer to the volume using the `<volumeref>` tag. At least one log
         -   &ldquo;Region&rdquo;: &ldquo;CalorimeterRegion&rdquo;
         -   &ldquo;VisAttributes&rdquo;: &ldquo;HcalVis&rdquo;
         -   &ldquo;DetElem&rdquo;: &ldquo;Hcal&rdquo;
--   `absorber_volume` represents one layer of the steel absorber and is defined in [absorber<sub>volume.gdml</sub>](./absorber_volume.gdml)
+-   `absorber_volume` represents one layer of the steel absorber and is defined in [absorber_volume.gdml](./absorber_volume.gdml)
     -   Material: `Steel`
     -   Solid: `absorberBox`
     -   Auxiliary information:
@@ -186,7 +186,7 @@ can be used to refer to the volume using the `<volumeref>` tag. At least one log
 -   There are four volumes representing each of the four different types of
     scintillator layers called `frontV_ScintBox_volume`, `frontH_ScintBox_volume`,
     `backV_ScintBox_volume`, and `backH_ScintBox_volume`, all defined in
-    [scintillator<sub>volume.gdml</sub>](./scintillator_volume.gdml). They differ in name
+    [scintillator_volume.gdml](./scintillator_volume.gdml). They differ in name
     and which corresponding solid they make use of
 -   Material: &ldquo;Scintillator&rdquo;
 -   Solid: One of `frontV_ScintBox`, `frontH_ScintBox`, `backV_ScintBox`, and
