@@ -146,8 +146,9 @@ that we use in this geometry can contain the following tags
     [materials.gdml](./materials.gdml)
 -   `<auxiliary>` allows us to add any other kind of information that is used by
     the simulation, such as defining if a volume is supposed to be a sensitive
-    element or how the volume should be visualized by default. Most auxiliary tags
-    will be references to groups of properties defined in [[\*User information][User information]].
+    element or how the volume should be visualized by default. Most auxiliary
+    tags will be references to groups of properties defined in [User
+    information](#orgf1ba2d9).
 
 -   `<physvol>` any daughter volumes that are to be placed within the logical
     volume, see [Physical volumes](#org39199a2)
