@@ -1,5 +1,5 @@
 <!DOCTYPE gdml [
-<!ENTITY constants SYSTEM "constants_for_eared_absorber.gdml">
+<!ENTITY constants SYSTEM "constants.gdml">
 <!ENTITY materials SYSTEM "materials.gdml">
 <!ENTITY userinfo SYSTEM "userinfo.gdml">
 <!ENTITY hcal_solids SYSTEM "hcal_solids.gdml">
