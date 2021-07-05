@@ -1,19 +1,19 @@
 
 # Table of Contents
 
-1.  [Structure of the geometry description](#orgd84c242)
-2.  [Reference](#org0b0aa54)
-    1.  [Constants](#org2461180)
-    2.  [Solids](#org6caa71f)
-    3.  [Logical volumes](#org8e47593)
-    4.  [Physical volumes](#org39199a2)
-        1.  [Notes on the CopyNumber](#orgdd24d48)
-    5.  [User information](#orgf1ba2d9)
-    6.  [Python code with all variables for testing](#org8fdb863)
+1.  [Structure of the geometry description](#structure)
+2.  [Reference](#reference)
+    1.  [Constants](#constants)
+    2.  [Solids](#solids)
+    3.  [Logical volumes](#logical_volumes)
+    4.  [Physical volumes](#physical_volumes)
+        1.  [Notes on the CopyNumber](#copy_numbers)
+    5.  [User information](#user_information)
+    6.  [Python code with all variables for testing](#python_code)
 
 
 
-<a id="orgd84c242"></a>
+<a id="structure"></a>
 
 # Structure of the geometry description
 
@@ -29,14 +29,14 @@ The geometry is divided into several files to make working with it easier.
 -   [scintillator_volume.gdml](./scintillator_volume.gdml) Contains the definition of the scintillator volumes
 
 
-<a id="org0b0aa54"></a>
+<a id="reference"></a>
 
 # Reference
 
 The following is a list of all the variables defined in the protoype geometry description.
 
 
-<a id="org2461180"></a>
+<a id="constants"></a>
 
 ## Constants
 
@@ -64,7 +64,7 @@ The following is a list of all the variables defined in the protoype geometry de
 -   `dz` is the depth of the prototype and is defined as `numLayersFront * layer_thick + numDoubleLayersBack * double_layer_thick` which correpsonds to **931 mm**
 
 
-<a id="org6caa71f"></a>
+<a id="solids"></a>
 
 ## Solids
 
@@ -74,7 +74,7 @@ or a more complicated geometry
 -   `absorberBox` is the solid that represents the absorber layer.
     -   TODO: Document this @petergy
 -   There are four boxes representing the four different types of scintillator layers (front vertical, front horizontal, back vertical, back horizontal). These are defined using the corresponding width/height from
-    [Constants](#org2461180), e.g.
+    [Constants](#constants), e.g.
     -   `frontV_ScintBox` has width `scint_FrontV_x` (400 mm) and height `scint_FrontV_y` (2000 mm)
     -   `frontH_ScintBox` has width `scint_FrontH_x` (2000 mm) and height `scint_FrontH_y` (400 mm)
     -   `backV_ScintBox` has width `scint_BackV_x` (600 mm) and height `scint_BackV_y` (2000 mm)
@@ -84,7 +84,7 @@ or a more complicated geometry
 -   `world_box` is the parent volume for all the other parts of the geometry and is defined as a box with all sides having length `world_dim` (10 m)
 
 
-<a id="org8e47593"></a>
+<a id="logical_volumes"></a>
 
 ## Logical volumes
 
@@ -92,8 +92,8 @@ In Geant4, a logical volume can contain all of the information about a volume ex
 
 -   `<solidref>` is a reference to one of the solids defined in [hcal_solids.gdml](./hcal_solids.gdml)
 -   `<materialref>` is a reference to a material defined in [materials.gdml](./materials.gdml)
--   `<auxiliary>` allows us to add any other kind of information that is used by the simulation, such as defining if a volume is supposed to be a sensitive element or how the volume should be visualized by default. Most auxiliary tags will be references to groups of properties defined in [User information](#orgf1ba2d9).
--   `<physvol>` any daughter volumes that are to be placed within the logical volume, see [Physical volumes](#org39199a2)
+-   `<auxiliary>` allows us to add any other kind of information that is used by the simulation, such as defining if a volume is supposed to be a sensitive element or how the volume should be visualized by default. Most auxiliary tags will be references to groups of properties defined in [User information](#user_information).
+-   `<physvol>` any daughter volumes that are to be placed within the logical volume, see [Physical volumes](#physical_volumes)
 
 Furthermore, each logical volume has a name as part of the `<volume>` tag which can be used to refer to the volume using the `<volumeref>` tag. At least one logical volume has to be the &ldquo;World&rdquo; volume. This volume determines the global coordinate system and has to completly contain all other volumes, sharing surfaces with none of them.
 
@@ -132,11 +132,11 @@ Furthermore, each logical volume has a name as part of the `<volume>` tag which 
     -   &ldquo;VisAttributes&rdquo;: &ldquo;HcalVis&rdquo;
 
 
-<a id="org39199a2"></a>
+<a id="physical_volumes"></a>
 
 ## Physical volumes
 
-A physical volume is a logical volume with a position and, optionally, a name and a so-called CopyNumber. The CopyNumber should be *unique* for each physical volume. In LDMX-sw, the CopyNumber is used to identify which readout-channels a given physical volume corresponds to so some care must be taken when working on the geometry to ensure that the position of the physical volume and the corresponding CopyNumber aligns. For details see [Notes on the CopyNumber](#orgdd24d48).
+A physical volume is a logical volume with a position and, optionally, a name and a so-called CopyNumber. The CopyNumber should be *unique* for each physical volume. In LDMX-sw, the CopyNumber is used to identify which readout-channels a given physical volume corresponds to so some care must be taken when working on the geometry to ensure that the position of the physical volume and the corresponding CopyNumber aligns. For details see [Notes on the CopyNumber](#copy_numbers).
 
 -   The physical volume representing the prototype volume is unnamed
     -   Mother volume: `World`
@@ -190,7 +190,7 @@ A physical volume is a logical volume with a position and, optionally, a name an
     -   Distance (z) to subsequent layer: `double_layer_thick`, i.e. **98 mm**
 
 
-<a id="orgdd24d48"></a>
+<a id="copy_numbers"></a>
 
 ### Notes on the CopyNumber
 
@@ -203,12 +203,12 @@ TODO: @PeterGy, document the CopyNumber requirements for the trigger scintillato
 Furthermore, the rotation of the layer is determined by the layer number, which in turn depends on the CopyNumber. An even CopyNumber means a vertical layer (length of the bars is along the y-axis) while an odd CopyNumber
 
 
-<a id="orgf1ba2d9"></a>
+<a id="user_information"></a>
 
 ## User information
 
 
-<a id="org8fdb863"></a>
+<a id="python_code"></a>
 
 ## Python code with all variables for testing
 
