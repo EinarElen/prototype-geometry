@@ -1,7 +1,0 @@
-      <volume name="backV_ScintBox_volume">
-    <materialref ref="Scintillator"/>
-    <solidref    ref="backV_ScintBox"/>
-    <auxiliary   auxtype="SensDet" auxvalue="HcalSD"/>
-    <auxiliary auxtype="Color" auxvalue="Blue"/>
-    <auxiliary auxtype="VisAttributes" auxvalue="HcalVis"/>
-      </volume>

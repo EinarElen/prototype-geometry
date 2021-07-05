@@ -1,6 +1,6 @@
-      <volume name="absorber_volume">
-    <materialref ref="Steel"/>
-    <solidref    ref="absorberBox"/>
-    <auxiliary auxtype="Color" auxvalue="Red"/>
-    <auxiliary auxtype="VisAttributes" auxvalue="HcalVis"/>
-      </volume>
+<volume name="absorber_volume">
+  <materialref ref="Steel"/>
+  <solidref    ref="absorberBox"/>
+  <auxiliary auxtype="Color" auxvalue="Red"/>
+  <auxiliary auxtype="VisAttributes" auxvalue="HcalVis"/>
+</volume>
