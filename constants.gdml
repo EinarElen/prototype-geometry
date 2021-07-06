@@ -14,6 +14,7 @@
     <variable name="absorber_ears"       value="50"/>
     <variable name="absorber_thickness"       value="25."/>
     <variable name="scint_thick"       value="20."/>
+    <variable name="scint_bar_width"  value="50."/>
     <variable name="scint_bar_length"       value="2000."/>
 
     <variable name="layer_thick"   value="absorber_thickness + scint_thick + 2.0*air_thick"/>
