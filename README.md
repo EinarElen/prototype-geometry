@@ -36,7 +36,7 @@ The geometry is divided into several files to make working with it easier.
 -   [userinfo.gdml](./userinfo.gdml) Contains auxiliary information (see the
     [GDML manual](https://gdml.web.cern.ch/GDML/doc/GDMLmanual.pdf) for details), such as sensitive detector volumes, visualization information, version and author information.
 -   [hcal_solids.gdml](./hcal_solids.gdml) Contains definitions of the absorber, scintillator, and parent boxes
--   [hcal_volumes.gdml](./hcal_volumes.gdml) Contains the definition of the scintillator and absorber volumes
+-   [hcal_volumes.gdml](./hcal_volumes.gdml) Contains the definition of the scintillator and absorber logical volumes, see [Logical volumes](#logical_volumes).
 
 
 <a id="reference"></a>
