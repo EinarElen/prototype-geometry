@@ -19,12 +19,12 @@
     <variable name="layer_thick"   value="absorber_thickness + scint_thick + 2.0*air_thick"/>
     <variable name="double_layer_thick"   value="2.0 * layer_thick"/>
 
-    <variable name="numLayersFront"   value="9"/>
-    <variable name="numLayersFront_vert"   value="4"/>
-    <variable name="numLayersFront_hori"   value="5"/>
-    <variable name="numDoubleLayersBack"   value="5"/>
-    <variable name="numLayers"   value="19"/>
-    <variable name="back_start"   value="numLayersFront * layer_thick"/>
+    <variable name="num_layers_front"   value="9"/>
+    <variable name="num_layers_front_vert"   value="4"/>
+    <variable name="num_layers_front_hori"   value="5"/>
+    <variable name="num_double_layers_back"   value="5"/>
+    <variable name="num_layers"   value="19"/>
+    <variable name="back_start"   value="num_layers_front * layer_thick"/>
 
 
     <!-- Front Layer, vertical bars -->
@@ -46,4 +46,4 @@
 
     <variable name="dx"           value="3000."/>
     <variable name="dy"           value="3000."/>
-    <variable name="dz"          value="numLayersFront * layer_thick + numDoubleLayersBack * double_layer_thick"/>
+    <variable name="dz"          value="num_layers_front * layer_thick + num_double_layers_back * double_layer_thick"/>

@@ -39,21 +39,21 @@
         <materialref ref="G4_AIR"/>
         <solidref    ref="prototype_Box"/>
 
-        <loop for="layer_index" from="1" to="numLayers" step="1">
+        <loop for="layer_index" from="1" to="num_layers" step="1">
            <physvol name="absorber_physvol" copynumber="layer_index" >
               <volumeref ref="absorber_volume"/>
               <position name="absorber_pos" unit="mm" x="-400" y="-400" z="-dz/2.0 + (layer_index-1)*layer_thick "/>
            </physvol>
         </loop>
 <!-- Even means vertical, odd means horizontal -->
-        <loop for="layer_index" from="1" to="numLayersFront_hori" step="1">
+        <loop for="layer_index" from="1" to="num_layers_front_hori" step="1">
            <physvol name="frontH_scint_physvol"  copynumber="2*layer_index - 1">
               <volumeref ref="frontH_ScintBox_volume"/>
               <position name="frontH_scint_pos" unit="mm" x="0" y="0" z="-dz/2.0 + absorber_thickness + air_thick + scint_thick/2.0 + (layer_index-1)*2.0*layer_thick"/>
            </physvol>
         </loop>
 
-        <loop for="layer_index" from="1" to="numLayersFront_vert" step="1">
+        <loop for="layer_index" from="1" to="num_layers_front_vert" step="1">
            <physvol name="frontV_scint_physvol"  copynumber="2*layer_index">
               <volumeref ref="frontV_ScintBox_volume"/>
               <position name="frontV_scint_pos" unit="mm" x="0" y="0" z="-dz/2.0 + layer_thick + absorber_thickness + air_thick + scint_thick/2.0 + (layer_index-1)*2.0*layer_thick"/>
@@ -61,15 +61,15 @@
         </loop>
 
 
-        <loop for="layer_index" from="1" to="numDoubleLayersBack" step="1">
-           <physvol name="backV_scint_physvol" copynumber="numLayersFront + 2*layer_index - 1">
+        <loop for="layer_index" from="1" to="num_double_layers_back" step="1">
+           <physvol name="backV_scint_physvol" copynumber="num_layers_front + 2*layer_index - 1">
               <volumeref ref="backV_ScintBox_volume"/>
               <position name="backV_scint_pos" unit="mm" x="0" y="0" z="-dz/2.0 + back_start + absorber_thickness + air_thick + scint_thick/2.0 + (layer_index-1)*2.0*layer_thick"/>
            </physvol>
         </loop>
 
-        <loop for="layer_index" from="1" to="numDoubleLayersBack" step="1">
-           <physvol name="backH_scint_physvol"  copynumber="numLayersFront + 2*layer_index">
+        <loop for="layer_index" from="1" to="num_double_layers_back" step="1">
+           <physvol name="backH_scint_physvol"  copynumber="num_layers_front + 2*layer_index">
               <volumeref ref="backH_ScintBox_volume"/>
               <position name="backH_scint_pos" unit="mm" x="0" y="0" z="-dz/2.0 + back_start + layer_thick + absorber_thickness + air_thick + scint_thick/2.0 + (layer_index-1)*2.0*layer_thick"/>
            </physvol>

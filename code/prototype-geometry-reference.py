@@ -18,12 +18,12 @@ scint_thick=20.
 scint_bar_length=2000.
 layer_thick = absorber_thickness + scint_thick + 2 * air_thick
 double_layer_thick=2 * layer_thick
-numLayersFront_vert = 4
-numLayersFront_hori = 5
-numLayersFront=numLayersFront_vert + numLayersFront_hori
-numDoubleLayersBack=5
-numLayers = numLayersFront + 2 * numDoubleLayersBack
-back_start=numLayersFront * layer_thick
+num_layers_front_vert = 4
+num_layers_front_hori = 5
+num_layers_front=num_layersFront_vert + num_layersFront_hori
+num_double_layers_back=5
+num_layers = num_layers_front + 2 * num_double_layers_back
+back_start=num_layers_front * layer_thick
 scint_width=50.
 numBarsFront=8
 numBarsBack=12
@@ -37,7 +37,7 @@ scint_BackH_x=scint_bar_length
 scint_BackH_y=numBarsBack * scint_width
 dx=3000.
 dy=3000.
-dz=numLayersFront * layer_thick + numDoubleLayersBack * double_layer_thick
+dz=num_layers_front * layer_thick + num_double_layers_back * double_layer_thick
 
 # Solids
 frontV_ScintBox = {"width": scint_FrontV_x, "height": scint_FrontV_y}
@@ -65,7 +65,7 @@ first_absorber = physical_volume(position_of_first_absorber_layer)
 absorber_physvols=[
     physical_volume(position=position_of_first_absorber_layer + distance_to_subsequent_absorber_layer * i ,
                     name="absorber_physvol", CopyNumber=i)
-    for i in range(1, numLayers + 1)
+    for i in range(1, num_layers + 1)
 ]
 position_of_first_frontH_scint_layer = np.array([0.,0., -dz/2 + absorber_thickness + air_thick + scint_thick/2 ])
 position_of_first_frontV_scint_layer = position_of_first_frontH_scint_layer + [0., 0., layer_thick]
@@ -76,52 +76,52 @@ frontH_scint_physvols=[
     physical_volume(position=position_of_first_frontH_scint_layer + (i - 1) * distance_to_subsequent_scint_layer,
                     name="frontH_scint_physvol", CopyNumber=2*i - 1
                     )
-    for i in range(1,numLayersFront_hori + 1)
+    for i in range(1,num_layers_front_hori + 1)
 ]
 frontV_scint_physvols=[
     physical_volume(position=position_of_first_frontV_scint_layer + (i - 1) * distance_to_subsequent_scint_layer,
                     name="frontV_scint_physvol", CopyNumber=2*i
                     )
-    for i in range(1,numLayersFront_vert + 1)
+    for i in range(1,num_layers_front_vert + 1)
 ]
 backV_scint_physvols=[
     physical_volume(position=position_of_first_backV_scint_layer + (i - 1) * distance_to_subsequent_scint_layer,
-                    name="backV_scint_physvol", CopyNumber=2*i + numLayersFront - 1
+                    name="backV_scint_physvol", CopyNumber=2*i + num_layers_front - 1
                     )
-    for i in range(1,numDoubleLayersBack+ 1)
+    for i in range(1,num_double_layers_back+ 1)
 ]
 
 backH_scint_physvols=[
     physical_volume(position=position_of_first_backH_scint_layer + (i - 1) * distance_to_subsequent_scint_layer,
-                    name="backH_scint_physvol", CopyNumber=2*i + numLayersFront
+                    name="backH_scint_physvol", CopyNumber=2*i + num_layers_front
                     )
-    for i in range(1,numDoubleLayersBack+ 1)
+    for i in range(1,num_double_layers_back+ 1)
 ]
 
 def absorber_copynumbers():
-    return [absorber_physvols[i].CopyNumber  for i in range(0, numLayers)]
+    return [absorber_physvols[i].CopyNumber  for i in range(0, num_layers)]
 
 def frontH_copynumbers():
-    return [frontH_scint_physvols[i].CopyNumber  for i in range(0, numLayersFront_hori)]
+    return [frontH_scint_physvols[i].CopyNumber  for i in range(0, num_layers_front_hori)]
 
 def frontV_copynumbers():
-    return [frontV_scint_physvols[i].CopyNumber  for i in range(0, numLayersFront_vert)]
+    return [frontV_scint_physvols[i].CopyNumber  for i in range(0, num_layers_front_vert)]
 
 def backH_copynumbers():
-    return [backH_scint_physvols[i].CopyNumber  for i in range(0, numDoubleLayersBack)]
+    return [backH_scint_physvols[i].CopyNumber  for i in range(0, num_double_layers_back)]
 
 def backV_copynumbers():
-    return [backV_scint_physvols[i].CopyNumber  for i in range(0, numDoubleLayersBack)]
+    return [backV_scint_physvols[i].CopyNumber  for i in range(0, num_double_layers_back)]
 
 
 def frontH_depths():
-    return [frontH_scint_physvols[i].depth  for i in range(0, numLayersFront_hori)]
+    return [frontH_scint_physvols[i].depth  for i in range(0, num_layers_front_hori)]
 
 def frontV_depths():
-    return [frontV_scint_physvols[i].depth  for i in range(0, numLayersFront_vert)]
+    return [frontV_scint_physvols[i].depth  for i in range(0, num_layers_front_vert)]
 
 def backH_depths():
-    return [backH_scint_physvols[i].depth  for i in range(0, numDoubleLayersBack)]
+    return [backH_scint_physvols[i].depth  for i in range(0, num_double_layers_back)]
 
 def backV_depths():
-    return [backV_scint_physvols[i].depth  for i in range(0, numDoubleLayersBack)]
+    return [backV_scint_physvols[i].depth  for i in range(0, num_double_layers_back)]
