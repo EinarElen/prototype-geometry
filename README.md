@@ -71,7 +71,7 @@ The following is a list of all the variables defined in the protoype geometry de
 Solids are objects with purely geometrical properties such as a box, a sphere,
 or a more complicated geometry
 
--   `absorberBox` is the solid that represents the absorber layer.
+-   `absorberBox` is the solid that represents the absorber layer. It has a shape according to the image: ![Image](https://files.slack.com/files-pri/T12GGHQSK-F0271BXAZB5/absorber_plate.png)
     -   TODO: Document this @petergy
 -   There are four boxes representing the four different types of scintillator layers (front vertical, front horizontal, back vertical, back horizontal). These are defined using the corresponding width/height from
     [Constants](#constants), e.g.
