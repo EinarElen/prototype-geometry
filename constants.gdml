@@ -28,20 +28,20 @@
 
 
     <!-- Front Layer, vertical bars -->
-    <variable name="scint_FrontV_x"   value="400"/>
-    <variable name="scint_FrontV_y"   value="scint_bar_length"/>
+    <variable name="scint_front_vertical_x"   value="400"/>
+    <variable name="scint_front_vertical_y"   value="scint_bar_length"/>
 
     <!-- Front Layer, horizontal bars -->
-    <variable name="scint_FrontH_x"   value="scint_bar_length"/>
-    <variable name="scint_FrontH_y"   value="400"/>
+    <variable name="scint_front_horizontal_x"   value="scint_bar_length"/>
+    <variable name="scint_front_horizontal_y"   value="400"/>
 
     <!-- Back Layer, vertical bars -->
-    <variable name="scint_BackV_x"   value="600"/>
-    <variable name="scint_BackV_y"   value="scint_bar_length"/>
+    <variable name="scint_back_vertical_x"   value="600"/>
+    <variable name="scint_back_vertical_y"   value="scint_bar_length"/>
 
     <!-- Back Layer, horizontal bars -->
-    <variable name="scint_BackH_x"   value="scint_bar_length"/>
-    <variable name="scint_BackH_y"   value="600"/>
+    <variable name="scint_back_horizontal_x"   value="scint_bar_length"/>
+    <variable name="scint_back_horizontal_y"   value="600"/>
 
 
     <variable name="dx"           value="3000."/>

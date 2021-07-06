@@ -67,10 +67,10 @@ The following is a list of all the variables defined in the protoype geometry de
 -   `num_layers` is the total number of layers. It is set to **19** and corresponds to `num_layers + 2 * num_double_layers_back`
 -   `back_start` is the location of the first layer in the back region. It is set to `num_layers_front * layer_thick`, i.e. **441 mm**
 -   The length of the sides of the various scintillator layers are defined as
-    -   Front vertical layers have `scint_FrontV_x` which is **400 mm**, `scint_FrontV_y` which is the bar length, **2000 mm**. The 400 mm corresponds to 8 bars each having a width of **50 mm**
-    -   Front horizontal layers have `scint_FrontH_y` which is **400 mm**, `scint_FrontH_x` which is the bar length, **2000 mm**. The 400 mm corresponds to 8 bars each having a width of **50 mm**
-    -   Back vertical layers have `scint_BackV_x` which is **600 mm**, `scint_BackV_y` which is the bar length, **2000 mm**. The 600 mm corresponds to 12 bars each having a width of **50 mm**
-    -   Back horizontal layers have `scint_BackH_y` which is **600 mm**, `scint_BackH_x` which is the bar length, **2000 mm**. The 600 mm corresponds to 12 bars each having a width of **50 mm**
+    -   Front vertical layers have `scint_front_vertical_x` which is **400 mm**, `scint_front_vertical_y` which is the bar length, **2000 mm**. The 400 mm corresponds to 8 bars each having a width of **50 mm**
+    -   Front horizontal layers have `scint_front_horizontal_y` which is **400 mm**, `scint_front_horizontal_x` which is the bar length, **2000 mm**. The 400 mm corresponds to 8 bars each having a width of **50 mm**
+    -   Back vertical layers have `scint_back_vertical_x` which is **600 mm**, `scint_back_vertical_y` which is the bar length, **2000 mm**. The 600 mm corresponds to 12 bars each having a width of **50 mm**
+    -   Back horizontal layers have `scint_back_horizontal_y` which is **600 mm**, `scint_back_horizontal_x` which is the bar length, **2000 mm**. The 600 mm corresponds to 12 bars each having a width of **50 mm**
 -   `dx` and `dy`, the width and height of the prototype respectively are both set to **3000 mm**
 -   `dz` is the depth of the prototype and is defined as `num_layers_front * layer_thick + num_double_layers_back * double_layer_thick` which correpsonds to **931 mm**
 
@@ -86,10 +86,10 @@ or a more complicated geometry
     -   TODO: Document this @petergy
 -   There are four boxes representing the four different types of scintillator layers (front vertical, front horizontal, back vertical, back horizontal). These are defined using the corresponding width/height from
     [Constants](#constants), e.g.
-    -   `frontV_ScintBox` has width `scint_FrontV_x` (400 mm) and height `scint_FrontV_y` (2000 mm)
-    -   `frontH_ScintBox` has width `scint_FrontH_x` (2000 mm) and height `scint_FrontH_y` (400 mm)
-    -   `backV_ScintBox` has width `scint_BackV_x` (600 mm) and height `scint_BackV_y` (2000 mm)
-    -   `backH_ScintBox` has width `scint_BackH_x` (2000 mm) and height `scint_BackH_y` (600 mm)
+    -   `frontV_ScintBox` has width `scint_front_vertical_x` (400 mm) and height `scint_front_vertical_y` (2000 mm)
+    -   `frontH_ScintBox` has width `scint_front_horizontal_x` (2000 mm) and height `scint_front_horizontal_y` (400 mm)
+    -   `backV_ScintBox` has width `scint_back_vertical_x` (600 mm) and height `scint_back_vertical_y` (2000 mm)
+    -   `backH_ScintBox` has width `scint_back_horizontal_x` (2000 mm) and height `scint_back_horizontal_y` (600 mm)
 -   `air_box` is the a box representing a single air layer and has width `dx` (3000 mm), height `dy` (3000 mm), and depth `air_thick` (2 mm)
 -   `prototype_Box` is the parent volume for the prototype and is defined as a box with width `dx` (3000 mm), height `dy` (3000 mm), and depth `dz` (931 mm)
 -   `world_box` is the parent volume for all the other parts of the geometry and is defined as a box with all sides having length `world_dim` (10 m)
@@ -122,8 +122,8 @@ Furthermore, each logical volume has a name as part of the `<volume>` tag which 
         -   `absorber_physvol`
         -   `frontH_scint_physvol`
         -   `frontV_scint_physvol`
-        -   `back_H_scint_physvol`
-        -   `back_V_scint_physvol`
+        -   `back_horizontal_scint_physvol`
+        -   `back_vertical_scint_physvol`
     -   Auxiliary information:
         -   &ldquo;Region&rdquo;: &ldquo;CalorimeterRegion&rdquo;
         -   &ldquo;VisAttributes&rdquo;: &ldquo;HcalVis&rdquo;
