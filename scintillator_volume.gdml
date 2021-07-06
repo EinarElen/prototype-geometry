@@ -1,30 +1,30 @@
-<volume name="frontV_ScintBox_volume">
+<volume name="front_vertical_scint_box_volume">
   <materialref ref="Scintillator"/>
-  <solidref    ref="frontV_ScintBox"/>
+  <solidref    ref="front_vertical_scint_box"/>
   <auxiliary   auxtype="SensDet" auxvalue="HcalSD"/>
   <auxiliary auxtype="Color" auxvalue="Blue"/>
   <auxiliary auxtype="VisAttributes" auxvalue="HcalVis"/>
 </volume>
 
-<volume name="frontH_ScintBox_volume">
+<volume name="front_horizontal_scint_box_volume">
   <materialref ref="Scintillator"/>
-  <solidref    ref="frontH_ScintBox"/>
+  <solidref    ref="front_horizontal_scint_box"/>
   <auxiliary   auxtype="SensDet" auxvalue="HcalSD"/>
   <auxiliary auxtype="Color" auxvalue="Blue"/>
   <auxiliary auxtype="VisAttributes" auxvalue="HcalVis"/>
 </volume>
 
-<volume name="backV_ScintBox_volume">
+<volume name="back_vertical_scint_box_volume">
   <materialref ref="Scintillator"/>
-  <solidref    ref="backV_ScintBox"/>
+  <solidref    ref="back_vertical_scint_box"/>
   <auxiliary   auxtype="SensDet" auxvalue="HcalSD"/>
   <auxiliary auxtype="Color" auxvalue="Blue"/>
   <auxiliary auxtype="VisAttributes" auxvalue="HcalVis"/>
 </volume>
 
-<volume name="backH_ScintBox_volume">
+<volume name="back_horizontal_scint_box_volume">
   <materialref ref="Scintillator"/>
-  <solidref    ref="backH_ScintBox"/>
+  <solidref    ref="back_horizontal_scint_box"/>
   <auxiliary   auxtype="SensDet" auxvalue="HcalSD"/>
   <auxiliary auxtype="Color" auxvalue="Blue"/>
   <auxiliary auxtype="VisAttributes" auxvalue="HcalVis"/>

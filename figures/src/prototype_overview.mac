@@ -26,10 +26,10 @@
 /vis/geometry/set/visibility prototype_volume 0 false
 
 /vis/geometry/set/colour absorber_volume -1 1 0 0 1
-/vis/geometry/set/colour frontH_ScintBox_volume -1 0 1 0 1
-/vis/geometry/set/colour frontV_ScintBox_volume -1 0 1 0 1
-/vis/geometry/set/colour backH_ScintBox_volume -1 0 0 1 1
-/vis/geometry/set/colour backV_ScintBox_volume -1 0 0 1 1
+/vis/geometry/set/colour front_horizontal_scint_box_volume -1 0 1 0 1
+/vis/geometry/set/colour front_vertical_scint_box_volume -1 1 1 0 1
+/vis/geometry/set/colour back_horizontal_scint_box_volume -1 0 0 1 1
+/vis/geometry/set/colour back_vertical_scint_box_volume -1 1 0 1 1
 
 
 #

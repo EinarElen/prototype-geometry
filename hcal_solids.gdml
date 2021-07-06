@@ -17,10 +17,10 @@
 	
 	
 	
-    <box lunit="mm" name="frontV_ScintBox"    x="scint_front_vertical_x"          y="scint_front_vertical_y"          z="scint_thick"/>
-    <box lunit="mm" name="frontH_ScintBox"    x="scint_front_horizontal_x"          y="scint_front_horizontal_y"          z="scint_thick"/>
-    <box lunit="mm" name="backV_ScintBox"    x="scint_back_vertical_x"          y="scint_back_vertical_y"          z="scint_thick"/>
-    <box lunit="mm" name="backH_ScintBox"    x="scint_back_horizontal_x"          y="scint_back_horizontal_y"          z="scint_thick"/>
+    <box lunit="mm" name="front_vertical_scint_box"    x="scint_front_vertical_x"          y="scint_front_vertical_y"          z="scint_thick"/>
+    <box lunit="mm" name="front_horizontal_scint_box"    x="scint_front_horizontal_x"          y="scint_front_horizontal_y"          z="scint_thick"/>
+    <box lunit="mm" name="back_vertical_scint_box"    x="scint_back_vertical_x"          y="scint_back_vertical_y"          z="scint_thick"/>
+    <box lunit="mm" name="back_horizontal_scint_box"    x="scint_back_horizontal_x"          y="scint_back_horizontal_y"          z="scint_thick"/>
     <box lunit="mm" name="airBox"      x="dx"          y="dy"          z="air_thick"/>
 
     <!-- - - - - - - - - Parent Volumes - - - - - - - -->

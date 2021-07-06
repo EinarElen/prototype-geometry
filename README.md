@@ -86,10 +86,10 @@ or a more complicated geometry
     -   TODO: Document this @petergy
 -   There are four boxes representing the four different types of scintillator layers (front vertical, front horizontal, back vertical, back horizontal). These are defined using the corresponding width/height from
     [Constants](#constants), e.g.
-    -   `frontV_ScintBox` has width `scint_front_vertical_x` (400 mm) and height `scint_front_vertical_y` (2000 mm)
-    -   `frontH_ScintBox` has width `scint_front_horizontal_x` (2000 mm) and height `scint_front_horizontal_y` (400 mm)
-    -   `backV_ScintBox` has width `scint_back_vertical_x` (600 mm) and height `scint_back_vertical_y` (2000 mm)
-    -   `backH_ScintBox` has width `scint_back_horizontal_x` (2000 mm) and height `scint_back_horizontal_y` (600 mm)
+    -   `front_vertical_scint_box` has width `scint_front_vertical_x` (400 mm) and height `scint_front_vertical_y` (2000 mm)
+    -   `front_horizontal_scint_box` has width `scint_front_horizontal_x` (2000 mm) and height `scint_front_horizontal_y` (400 mm)
+    -   `back_vertical_scint_box` has width `scint_back_vertical_x` (600 mm) and height `scint_back_vertical_y` (2000 mm)
+    -   `back_horizontal_scint_box` has width `scint_back_horizontal_x` (2000 mm) and height `scint_back_horizontal_y` (600 mm)
 -   `air_box` is the a box representing a single air layer and has width `dx` (3000 mm), height `dy` (3000 mm), and depth `air_thick` (2 mm)
 -   `prototype_Box` is the parent volume for the prototype and is defined as a box with width `dx` (3000 mm), height `dy` (3000 mm), and depth `dz` (931 mm)
 -   `world_box` is the parent volume for all the other parts of the geometry and is defined as a box with all sides having length `world_dim` (10 m)
@@ -120,8 +120,8 @@ Furthermore, each logical volume has a name as part of the `<volume>` tag which 
     -   Solid: `prototype_Box`
     -   Daughter volumes:
         -   `absorber_physvol`
-        -   `frontH_scint_physvol`
-        -   `frontV_scint_physvol`
+        -   `front_horizontal_scint_physvol`
+        -   `front_vertical_scint_physvol`
         -   `back_horizontal_scint_physvol`
         -   `back_vertical_scint_physvol`
     -   Auxiliary information:
@@ -134,9 +134,9 @@ Furthermore, each logical volume has a name as part of the `<volume>` tag which 
     -   Auxiliary information:
         -   &ldquo;Color&rdquo;: &ldquo;Red&rdquo;
         -   &ldquo;VisAttributes&rdquo;: &ldquo;HcalVis&rdquo;
--   There are four volumes representing each of the four different types of scintillator layers called `frontV_ScintBox_volume`, `frontH_ScintBox_volume`, `backV_ScintBox_volume`, and `backH_ScintBox_volume`, all defined in [scintillator_volume.gdml](./scintillator_volume.gdml). They differ in name and which corresponding solid they make use of
+-   There are four volumes representing each of the four different types of scintillator layers called `front_vertical_scint_box_volume`, `front_horizontal_scint_box_volume`, `back_vertical_scint_box_volume`, and `back_horizontal_scint_box_volume`, all defined in [scintillator_volume.gdml](./scintillator_volume.gdml). They differ in name and which corresponding solid they make use of
 -   Material: &ldquo;Scintillator&rdquo;
--   Solid: One of `frontV_ScintBox`, `frontH_ScintBox`, `backV_ScintBox`, and `backH_ScintBox`
+-   Solid: One of `front_vertical_scint_box`, `front_horizontal_scint_box`, `back_vertical_scint_box`, and `back_horizontal_scint_box`
 -   Auxiliary information:
     -   &ldquo;SensDet&rdquo;: &ldquo;HcalSD&rdquo;
     -   &ldquo;Color&rdquo;: &ldquo;Blue&rdquo;
@@ -163,8 +163,8 @@ A physical volume is a logical volume with a position and, optionally, a name an
         -   y: **-400 mm**
         -   z: `-dz/2`, i.e. **-465.5 mm**
     -   Distance (z) to subsequent layer: `layer_thick`, i.e. **49 mm**
--   `frontH_scint_physvol`: There are 5 physical volumes representing the horizontal scintillator layers in the front region. They all have odd CopyNumbers.
-    -   Logical volume: `frontH_ScintBox_volume`
+-   `front_horizontal_scint_physvol`: There are 5 physical volumes representing the horizontal scintillator layers in the front region. They all have odd CopyNumbers.
+    -   Logical volume: `front_horizontal_scint_box_volume`
     -   Mother volume: `prototype_volume`
     -   CopyNumbers: [1,3,5,7,9]
     -   Position of the first layer:
@@ -172,8 +172,8 @@ A physical volume is a logical volume with a position and, optionally, a name an
         -   y: **0 mm**
         -   z: `-dz/2 + absorber_thickness + air_thick + scint_thick/2`, i.e. **-428.5 mm**
     -   Distance (z) to subsequent layer: `double_layer_thick`, i.e. **98 mm**
--   `frontV_scint_physvol`: There are 4 physical volumes representing the vertical scintillator layers in the front region. They all have even CopyNumbers.
-    -   Logical volume: `frontV_ScintBox_volume`
+-   `front_vertical_scint_physvol`: There are 4 physical volumes representing the vertical scintillator layers in the front region. They all have even CopyNumbers.
+    -   Logical volume: `front_vertical_scint_box_volume`
     -   Mother volume: `prototype_volume`
     -   CopyNumbers: [2,4,6,8]
     -   Position of the first layer:
@@ -181,8 +181,8 @@ A physical volume is a logical volume with a position and, optionally, a name an
         -   y: **0 mm**
         -   z: `-dz/2 + absorber_thickness + air_thick + scint_thick/2 + layer_thick`, i.e. **-379.5 mm**
     -   Distance (z) to subsequent layer: `double_layer_thick`, i.e. **98 mm**
--   `backV_scint_physvol`: There are 5 physical volumes representing the vertical scintillator layers in the back region. They all have even CopyNumbers.
-    -   Logical volume: `backV_ScintBox_volume`
+-   `back_vertical_scint_physvol`: There are 5 physical volumes representing the vertical scintillator layers in the back region. They all have even CopyNumbers.
+    -   Logical volume: `back_vertical_scint_box_volume`
     -   Mother volume: `prototype_volume`
     -   CopyNumbers: [10, 12, 14, 16, 18]
     -   Position of the first layer:
@@ -190,8 +190,8 @@ A physical volume is a logical volume with a position and, optionally, a name an
         -   y: **0 mm**
         -   z: `-dz/2 + back_start + absorber_thickness + air_thick + scint_thick/2`, i.e. **12.5 mm**
     -   Distance (z) to subsequent layer: `double_layer_thick`, i.e. **98 mm**
--   `backH_scint_physvol`: There are 5 physical volumes representing the horizontal scintillator layers in the back region. They all have odd CopyNumbers.
-    -   Logical volume: `backH_ScintBox_volume`
+-   `back_horizontal_scint_physvol`: There are 5 physical volumes representing the horizontal scintillator layers in the back region. They all have odd CopyNumbers.
+    -   Logical volume: `back_horizontal_scint_box_volume`
     -   Mother volume: `prototype_volume`
     -   CopyNumbers: [11, 13, 15, 17, 19]
     -   Position of the first layer:
