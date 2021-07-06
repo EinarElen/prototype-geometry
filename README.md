@@ -12,6 +12,15 @@
     6.  [Python code with all variables for testing](#python_code)
 
 
+<a id="geometry"></a>
+## The prototype geometry
+
+This document describes the current version of the GDML description of the LDMX testbeam prototype. The prototype consists of a 
+
+
+![Overview of the prototype geometry](figures/prototype-overview_0.png)
+
+
 
 <a id="structure"></a>
 
