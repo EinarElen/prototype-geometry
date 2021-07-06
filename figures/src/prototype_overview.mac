@@ -1,0 +1,51 @@
+#
+
+# Use this open statement to create an OpenGL view:
+/vis/open OGL 900x600-0+0
+
+# Disable auto refresh and quieten vis messages whilst scene and
+# trajectories are established:
+/vis/viewer/set/autoRefresh false
+/vis/verbose errors
+#
+# Draw geometry:
+/vis/drawVolume
+#
+# Specify view angle:
+/vis/viewer/set/viewpointThetaPhi 140 160
+#
+# Specify zoom value:
+#/vis/viewer/zoom .9
+#
+# Specify style (surface or wireframe):
+/vis/viewer/set/style surface
+#
+# Draw coordinate axes:
+#/vis/scene/add/axes 0 0 0 1 m
+
+/vis/geometry/set/visibility prototype_volume 0 false
+
+/vis/geometry/set/colour absorber_volume -1 1 0 0 1
+/vis/geometry/set/colour frontH_ScintBox_volume -1 0 1 0 1
+/vis/geometry/set/colour frontV_ScintBox_volume -1 1 1 0 1
+/vis/geometry/set/colour backH_ScintBox_volume -1 0 0 1 1
+/vis/geometry/set/colour backV_ScintBox_volume -1 1 0 1 1
+
+
+#
+# Re-establish auto refreshing and verbosity:
+/vis/viewer/set/autoRefresh true
+/vis/verbose warnings
+#
+# For file-based drivers, use this to create an empty detector view:
+#/vis/viewer/flush
+
+# Save image
+
+# It seems like you need to manually update the view if you are using the QT
+# based interface, otherwise you just get a black screen. So these commands need
+# to be run manually
+
+# /vis/viewer/refresh
+# /vis/ogl/export ../prototype-overview.png
+# /vis/ogl/export ../prototype-overview.svg
