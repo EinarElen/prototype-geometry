@@ -82,7 +82,7 @@ The following is a list of all the variables defined in the protoype geometry de
 Solids are objects with purely geometrical properties such as a box, a sphere,
 or a more complicated geometry
 
--   `absorberBox` is the solid that represents the absorber layer.
+-   `absorber_box` is the solid that represents the absorber layer.
     -   TODO: Document this @petergy
 -   There are four boxes representing the four different types of scintillator layers (front vertical, front horizontal, back vertical, back horizontal). These are defined using the corresponding width/height from
     [Constants](#constants), e.g.
@@ -91,7 +91,7 @@ or a more complicated geometry
     -   `back_vertical_scint_box` has width `scint_back_vertical_x` (600 mm) and height `scint_back_vertical_y` (2000 mm)
     -   `back_horizontal_scint_box` has width `scint_back_horizontal_x` (2000 mm) and height `scint_back_horizontal_y` (600 mm)
 -   `air_box` is the a box representing a single air layer and has width `dx` (3000 mm), height `dy` (3000 mm), and depth `air_thick` (2 mm)
--   `prototype_Box` is the parent volume for the prototype and is defined as a box with width `dx` (3000 mm), height `dy` (3000 mm), and depth `dz` (931 mm)
+-   `prototype_box` is the parent volume for the prototype and is defined as a box with width `dx` (3000 mm), height `dy` (3000 mm), and depth `dz` (931 mm)
 -   `world_box` is the parent volume for all the other parts of the geometry and is defined as a box with all sides having length `world_dim` (10 m)
 
 
@@ -117,7 +117,7 @@ Furthermore, each logical volume has a name as part of the `<volume>` tag which 
         -   &ldquo;DetElem&rdquo;: &ldquo;Top&rdquo;
 -   `prototype_volume` represents the entire prototype and is defined in [detector.gdml](./detector.gdml)
     -   Material: `G4_AIR`
-    -   Solid: `prototype_Box`
+    -   Solid: `prototype_box`
     -   Daughter volumes:
         -   `absorber_physvol`
         -   `front_horizontal_scint_physvol`
@@ -130,7 +130,7 @@ Furthermore, each logical volume has a name as part of the `<volume>` tag which 
         -   &ldquo;DetElem&rdquo;: &ldquo;Hcal&rdquo;
 -   `absorber_volume` represents one layer of the steel absorber and is defined in [absorber_volume.gdml](./absorber_volume.gdml)
     -   Material: `Steel`
-    -   Solid: `absorberBox`
+    -   Solid: `absorber_box`
     -   Auxiliary information:
         -   &ldquo;Color&rdquo;: &ldquo;Red&rdquo;
         -   &ldquo;VisAttributes&rdquo;: &ldquo;HcalVis&rdquo;

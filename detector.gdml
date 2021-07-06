@@ -37,7 +37,7 @@
 
      <volume name="prototype_volume">
         <materialref ref="G4_AIR"/>
-        <solidref    ref="prototype_Box"/>
+        <solidref    ref="prototype_box"/>
 
         <loop for="layer_index" from="1" to="num_layers" step="1">
            <physvol name="absorber_physvol" copynumber="layer_index" >

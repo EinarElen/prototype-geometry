@@ -45,7 +45,7 @@ front_horizontal_scint_box = {"width": scint_front_horizontal_x, "height": scint
 back_vertical_scint_box = {"width": scint_back_vertical_x, "height": scint_back_vertical_y}
 back_horizontal_scint_box = {"width": scint_back_horizontal_x, "height": scint_back_horizontal_y}
 air_box = {"width": dx, "height": dy, "depth": air_thick}
-prototype_Box={"width": dx, "height": dy, "depth": dz}
+prototype_box={"width": dx, "height": dy, "depth": dz}
 world_box={"width": world_dim, "height": world_dim, "depth": world_dim}
 
 class physical_volume:
