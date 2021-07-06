@@ -62,11 +62,11 @@ The following is a list of all the variables defined in the protoype geometry de
 -   `layer_thick` is the combined thickness of a layer (&Delta; z<sub>layer</sub>). It consists of one layer of absorber, `absorber_thickness`, one layer of scintillators, and *two* layers of air, `air_thick`. The resulting layer thickness is thus given by `absorber_thickness + scint_thick + 2 * air_thick`, **49 mm**
 -   `num_bars_front` is the number of scintillator bars in the front region. It is set to **8**
 -   `num_bars_back` is the number of scintillator bars in the back region. It is set to **12**
--   `double_layer_thick` is twice the thickness of one layer, i.e. **98 mm. It is currently only used in defining the total depth of the prototype, `dz`.
 -   `num_layers_front` is the total number of layers in the front region of the prototype and is set to **9**
--   `num_layers_front_vert` and `num_layers_front_hori` are the number of vertical/horizontal layers in the front region. They are set to **4** and **5** respectively
--   `num_double_layers_back` is the number of horizontal or vertical layers in the back region. It is set to **5** so the total number of layers in the back region is **10**
--   `num_layers` is the total number of layers. It is set to **19** and corresponds to `num_layers + 2 * num_double_layers_back`
+-   `num_layers_front_vertical` and `num_layers_front_horizontal` are the number of vertical/horizontal layers in the front region. They are set to **4** and **5** respectively
+-   `num_layers_back_vertical` and `num_layers_back_horizontal` are the number of horizontal or vertical layers in the back region. They are both set to **5** 
+-   `num_layer_back` is the total number of layers in the back region of the prototype and is set to **10**
+-   `num_layers` is the total number of layers. It is set to **19** and corresponds to `num_layers_front + num_layers_back`
 -   `back_start` is the location of the first layer in the back region. It is set to `num_layers_front * layer_thick`, i.e. **441 mm**
 -   The length of the sides of the various scintillator layers are defined as
     -   Front vertical layers have `scint_front_vertical_x` which is **400 mm**, `scint_front_vertical_y` which is the bar length, **2000 mm**. The 400 mm corresponds to 8 bars each having a width of **50 mm**, `num_bars_front * scint_bar_width`
@@ -74,7 +74,7 @@ The following is a list of all the variables defined in the protoype geometry de
     -   Back vertical layers have `scint_back_vertical_x` which is **600 mm**, `scint_back_vertical_y` which is the bar length, **2000 mm**. The 600 mm corresponds to 12 bars each having a width of **50 mm**, `num_bars_back* scint_bar_width` 
     -   Back horizontal layers have `scint_back_horizontal_y` which is **600 mm**, `scint_back_horizontal_x` which is the bar length, **2000 mm**. The 600 mm corresponds to 12 bars each having a width of **50 mm**, `num_bars_back* scint_bar_width` 
 -   `dx` and `dy`, the width and height of the prototype respectively are both set to **3000 mm**
--   `dz` is the depth of the prototype and is defined as `num_layers_front * layer_thick + num_double_layers_back * double_layer_thick` which correpsonds to **931 mm**
+-   `dz` is the depth of the prototype and is defined as `num_layers * layer_thick` which correpsonds to **931 mm**
 
 
 <a id="solids"></a>
@@ -173,7 +173,7 @@ A physical volume is a logical volume with a position and, optionally, a name an
         -   x: **0 mm**
         -   y: **0 mm**
         -   z: `-dz/2 + absorber_thickness + air_thick + scint_thick/2`, i.e. **-428.5 mm**
-    -   Distance (z) to subsequent layer: `double_layer_thick`, i.e. **98 mm**
+    -   Distance (z) to subsequent layer: `2 * layer_thick`, i.e. **98 mm**
 -   `front_vertical_scint_physvol`: There are 4 physical volumes representing the vertical scintillator layers in the front region. They all have even CopyNumbers.
     -   Logical volume: `front_vertical_scint_box_volume`
     -   Mother volume: `prototype_volume`
@@ -182,7 +182,7 @@ A physical volume is a logical volume with a position and, optionally, a name an
         -   x: **0 mm**
         -   y: **0 mm**
         -   z: `-dz/2 + absorber_thickness + air_thick + scint_thick/2 + layer_thick`, i.e. **-379.5 mm**
-    -   Distance (z) to subsequent layer: `double_layer_thick`, i.e. **98 mm**
+    -   Distance (z) to subsequent layer: `2 * layer_thick`, i.e. **98 mm**
 -   `back_vertical_scint_physvol`: There are 5 physical volumes representing the vertical scintillator layers in the back region. They all have even CopyNumbers.
     -   Logical volume: `back_vertical_scint_box_volume`
     -   Mother volume: `prototype_volume`
@@ -191,7 +191,7 @@ A physical volume is a logical volume with a position and, optionally, a name an
         -   x: **0 mm**
         -   y: **0 mm**
         -   z: `-dz/2 + back_start + absorber_thickness + air_thick + scint_thick/2`, i.e. **12.5 mm**
-    -   Distance (z) to subsequent layer: `double_layer_thick`, i.e. **98 mm**
+    -   Distance (z) to subsequent layer: `2 * layer_thick`, i.e. **98 mm**
 -   `back_horizontal_scint_physvol`: There are 5 physical volumes representing the horizontal scintillator layers in the back region. They all have odd CopyNumbers.
     -   Logical volume: `back_horizontal_scint_box_volume`
     -   Mother volume: `prototype_volume`
@@ -200,7 +200,7 @@ A physical volume is a logical volume with a position and, optionally, a name an
         -   x: **0 mm**
         -   y: **0 mm**
         -   z: `-dz/2 + back_start + layer_thick + absorber_thickness + air_thick + scint_thick/2`, i.e. **61.5 mm**
-    -   Distance (z) to subsequent layer: `double_layer_thick`, i.e. **98 mm**
+    -   Distance (z) to subsequent layer: `2 * layer_thick`, i.e. **98 mm**
 
 
 <a id="copy_numbers"></a>
