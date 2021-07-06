@@ -161,8 +161,8 @@ A physical volume is a logical volume with a position and, optionally, a name an
     -   Mother volume: `prototype_volume`
     -   CopyNumbers: [1 .. 19]
     -   Position of the first layer:
-        -   x: **-400 mm**
-        -   y: **-400 mm**
+        -   x: `-absorber_width/2`, i.e. **-400 mm**
+        -   y: `-absorber_width/2`, i.e. **-400 mm**
         -   z: `-dz/2`, i.e. **-465.5 mm**
     -   Distance (z) to subsequent layer: `layer_thick`, i.e. **49 mm**
 -   `front_horizontal_scint_physvol`: There are 5 physical volumes representing the horizontal scintillator layers in the front region. They all have odd CopyNumbers.
