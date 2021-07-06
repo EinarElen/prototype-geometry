@@ -85,8 +85,11 @@ The following is a list of all the variables defined in the protoype geometry de
 Solids are objects with purely geometrical properties such as a box, a sphere,
 or a more complicated geometry
 
--   `absorber_box` is the solid that represents the absorber layer.
-    -   TODO: Document this @petergy
+-   `absorberBox` is the solid that represents the absorber layer. It has a shape according to the image: ![Image](https://files.slack.com/files-pri/T12GGHQSK-F0271BXAZB5/absorber_plate.png "absorber"). Within Geant4, it is described as an extruded solid. The outline of the solid is described by 8 vertices, starting at the bottom left and going counterclockwise until the shape shown in the image is obtained. It is then extruded outwards by a measure of `absorber_thickness` (25 mm). Its description uses three constants: 
+    -   `absorber_width` is the overall width and height of the absorber plate. It is 800 mm.
+    -   `absorber_ears` is the dimension of the two "ears" that are at the top left and top right of the image. It is 50 mm.
+    -   `absorber_thickness` is the thickness of the absorber plate, i.e. the length that the beam travels through the material. It is 25 mm (subject to change).
+    -   TODO: Did I describe it right?
 -   There are four boxes representing the four different types of scintillator layers (front vertical, front horizontal, back vertical, back horizontal). These are defined using the corresponding width/height from
     [Constants](#constants), e.g.
     -   `front_vertical_scint_box` has width `scint_front_vertical_x` (400 mm) and height `scint_front_vertical_y` (2000 mm)
