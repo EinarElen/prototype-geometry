@@ -23,7 +23,3 @@
     <box lunit="mm" name="back_horizontal_scint_box"    x="scint_back_horizontal_x"          y="scint_back_horizontal_y"          z="scint_thick"/>
     <box lunit="mm" name="air_box"      x="dx"          y="dy"          z="air_thick"/>
 
-    <!-- - - - - - - - - Parent Volumes - - - - - - - -->
-    <box lunit="mm" name="prototype_box" x="dx" y="dy" z="dz"/>
-
-    <box lunit="mm" name="world_box" x="world_dim" y="world_dim" z="world_dim"/>

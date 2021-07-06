@@ -30,6 +30,10 @@
 
     &hcal_volumes;
 
+    <!-- - - - - - - - - Parent Volumes - - - - - - - -->
+    <box lunit="mm" name="prototype_box" x="dx" y="dy" z="dz"/>
+
+    <box lunit="mm" name="world_box" x="world_dim" y="world_dim" z="world_dim"/>
 
 
      <volume name="prototype_volume">
