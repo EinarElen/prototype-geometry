@@ -60,17 +60,19 @@ The following is a list of all the variables defined in the protoype geometry de
 -   `scint_bar_width` is the width of an individual scintillator bar, it is set to **50 mm**.
 -   `scint_bar_length` is the length of an individual scintillator bar. In horizontal layers, this is equivalent to the width (&Delta; x<sub>scintillator</sub>) of the layer while in vertical layers it is equivalent to the height (&Delta; y<sub>scintillator</sub>) of the layer. It is set to **2000 mm**.
 -   `layer_thick` is the combined thickness of a layer (&Delta; z<sub>layer</sub>). It consists of one layer of absorber, `absorber_thickness`, one layer of scintillators, and *two* layers of air, `air_thick`. The resulting layer thickness is thus given by `absorber_thickness + scint_thick + 2 * air_thick`, **49 mm**
--   `double_layer_thick` is twice the thickness of one layer, i.e. **98 mm**. It is currently only used in defining the total depth of the prototype, `dz`.
+-   `num_bars_front` is the number of scintillator bars in the front region. It is set to **8**
+-   `num_bars_back` is the number of scintillator bars in the back region. It is set to **12**
+-   `double_layer_thick` is twice the thickness of one layer, i.e. **98 mm. It is currently only used in defining the total depth of the prototype, `dz`.
 -   `num_layers_front` is the total number of layers in the front region of the prototype and is set to **9**
 -   `num_layers_front_vert` and `num_layers_front_hori` are the number of vertical/horizontal layers in the front region. They are set to **4** and **5** respectively
 -   `num_double_layers_back` is the number of horizontal or vertical layers in the back region. It is set to **5** so the total number of layers in the back region is **10**
 -   `num_layers` is the total number of layers. It is set to **19** and corresponds to `num_layers + 2 * num_double_layers_back`
 -   `back_start` is the location of the first layer in the back region. It is set to `num_layers_front * layer_thick`, i.e. **441 mm**
 -   The length of the sides of the various scintillator layers are defined as
-    -   Front vertical layers have `scint_front_vertical_x` which is **400 mm**, `scint_front_vertical_y` which is the bar length, **2000 mm**. The 400 mm corresponds to 8 bars each having a width of **50 mm**
-    -   Front horizontal layers have `scint_front_horizontal_y` which is **400 mm**, `scint_front_horizontal_x` which is the bar length, **2000 mm**. The 400 mm corresponds to 8 bars each having a width of **50 mm**
-    -   Back vertical layers have `scint_back_vertical_x` which is **600 mm**, `scint_back_vertical_y` which is the bar length, **2000 mm**. The 600 mm corresponds to 12 bars each having a width of **50 mm**
-    -   Back horizontal layers have `scint_back_horizontal_y` which is **600 mm**, `scint_back_horizontal_x` which is the bar length, **2000 mm**. The 600 mm corresponds to 12 bars each having a width of **50 mm**
+    -   Front vertical layers have `scint_front_vertical_x` which is **400 mm**, `scint_front_vertical_y` which is the bar length, **2000 mm**. The 400 mm corresponds to 8 bars each having a width of **50 mm**, `num_bars_front * scint_bar_width`
+    -   Front horizontal layers have `scint_front_horizontal_y` which is **400 mm**, `scint_front_horizontal_x` which is the bar length, **2000 mm**. The 400 mm corresponds to 8 bars each having a width of **50 mm**, `num_bars_front * scint_bar_width`
+    -   Back vertical layers have `scint_back_vertical_x` which is **600 mm**, `scint_back_vertical_y` which is the bar length, **2000 mm**. The 600 mm corresponds to 12 bars each having a width of **50 mm**, `num_bars_back* scint_bar_width` 
+    -   Back horizontal layers have `scint_back_horizontal_y` which is **600 mm**, `scint_back_horizontal_x` which is the bar length, **2000 mm**. The 600 mm corresponds to 12 bars each having a width of **50 mm**, `num_bars_back* scint_bar_width` 
 -   `dx` and `dy`, the width and height of the prototype respectively are both set to **3000 mm**
 -   `dz` is the depth of the prototype and is defined as `num_layers_front * layer_thick + num_double_layers_back * double_layer_thick` which correpsonds to **931 mm**
 
