@@ -223,6 +223,6 @@ Furthermore, the rotation of the layer is determined by the layer number, which 
 
 ## Python code with all variables for testing
 
-[code/prototype-geometry-reference.py](./code/prototype-geometry-reference.py) is a short python script containing definitions for all of the variables used to describe the physical volumes that can be used to test or calculate. All units are **mm**
+[prototype-geometry-reference.py](./code/prototype-geometry-reference.py) is a short python script containing definitions for all of the variables used to describe the physical volumes that can be used to test or calculate. All units are **mm**
 
 
