@@ -1,3 +1,10 @@
+<volume name="absorber_volume">
+  <materialref ref="Steel"/>
+  <solidref    ref="absorber_box"/>
+  <auxiliary auxtype="Color" auxvalue="Red"/>
+  <auxiliary auxtype="VisAttributes" auxvalue="HcalVis"/>
+</volume>
+
 <volume name="front_vertical_scint_box_volume">
   <materialref ref="Scintillator"/>
   <solidref    ref="front_vertical_scint_box"/>

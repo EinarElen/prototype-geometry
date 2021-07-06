@@ -30,14 +30,13 @@ The scintillator bars are currently not represented individually in the geometry
 
 The geometry is divided into several files to make working with it easier.
 
--   [detector.gdml](./detector.gdml) This is the entrypoint of the geometry. Contains the actual implementation of the prototype geometry using the definitions from [absorber_volume.gdml](./absorber_volume.gdml) and [scintillator_volume.gdml](./scintillator_volume.gdml)
+-   [detector.gdml](./detector.gdml) This is the entrypoint of the geometry. Contains the actual implementation of the prototype geometry using the definitions from [hcal_volumes.gdml](./hcal_volumes.gdml)
 -   [constants.gdml](./constants.gdml) Contains variable definitions used elsewhere in the geometry such as positions and geometrical properties of different volumes.
 -   [materials.gdml](./materials.gdml) Contains definitions of isotopes and materials
 -   [userinfo.gdml](./userinfo.gdml) Contains auxiliary information (see the
     [GDML manual](https://gdml.web.cern.ch/GDML/doc/GDMLmanual.pdf) for details), such as sensitive detector volumes, visualization information, version and author information.
 -   [hcal_solids.gdml](./hcal_solids.gdml) Contains definitions of the absorber, scintillator, and parent boxes
--   [absorber_volume.gdml](./absorber_volume.gdml) Contains the definition of the absorber volume
--   [scintillator_volume.gdml](./scintillator_volume.gdml) Contains the definition of the scintillator volumes
+-   [hcal_volumes.gdml](./hcal_volumes.gdml) Contains the definition of the scintillator and absorber volumes
 
 
 <a id="reference"></a>
@@ -128,13 +127,13 @@ Furthermore, each logical volume has a name as part of the `<volume>` tag which 
         -   &ldquo;Region&rdquo;: &ldquo;CalorimeterRegion&rdquo;
         -   &ldquo;VisAttributes&rdquo;: &ldquo;HcalVis&rdquo;
         -   &ldquo;DetElem&rdquo;: &ldquo;Hcal&rdquo;
--   `absorber_volume` represents one layer of the steel absorber and is defined in [absorber_volume.gdml](./absorber_volume.gdml)
+-   `absorber_volume` represents one layer of the steel absorber and is defined in [hcal_volumes.gdml](./hcal_volumes.gdml)
     -   Material: `Steel`
     -   Solid: `absorber_box`
     -   Auxiliary information:
         -   &ldquo;Color&rdquo;: &ldquo;Red&rdquo;
         -   &ldquo;VisAttributes&rdquo;: &ldquo;HcalVis&rdquo;
--   There are four volumes representing each of the four different types of scintillator layers called `front_vertical_scint_box_volume`, `front_horizontal_scint_box_volume`, `back_vertical_scint_box_volume`, and `back_horizontal_scint_box_volume`, all defined in [scintillator_volume.gdml](./scintillator_volume.gdml). They differ in name and which corresponding solid they make use of
+-   There are four volumes representing each of the four different types of scintillator layers called `front_vertical_scint_box_volume`, `front_horizontal_scint_box_volume`, `back_vertical_scint_box_volume`, and `back_horizontal_scint_box_volume`, all defined in [hcal_volumes.gdml](./hcal_volumes.gdml). They differ in name and which corresponding solid they make use of
 -   Material: &ldquo;Scintillator&rdquo;
 -   Solid: One of `front_vertical_scint_box`, `front_horizontal_scint_box`, `back_vertical_scint_box`, and `back_horizontal_scint_box`
 -   Auxiliary information:

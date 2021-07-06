@@ -3,8 +3,7 @@
 <!ENTITY materials SYSTEM "materials.gdml">
 <!ENTITY userinfo SYSTEM "userinfo.gdml">
 <!ENTITY hcal_solids SYSTEM "hcal_solids.gdml">
-<!ENTITY absorber_volume SYSTEM "absorber_volume.gdml">
-<!ENTITY scintillator_volume SYSTEM "scintillator_volume.gdml">
+<!ENTITY hcal_volumes SYSTEM "hcal_volumes.gdml">
 ]>
 
 <gdml xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://service-spi.web.cern.ch/service-spi/app/releases/GDML/schema/gdml.xsd">
@@ -29,9 +28,7 @@
 
   <structure>
 
-      &absorber_volume;
-      &scintillator_volume;
-
+    &hcal_volumes;
 
 
 
