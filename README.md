@@ -53,14 +53,14 @@ The following is a list of all the variables defined in the protoype geometry de
 
 -   `center`, `identity`, and `hadron_calorimeter_pos` are positions that are all defined as **(x,y,z) = (0,0,0)**. `hadron_calorimeter_pos` is used to place the `prototype_volume` physical volume within the `World` volume.
 -   `world_dim` is the size of the sides of the &ldquo;world_box&rdquo; box, set to **10 m**
--   `air_thick` is the thickness (&Delta; z<sub>air</sub>) of the layers of air in between the absorber and scintillator bars. The thickness of each region is set to **2 mm**, which contributes twice to the thickness of an individual layer.
+-   `air_thickness` is the thickness (&Delta; z<sub>air</sub>) of the layers of air in between the absorber and scintillator bars. The thickness of each region is set to **2 mm**, which contributes twice to the thickness of an individual layer.
 -   `absorber_width` is the width (&Delta; x<sub>absorber</sub>,&Delta; y<sub>absorber</sub>) of an absorber layer, set to **800 mm**
 -   `absorber_ears`, TODO: Document this, set to **50 mm**
 -   `absorber_thickness` is the thickness (&Delta; z<sub>absorber</sub>) of an absorber layer, set to **25 mm**
 -   `scint_thickness` is the thickness of a scintillator bar layer (&Delta; z<sub>scintillator</sub>). This is equivalent to the thickness of an individual scintillator bar and is set to **20 mm**
 -   `scint_bar_width` is the width of an individual scintillator bar, it is set to **50 mm**.
 -   `scint_bar_length` is the length of an individual scintillator bar. In horizontal layers, this is equivalent to the width (&Delta; x<sub>scintillator</sub>) of the layer while in vertical layers it is equivalent to the height (&Delta; y<sub>scintillator</sub>) of the layer. It is set to **2000 mm**.
--   `layer_thick` is the combined thickness of a layer (&Delta; z<sub>layer</sub>). It consists of one layer of absorber, `absorber_thickness`, one layer of scintillators, and *two* layers of air, `air_thick`. The resulting layer thickness is thus given by `absorber_thickness + scint_thickness + 2 * air_thick`, **49 mm**
+-   `layer_thick` is the combined thickness of a layer (&Delta; z<sub>layer</sub>). It consists of one layer of absorber, `absorber_thickness`, one layer of scintillators, and *two* layers of air, `air_thickness`. The resulting layer thickness is thus given by `absorber_thickness + scint_thickness + 2 * air_thickness`, **49 mm**
 -   `num_bars_front` is the number of scintillator bars in the front region. It is set to **8**
 -   `num_bars_back` is the number of scintillator bars in the back region. It is set to **12**
 -   `num_layers_front` is the total number of layers in the front region of the prototype and is set to **9**
@@ -96,7 +96,7 @@ or a more complicated geometry
     -   `front_horizontal_scint_box` has width `scint_front_horizontal_x` (2000 mm) and height `scint_front_horizontal_y` (400 mm)
     -   `back_vertical_scint_box` has width `scint_back_vertical_x` (600 mm) and height `scint_back_vertical_y` (2000 mm)
     -   `back_horizontal_scint_box` has width `scint_back_horizontal_x` (2000 mm) and height `scint_back_horizontal_y` (600 mm)
--   `air_box` is the a box representing a single air layer and has width `dx` (3000 mm), height `dy` (3000 mm), and depth `air_thick` (2 mm)
+-   `air_box` is the a box representing a single air layer and has width `dx` (3000 mm), height `dy` (3000 mm), and depth `air_thickness` (2 mm)
 -   `prototype_box` is the parent volume for the prototype and is defined as a box with width `dx` (3000 mm), height `dy` (3000 mm), and depth `dz` (931 mm)
 -   `world_box` is the parent volume for all the other parts of the geometry and is defined as a box with all sides having length `world_dim` (10 m)
 
@@ -176,7 +176,7 @@ A physical volume is a logical volume with a position and, optionally, a name an
     -   Position of the first layer:
         -   x: **0 mm**
         -   y: **0 mm**
-        -   z: `-dz/2 + absorber_thickness + air_thick + scint_thickness/2`, i.e. **-428.5 mm**
+        -   z: `-dz/2 + absorber_thickness + air_thickness + scint_thickness/2`, i.e. **-428.5 mm**
     -   Distance (z) to subsequent layer: `2 * layer_thick`, i.e. **98 mm**
 -   `front_vertical_scint_physvol`: There are 4 physical volumes representing the vertical scintillator layers in the front region. They all have even CopyNumbers.
     -   Logical volume: `front_vertical_scint_box_volume`
@@ -185,7 +185,7 @@ A physical volume is a logical volume with a position and, optionally, a name an
     -   Position of the first layer:
         -   x: **0 mm**
         -   y: **0 mm**
-        -   z: `-dz/2 + absorber_thickness + air_thick + scint_thickness/2 + layer_thick`, i.e. **-379.5 mm**
+        -   z: `-dz/2 + absorber_thickness + air_thickness + scint_thickness/2 + layer_thick`, i.e. **-379.5 mm**
     -   Distance (z) to subsequent layer: `2 * layer_thick`, i.e. **98 mm**
 -   `back_vertical_scint_physvol`: There are 5 physical volumes representing the vertical scintillator layers in the back region. They all have even CopyNumbers.
     -   Logical volume: `back_vertical_scint_box_volume`
@@ -194,7 +194,7 @@ A physical volume is a logical volume with a position and, optionally, a name an
     -   Position of the first layer:
         -   x: **0 mm**
         -   y: **0 mm**
-        -   z: `-dz/2 + back_start + absorber_thickness + air_thick + scint_thickness/2`, i.e. **12.5 mm**
+        -   z: `-dz/2 + back_start + absorber_thickness + air_thickness + scint_thickness/2`, i.e. **12.5 mm**
     -   Distance (z) to subsequent layer: `2 * layer_thick`, i.e. **98 mm**
 -   `back_horizontal_scint_physvol`: There are 5 physical volumes representing the horizontal scintillator layers in the back region. They all have odd CopyNumbers.
     -   Logical volume: `back_horizontal_scint_box_volume`
@@ -203,7 +203,7 @@ A physical volume is a logical volume with a position and, optionally, a name an
     -   Position of the first layer:
         -   x: **0 mm**
         -   y: **0 mm**
-        -   z: `-dz/2 + back_start + layer_thick + absorber_thickness + air_thick + scint_thickness/2`, i.e. **61.5 mm**
+        -   z: `-dz/2 + back_start + layer_thick + absorber_thickness + air_thickness + scint_thickness/2`, i.e. **61.5 mm**
     -   Distance (z) to subsequent layer: `2 * layer_thick`, i.e. **98 mm**
 
 

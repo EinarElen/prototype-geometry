@@ -10,13 +10,13 @@ import numpy as np
 center=np.array([0.,0.,0.])
 hadron_calorimeter_pos=np.array([0.,0.,0.])
 world_dim=10000.
-air_thick=2.
+air_thickness=2.
 absorber_width=800.
 absorber_ears=50.
 absorber_thickness=25
 scint_thickness=20.
 scint_bar_length=2000.
-layer_thick = absorber_thickness + scint_thickness + 2 * air_thick
+layer_thick = absorber_thickness + scint_thickness + 2 * air_thickness
 num_layers_front_vertical = 4
 num_layers_front_horizontal = 5
 num_layers_front=num_layers_front_vertical + num_layers_front_horizontal
@@ -45,7 +45,7 @@ front_vertical_scint_box = {"width": scint_front_vertical_x, "height": scint_fro
 front_horizontal_scint_box = {"width": scint_front_horizontal_x, "height": scint_front_horizontal_y}
 back_vertical_scint_box = {"width": scint_back_vertical_x, "height": scint_back_vertical_y}
 back_horizontal_scint_box = {"width": scint_back_horizontal_x, "height": scint_back_horizontal_y}
-air_box = {"width": dx, "height": dy, "depth": air_thick}
+air_box = {"width": dx, "height": dy, "depth": air_thickness}
 prototype_box={"width": dx, "height": dy, "depth": dz}
 world_box={"width": world_dim, "height": world_dim, "depth": world_dim}
 
@@ -68,7 +68,7 @@ absorber_physvols=[
                     name="absorber_physvol", CopyNumber=i)
     for i in range(1, num_layers + 1)
 ]
-position_of_first_front_horizontal_scint_layer = np.array([0.,0., -dz/2 + absorber_thickness + air_thick + scint_thickness/2 ])
+position_of_first_front_horizontal_scint_layer = np.array([0.,0., -dz/2 + absorber_thickness + air_thickness + scint_thickness/2 ])
 position_of_first_front_vertical_scint_layer = position_of_first_front_horizontal_scint_layer + [0., 0., layer_thick]
 position_of_first_back_vertical_scint_layer =  position_of_first_front_horizontal_scint_layer + [0., 0., back_start]
 position_of_first_back_horizontal_scint_layer = position_of_first_back_vertical_scint_layer + [0., 0., layer_thick]

@@ -21,5 +21,4 @@
     <box lunit="mm" name="front_horizontal_scint_box"    x="scint_front_horizontal_x"          y="scint_front_horizontal_y"          z="scint_thickness"/>
     <box lunit="mm" name="back_vertical_scint_box"    x="scint_back_vertical_x"          y="scint_back_vertical_y"          z="scint_thickness"/>
     <box lunit="mm" name="back_horizontal_scint_box"    x="scint_back_horizontal_x"          y="scint_back_horizontal_y"          z="scint_thickness"/>
-    <box lunit="mm" name="air_box"      x="dx"          y="dy"          z="air_thick"/>
-
+    <box lunit="mm" name="air_box"      x="dx"          y="dy"          z="air_thickness"/>
