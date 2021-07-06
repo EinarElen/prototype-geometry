@@ -8,7 +8,6 @@
 import numpy as np
 # Constants
 center=np.array([0.,0.,0.])
-identity=np.array([0.,0.,0.])
 hadron_calorimeter_pos=np.array([0.,0.,0.])
 world_dim=10000.
 air_thick=2.

@@ -93,7 +93,6 @@
         <physvol>
           <volumeref ref="prototype_volume"/>
           <positionref ref="hadron_calorimeter_pos"/>
-          <rotationref ref="identity"/>
         </physvol>
 
       <auxiliary auxtype="DetElem" auxvalue="Top"/>

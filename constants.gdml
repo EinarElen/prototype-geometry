@@ -1,6 +1,5 @@
     <!-- define center position and identity rotation -->
     <position name="center" x="0" y="0" z="0"/>
-    <rotation name="identity" x="0" y="0" z="0"/>
 
     <!-- dimension of world box side -->
     <constant name="world_dim" value="10.0*m"/>
