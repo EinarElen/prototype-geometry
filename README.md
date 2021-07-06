@@ -1,8 +1,9 @@
 
 # Table of Contents
 
-1.  [Structure of the geometry description](#structure)
-2.  [Reference](#reference)
+1.  [The prototype geometry](#geometry)
+2.  [Structure of the geometry description](#structure)
+3.  [Reference](#reference)
     1.  [Constants](#constants)
     2.  [Solids](#solids)
     3.  [Logical volumes](#logical_volumes)
@@ -15,8 +16,9 @@
 <a id="geometry"></a>
 ## The prototype geometry
 
-This document describes the current version of the GDML description of the LDMX testbeam prototype. The prototype consists of a 
+This document describes the current version of the GDML description of the LDMX testbeam prototype. The hadronic calorimeter prototype, shown below, is a sampling calorimeter with steel absorber plates and alternating layers of polystyrene scintillator bars. There are in total 19 layers, divided into two regions with 8 (shown in green below) and 12 (shown in blue below) scintillator bars per layer respectively. 
 
+The scintillator bars are currently not represented individually in the geometry description and are treated as a single box of scintillator material. 
 
 ![Overview of the prototype geometry](figures/prototype-overview_0.png)
 
