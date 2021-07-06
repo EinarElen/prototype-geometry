@@ -16,7 +16,7 @@ absorber_ears=50.
 absorber_thickness=25
 scint_thickness=20.
 scint_bar_length=2000.
-layer_thick = absorber_thickness + scint_thickness + 2 * air_thickness
+layer_thickness = absorber_thickness + scint_thickness + 2 * air_thickness
 num_layers_front_vertical = 4
 num_layers_front_horizontal = 5
 num_layers_front=num_layers_front_vertical + num_layers_front_horizontal
@@ -24,7 +24,7 @@ num_layers_back_vertical = 5
 num_layers_back_horizontal = 5
 num_layers_back=num_layers_back_vertical + num_layers_back_horizontal
 num_layers = num_layers_front + num_layers_back
-back_start=num_layers_front * layer_thick
+back_start=num_layers_front * layer_thickness
 scint_bar_width=50.
 num_bars_front=8
 num_bars_back=12
@@ -38,7 +38,7 @@ scint_back_horizontal_x=scint_bar_length
 scint_back_horizontal_y=num_bars_back * scint_bar_width
 dx=3000.
 dy=3000.
-dz=num_layers * layer_thick
+dz=num_layers * layer_thickness
 
 # Solids
 front_vertical_scint_box = {"width": scint_front_vertical_x, "height": scint_front_vertical_y}
@@ -61,7 +61,7 @@ class physical_volume:
 
 # Physical volumes
 position_of_first_absorber_layer= np.array([-absorber_width/2, -absorber_width/2, -dz/2])
-distance_to_subsequent_absorber_layer = np.array([0.,0., layer_thick])
+distance_to_subsequent_absorber_layer = np.array([0.,0., layer_thickness])
 first_absorber = physical_volume(position_of_first_absorber_layer)
 absorber_physvols=[
     physical_volume(position=position_of_first_absorber_layer + distance_to_subsequent_absorber_layer * i ,
@@ -69,10 +69,10 @@ absorber_physvols=[
     for i in range(1, num_layers + 1)
 ]
 position_of_first_front_horizontal_scint_layer = np.array([0.,0., -dz/2 + absorber_thickness + air_thickness + scint_thickness/2 ])
-position_of_first_front_vertical_scint_layer = position_of_first_front_horizontal_scint_layer + [0., 0., layer_thick]
+position_of_first_front_vertical_scint_layer = position_of_first_front_horizontal_scint_layer + [0., 0., layer_thickness]
 position_of_first_back_vertical_scint_layer =  position_of_first_front_horizontal_scint_layer + [0., 0., back_start]
-position_of_first_back_horizontal_scint_layer = position_of_first_back_vertical_scint_layer + [0., 0., layer_thick]
-distance_to_subsequent_scint_layer=np.array([0., 0., 2. * layer_thick])
+position_of_first_back_horizontal_scint_layer = position_of_first_back_vertical_scint_layer + [0., 0., layer_thickness]
+distance_to_subsequent_scint_layer=np.array([0., 0., 2. * layer_thickness])
 front_horizontal_scint_physvols=[
     physical_volume(position=position_of_first_front_horizontal_scint_layer + (i - 1) * distance_to_subsequent_scint_layer,
                     name="front_horizontal_scint_physvol", CopyNumber=2*i - 1
