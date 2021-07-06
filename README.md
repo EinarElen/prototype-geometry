@@ -62,7 +62,7 @@ The following is a list of all the variables defined in the protoype geometry de
 -   `layer_thick` is the combined thickness of a layer (&Delta; z<sub>layer</sub>). It consists of one layer of absorber, `absorber_thickness`, one layer of scintillators, and *two* layers of air, `air_thick`. The resulting layer thickness is thus given by `absorber_thickness + scint_thick + 2 * air_thick`, **49 mm**
 -   `double_layer_thick` is twice the thickness of one layer, i.e. **98 mm**. It is currently only used in defining the total depth of the prototype, `dz`.
 -   `num_layers_front` is the total number of layers in the front region of the prototype and is set to **9**
--   `num_layers_front_vert` and `num_layersFront_hori` are the number of vertical/horizontal layers in the front region. They are set to **4** and **5** respectively
+-   `num_layers_front_vert` and `num_layers_front_hori` are the number of vertical/horizontal layers in the front region. They are set to **4** and **5** respectively
 -   `num_double_layers_back` is the number of horizontal or vertical layers in the back region. It is set to **5** so the total number of layers in the back region is **10**
 -   `num_layers` is the total number of layers. It is set to **19** and corresponds to `num_layers + 2 * num_double_layers_back`
 -   `back_start` is the location of the first layer in the back region. It is set to `num_layers_front * layer_thick`, i.e. **441 mm**
