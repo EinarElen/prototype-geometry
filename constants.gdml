@@ -4,7 +4,6 @@
     <!-- dimension of world box side -->
     <constant name="world_dim" value="10.0*m"/>
 
-    <!--<position name="hadron_calorimeter_pos" x="0.0" y="0.0" z="hadron_calorimeter_pos_z"/>-->
     <position name="hadron_calorimeter_pos" x="0.0" y="0.0" z="0.0"/>
 
     <!--common varibles -->
