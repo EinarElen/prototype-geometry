@@ -173,7 +173,7 @@ A physical volume is a logical volume with a position and, optionally, a name an
     -   Position of the first layer:
         -   x: `-absorber_width/2`, i.e. **-400 mm**
         -   y: `-absorber_width/2`, i.e. **-400 mm**
-        -   z: `-dz/2`, i.e. **-465.5 mm**
+        -   z: `absorber_first_layer_zpos`, i.e. **-465.5 mm**
     -   Distance (z) to subsequent layer: `layer_thickness`, i.e. **49 mm**
 -   `front_horizontal_scint_physvol`: There are 5 physical volumes representing the horizontal scintillator layers in the front region. They all have odd CopyNumbers.
     -   Logical volume: `front_horizontal_scint_box_volume`
@@ -182,7 +182,7 @@ A physical volume is a logical volume with a position and, optionally, a name an
     -   Position of the first layer:
         -   x: **0 mm**
         -   y: **0 mm**
-        -   z: `-dz/2 + absorber_thickness + air_thickness + scint_thickness/2`, i.e. **-428.5 mm**
+        -   z: `scint_front_horizontal_first_layer_zpos`, i.e. **-428.5 mm**
     -   Distance (z) to subsequent layer: `2 * layer_thickness`, i.e. **98 mm**
 -   `front_vertical_scint_physvol`: There are 4 physical volumes representing the vertical scintillator layers in the front region. They all have even CopyNumbers.
     -   Logical volume: `front_vertical_scint_box_volume`
@@ -191,7 +191,7 @@ A physical volume is a logical volume with a position and, optionally, a name an
     -   Position of the first layer:
         -   x: **0 mm**
         -   y: **0 mm**
-        -   z: `-dz/2 + absorber_thickness + air_thickness + scint_thickness/2 + layer_thickness`, i.e. **-379.5 mm**
+        -   z: `scint_front_vertical_first_layer_zpos`, i.e. **-379.5 mm**
     -   Distance (z) to subsequent layer: `2 * layer_thickness`, i.e. **98 mm**
 -   `back_vertical_scint_physvol`: There are 5 physical volumes representing the vertical scintillator layers in the back region. They all have even CopyNumbers.
     -   Logical volume: `back_vertical_scint_box_volume`
@@ -200,7 +200,7 @@ A physical volume is a logical volume with a position and, optionally, a name an
     -   Position of the first layer:
         -   x: **0 mm**
         -   y: **0 mm**
-        -   z: `-dz/2 + back_start + absorber_thickness + air_thickness + scint_thickness/2`, i.e. **12.5 mm**
+        -   z: `scint_back_vertical_first_layer_zpos`, i.e. **12.5 mm**
     -   Distance (z) to subsequent layer: `2 * layer_thickness`, i.e. **98 mm**
 -   `back_horizontal_scint_physvol`: There are 5 physical volumes representing the horizontal scintillator layers in the back region. They all have odd CopyNumbers.
     -   Logical volume: `back_horizontal_scint_box_volume`
@@ -209,7 +209,7 @@ A physical volume is a logical volume with a position and, optionally, a name an
     -   Position of the first layer:
         -   x: **0 mm**
         -   y: **0 mm**
-        -   z: `-dz/2 + back_start + layer_thickness + absorber_thickness + air_thickness + scint_thickness/2`, i.e. **61.5 mm**
+        -   z: `scint_back_horizontal_first_layer_zpos`, i.e. **61.5 mm**
     -   Distance (z) to subsequent layer: `2 * layer_thickness`, i.e. **98 mm**
 
 
