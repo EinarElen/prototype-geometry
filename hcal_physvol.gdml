@@ -3,7 +3,7 @@
 <loop for="layer_index" from="1" to="num_layers" step="1">
     <physvol name="absorber_physvol" copynumber="layer_index" >
         <volumeref ref="absorber_volume"/>
-        <position name="absorber_pos" unit="mm" x="-absorber_width/2" y="-absorber_width/2" z="-dz/2.0 + (layer_index-1)*layer_thickness "/>
+        <position name="absorber_pos" unit="mm" x="-absorber_width/2" y="-absorber_width/2" z="absorber_first_layer_zpos+ (layer_index-1)*layer_thickness "/>
     </physvol>
 </loop>
 

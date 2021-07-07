@@ -39,6 +39,9 @@
     <variable name="scint_front_vertical_y"   value="scint_bar_length"/>
     <variable name="scint_front_vertical_first_layer_zpos"  value="-dz/2.0 + absorber_thickness + air_thickness + scint_thickness/2.0 "/>
 
+    <!-- Absorber layers -->
+    <variable name="absorber_first_layer_zpos"
+              value="-dz/2"/>
     <!-- Front Layer, horizontal bars -->
     <variable name="scint_front_horizontal_x"   value="scint_bar_length"/>
     <variable name="scint_front_horizontal_y"   value="num_bars_front * scint_bar_width"/>
