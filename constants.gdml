@@ -11,7 +11,7 @@
     <variable name="absorber_width"       value="800"/>
     <variable name="absorber_ears"       value="50"/>
     <variable name="absorber_thickness"       value="25."/>
-    <variable name="scint_thickness"       value="40."/>
+    <variable name="scint_thickness"       value="100."/>
     <variable name="scint_bar_width"  value="50."/>
     <variable name="scint_bar_length"       value="2000."/>
 
