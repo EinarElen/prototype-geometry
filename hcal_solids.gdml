@@ -1,8 +1,8 @@
     <!-- - - - - - - - - HCal solids - - - - - - - -  -->
-    <!--<box lunit="mm" name="absorberBox"    x="absorber_width"          y="absorber_width"          z="absorber_thickness"/>-->
-    <!-- <box lunit="mm" name="absorberBox"    x="absorber_width"          y="absorber_width"          z="absorber_thickness"/> -->
+    <!--<box lunit="mm" name="absorber_box"    x="absorber_width"          y="absorber_width"          z="absorber_thickness"/>-->
+    <!-- <box lunit="mm" name="absorber_box"    x="absorber_width"          y="absorber_width"          z="absorber_thickness"/> -->
     
-	<xtru name = "absorberBox" lunit= "mm" >
+	<xtru name = "absorber_box" lunit= "mm" >
 		 <twoDimVertex x="absorber_ears" y="0" /> 
 		 <twoDimVertex x="absorber_width-absorber_ears" y="0" />
 		 <twoDimVertex x="absorber_width-absorber_ears" y="absorber_width-absorber_ears" />
@@ -15,13 +15,14 @@
 		 <section zOrder="2" zPosition="absorber_thickness" xOffset="0" yOffset="0" scalingFactor="1" />
 	</xtru>
 	
+	<box lunit="mm" name="front_vertical_scint_box"    x="scint_front_vertical_x"          y="scint_front_vertical_y"          z="scint_thickness"/>
+    <box lunit="mm" name="front_horizontal_scint_box"    x="scint_front_horizontal_x"          y="scint_front_horizontal_y"          z="scint_thickness"/>
+    <box lunit="mm" name="back_vertical_scint_box"    x="scint_back_vertical_x"          y="scint_back_vertical_y"          z="scint_thickness"/>
+    <box lunit="mm" name="back_horizontal_scint_box"    x="scint_back_horizontal_x"          y="scint_back_horizontal_y"          z="scint_thickness"/>
+    <box lunit="mm" name="air_box"      x="dx"          y="dy"          z="air_thickness"/>
 	
-	
-    <box lunit="mm" name="frontV_ScintBox"    x="scint_FrontV_x"          y="scint_FrontV_y"          z="scint_thick"/>
-    <box lunit="mm" name="frontH_ScintBox"    x="scint_FrontH_x"          y="scint_FrontH_y"          z="scint_thick"/>
-    <box lunit="mm" name="backV_ScintBox"    x="scint_BackV_x"          y="scint_BackV_y"          z="scint_thick"/>
-    <box lunit="mm" name="backH_ScintBox"    x="scint_BackH_x"          y="scint_BackH_y"          z="scint_thick"/>
-    <box lunit="mm" name="airBox"      x="dx"          y="dy"          z="air_thick"/>
+
+
 
     <!-- - - - - - - - - Parent Volumes - - - - - - - -->
     <box lunit="mm" name="prototype_Box" x="dx" y="dy" z="dz+100"/> <!-- +100 to z to accomodate trigger bars--> 
@@ -37,4 +38,4 @@
 	<box lunit="mm" name="trigger_bar_box" x="trigger_bar_dx" y="trigger_bar_dy" z="trigger_pad_bar_thickness" /> 
 
 
- 
+

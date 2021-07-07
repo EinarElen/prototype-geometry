@@ -1,59 +1,64 @@
     <!-- define center position and identity rotation -->
     <position name="center" x="0" y="0" z="0"/>
-    <rotation name="identity" x="0" y="0" z="0"/>
 
     <!-- dimension of world box side -->
     <constant name="world_dim" value="10.0*m"/>
 
-    <!--<position name="hadron_calorimeter_pos" x="0.0" y="0.0" z="hadron_calorimeter_pos_z"/>-->
     <position name="hadron_calorimeter_pos" x="0.0" y="0.0" z="0.0"/>
 
     <!--common varibles -->
-    <variable name="air_thick"         value="2."/>
-    <!-- <variable name="absorber_width"       value="697."/> -->
+    <variable name="air_thickness"         value="2."/>
     <variable name="absorber_width"       value="800"/>
     <variable name="absorber_ears"       value="50"/>
     <variable name="absorber_thickness"       value="25."/>
-    <variable name="scint_thick"       value="20."/>
+    <variable name="scint_thickness"       value="20."/>
+    <variable name="scint_bar_width"  value="50."/>
     <variable name="scint_bar_length"       value="2000."/>
 
-    <variable name="layer_thick"   value="absorber_thickness + scint_thick + 2.0*air_thick"/>
-    <variable name="double_layer_thick"   value="2.0 * layer_thick"/>
+    <variable name="layer_thickness"   value="absorber_thickness + scint_thickness + 2.0*air_thickness"/>
 
-    <variable name="numLayersFront"   value="9"/>
-    <variable name="numLayersFront_vert"   value="4"/>
-    <variable name="numLayersFront_hori"   value="5"/>
-    <variable name="numDoubleLayersBack"   value="5"/>
-    <variable name="numLayers"   value="19"/>
-    <variable name="back_start"   value="numLayersFront * layer_thick"/>
+    <variable name="num_bars_front" value="8"/>
+    <variable name="num_bars_back" value="12"/>
 
-
-    <!-- Front Layer, vertical bars -->
-    <variable name="scint_FrontV_x"   value="400"/>
-    <variable name="scint_FrontV_y"   value="scint_bar_length"/>
-
-    <!-- Front Layer, horizontal bars -->
-    <variable name="scint_FrontH_x"   value="scint_bar_length"/>
-    <variable name="scint_FrontH_y"   value="400"/>
-
-    <!-- Back Layer, vertical bars -->
-    <variable name="scint_BackV_x"   value="600"/>
-    <variable name="scint_BackV_y"   value="scint_bar_length"/>
-
-    <!-- Back Layer, horizontal bars -->
-    <variable name="scint_BackH_x"   value="scint_bar_length"/>
-    <variable name="scint_BackH_y"   value="600"/>
-
+    <variable name="num_layers_front_vertical"   value="4"/>
+    <variable name="num_layers_front_horizontal"   value="5"/>
+    <variable name="num_layers_front"   value="num_layers_front_vertical + num_layers_front_horizontal"/>
+    <variable name="num_layers_back_vertical"   value="5"/>
+    <variable name="num_layers_back_horizontal"   value="5"/>
+    <variable name="num_layers_back"   value="num_layers_back_vertical + num_layers_back_horizontal"/>
+    <variable name="num_layers"   value="num_layers_front + num_layers_back"/>
+    <variable name="back_start"   value="num_layers_front * layer_thickness"/>
 
     <variable name="dx"           value="3000."/>
     <variable name="dy"           value="3000."/>
-    <variable name="dz"          value="numLayersFront * layer_thick + numDoubleLayersBack * double_layer_thick"/>
+    <variable name="dz"          value="num_layers * layer_thickness"/>
 
 
 
+    <!-- Absorber layers -->
+    <variable name="absorber_first_layer_zpos"
+              value="-dz/2"/>
+    <!-- Front Layer, horizontal bars -->
+    <variable name="scint_front_horizontal_x"   value="scint_bar_length"/>
+    <variable name="scint_front_horizontal_y"   value="num_bars_front * scint_bar_width"/>
+    <variable name="scint_front_horizontal_first_layer_zpos"
+              value="absorber_first_layer_zpos + absorber_thickness + air_thickness + scint_thickness/2.0"/>
 
+    <!-- Front Layer, vertical bars -->
+    <variable name="scint_front_vertical_x"   value="num_bars_front * scint_bar_width"/>
+    <variable name="scint_front_vertical_y"   value="scint_bar_length"/>
+    <variable name="scint_front_vertical_first_layer_zpos"
+              value="layer_thickness + scint_front_horizontal_first_layer_zpos"/>
 
+    <!-- Back Layer, vertical bars -->
+    <variable name="scint_back_vertical_x"   value="num_bars_back * scint_bar_width"/>
+    <variable name="scint_back_vertical_y"   value="scint_bar_length"/>
+    <variable name="scint_back_vertical_first_layer_zpos"  value="back_start + scint_front_horizontal_first_layer_zpos"/>
 
+    <!-- Back Layer, horizontal bars -->
+	<variable name="scint_back_horizontal_x"   value="scint_bar_length"/>
+    <variable name="scint_back_horizontal_y"   value="num_bars_back * scint_bar_width"/>
+    <variable name="scint_back_horizontal_first_layer_zpos"  value="layer_thickness + scint_back_vertical_first_layer_zpos"/>
 
 
 <!-- trigger stuff -->

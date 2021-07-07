@@ -3,22 +3,26 @@
 <!ENTITY materials SYSTEM "materials.gdml">
 <!ENTITY userinfo SYSTEM "userinfo.gdml">
 <!ENTITY hcal_solids SYSTEM "hcal_solids.gdml">
-<!ENTITY absorber_volume SYSTEM "absorber_volume.gdml">
-<!ENTITY scintillator_volume SYSTEM "scintillator_volume.gdml">
+
+
 <!ENTITY trigger SYSTEM "trigger.gdml">
-<!ENTITY trigger_bar_volume SYSTEM "trigger_bar_volume.gdml">
+
+
+<!ENTITY hcal_volumes SYSTEM "hcal_volumes.gdml">
+<!ENTITY hcal_physvol SYSTEM "hcal_physvol.gdml">
+
 ]>
 <gdml xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://service-spi.web.cern.ch/service-spi/app/releases/GDML/schema/gdml.xsd">
 
   <define>
 
     <!-- loop variables - must be defined here -->
-    <variable name="absorber_index"  value="1"/>
-    <variable name="xsfv"  value="1"/>
-    <variable name="xsfh"  value="1"/>
-    <variable name="xsbv"  value="1"/>
-    <variable name="xsbh"  value="1"/>
+
+
 	<variable name="x" value="1"/>
+
+    <variable name="layer_index"  value="1"/>
+
 
     &constants;
 
@@ -31,57 +35,27 @@
 
   <solids>
     &hcal_solids;
+    <!-- - - - - - - - - Parent Solids - - - - - - - -->
+    <box lunit="mm" name="prototype_box" x="dx" y="dy" z="dz"/>
+
+    <box lunit="mm" name="world_box" x="world_dim" y="world_dim" z="world_dim"/>
   </solids>
 
   <structure>
 
-      &absorber_volume;
-      &scintillator_volume;
-      &trigger_bar_volume;
+
+    &hcal_volumes;
 
 
 
 
      <volume name="prototype_volume">
         <materialref ref="G4_AIR"/>
-        <solidref    ref="prototype_Box"/>
 
-        <loop for="absorber_index" to="numLayers" step="1">
-           <physvol name="absorber_physvol" copynumber="absorber_index" >
-              <volumeref ref="absorber_volume"/>
-              <position name="absorber_pos" unit="mm" x="-400" y="-400" z="-dz/2.0 + (absorber_index-1)*layer_thick "/>
-           </physvol>
-        </loop>
-<!-- Even means vertical, odd means horizontal -->
-        <loop for="xsfh" to="numLayersFront_hori" step="1">
-           <physvol name="frontH_scint_physvol"  copynumber="2*xsfh - 1">
-              <volumeref ref="frontH_ScintBox_volume"/>
-              <position name="frontH_scint_pos" unit="mm" x="0" y="0" z="-dz/2.0 + absorber_thickness + air_thick + scint_thick/2.0 + (xsfh-1)*2.0*layer_thick"/>
-           </physvol>
-        </loop>
-
-        <loop for="xsfv" to="numLayersFront_vert" step="1">
-           <physvol name="frontV_scint_physvol"  copynumber="2*xsfv">
-              <volumeref ref="frontV_ScintBox_volume"/>
-              <position name="frontV_scint_pos" unit="mm" x="0" y="0" z="-dz/2.0 + layer_thick + absorber_thickness + air_thick + scint_thick/2.0 + (xsfv-1)*2.0*layer_thick"/>
-           </physvol>
-        </loop>
+        <solidref    ref="prototype_box"/>
+        &hcal_physvol;
 
 
-        <loop for="xsbv" to="numDoubleLayersBack" step="1">
-           <physvol name="backV_scint_physvol" copynumber="numLayersFront + 2*xsbv - 1">
-              <volumeref ref="backV_ScintBox_volume"/>
-              <position name="backV_scint_pos" unit="mm" x="0" y="0" z="-dz/2.0 + back_start + absorber_thickness + air_thick + scint_thick/2.0 + (xsbv-1)*2.0*layer_thick"/>
-           </physvol>
-        </loop>
-
-        <loop for="xsbh" to="numDoubleLayersBack" step="1">
-           <physvol name="backH_scint_physvol"  copynumber="numLayersFront + 2*xsbh">
-              <volumeref ref="backH_ScintBox_volume"/>
-              <position name="backH_scint_pos" unit="mm" x="0" y="0" z="-dz/2.0 + back_start + layer_thick + absorber_thickness + air_thick + scint_thick/2.0 + (xsbh-1)*2.0*layer_thick"/>
-           </physvol>
-        </loop>
-		
 		<loop for="x" from="1" to="number_of_bars" step="1">
                 <physvol copynumber="2*x-2">
                     <volumeref ref="trigger_bar_volume" />
@@ -105,10 +79,8 @@
                               z="trigger_pad_up_z + trigger_pad_bar_thickness/2 + trigger_pad_bar_gap/2 -470 " />
                     <rotationref ref="identity" />
                 </physvol>
-
         </loop>
-		
-
+			
         <auxiliary auxtype="Region" auxvalue="CalorimeterRegion"/>
         <auxiliary auxtype="VisAttributes" auxvalue="HcalVis"/>
         <auxiliary auxtype="DetElem" auxvalue="Hcal"/>
@@ -123,7 +95,6 @@
         <physvol>
           <volumeref ref="prototype_volume"/>
           <positionref ref="hadron_calorimeter_pos"/>
-          <rotationref ref="identity"/>
         </physvol>
 		
 		<!-- <physvol copynumber="2"> -->
