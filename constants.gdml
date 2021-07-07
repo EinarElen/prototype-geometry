@@ -8,7 +8,6 @@
 
     <!--common varibles -->
     <variable name="air_thickness"         value="2."/>
-    <!-- <variable name="absorber_width"       value="697."/> -->
     <variable name="absorber_width"       value="800"/>
     <variable name="absorber_ears"       value="50"/>
     <variable name="absorber_thickness"       value="25."/>
