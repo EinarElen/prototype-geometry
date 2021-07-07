@@ -31,6 +31,10 @@
     <variable name="num_layers"   value="num_layers_front + num_layers_back"/>
     <variable name="back_start"   value="num_layers_front * layer_thickness"/>
 
+    <variable name="dx"           value="3000."/>
+    <variable name="dy"           value="3000."/>
+    <variable name="dz"          value="num_layers * layer_thickness"/>
+
 
     <!-- Front Layer, vertical bars -->
     <variable name="scint_front_vertical_x"   value="num_bars_front * scint_bar_width"/>
