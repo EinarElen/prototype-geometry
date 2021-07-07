@@ -39,20 +39,19 @@
     <!-- Front Layer, vertical bars -->
     <variable name="scint_front_vertical_x"   value="num_bars_front * scint_bar_width"/>
     <variable name="scint_front_vertical_y"   value="scint_bar_length"/>
+    <variable name="scint_front_vertical_first_layer_zpos"  value="-dz/2.0 + absorber_thickness + air_thickness + scint_thickness/2.0 "/>
 
     <!-- Front Layer, horizontal bars -->
     <variable name="scint_front_horizontal_x"   value="scint_bar_length"/>
     <variable name="scint_front_horizontal_y"   value="num_bars_front * scint_bar_width"/>
+    <variable name="scint_front_horizontal_first_layer_zpos"  value="layer_thickness + scint_front_vertical_first_layer_zpos"/>
 
     <!-- Back Layer, vertical bars -->
     <variable name="scint_back_vertical_x"   value="num_bars_back * scint_bar_width"/>
     <variable name="scint_back_vertical_y"   value="scint_bar_length"/>
+    <variable name="scint_back_vertical_first_layer_zpos"  value="back_start + scint_front_vertical_first_layer_zpos"/>
 
     <!-- Back Layer, horizontal bars -->
     <variable name="scint_back_horizontal_x"   value="scint_bar_length"/>
     <variable name="scint_back_horizontal_y"   value="num_bars_back * scint_bar_width"/>
-
-
-    <variable name="dx"           value="3000."/>
-    <variable name="dy"           value="3000."/>
-    <variable name="dz"          value="num_layers * layer_thickness"/>
+    <variable name="scint_back_horizontal_first_layer_zpos"  value="layer_thickness + scint_back_vertical_first_layer_zpos"/>
