@@ -5,6 +5,11 @@
 <!ENTITY hcal_solids SYSTEM "hcal_solids.gdml">
 <!ENTITY hcal_volumes SYSTEM "hcal_volumes.gdml">
 <!ENTITY hcal_physvol SYSTEM "hcal_physvol.gdml">
+<!ENTITY trigger_solids SYSTEM "trigger_solids.gdml">
+<!ENTITY trigger_volumes SYSTEM "trigger_volumes.gdml">
+<!ENTITY trigger_physvol SYSTEM "trigger_physvol.gdml">
+
+
 ]>
 <gdml xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://service-spi.web.cern.ch/service-spi/app/releases/GDML/schema/gdml.xsd">
 
@@ -25,6 +30,7 @@
 
   <solids>
     &hcal_solids;
+    &trigger_solids;
     <!-- - - - - - - - - Parent Solids - - - - - - - -->
     <box lunit="mm" name="prototype_box" x="dx" y="dy" z="dz+100"/> <!-- z gets an extra 100 mm  to accomodate the trigger. -->
  
@@ -35,6 +41,7 @@
 
 
     &hcal_volumes;
+    &trigger_volumes;
 
 
 
@@ -44,23 +51,8 @@
 
         <solidref    ref="prototype_box"/>
         &hcal_physvol;
-	
-		<loop for="layer_index" from="1" to="number_of_bars" step="1">
-                <physvol copynumber="2*layer_index-2">
-                    <volumeref ref="trigger_bar_volume" />
-                    <position name="trigger_pad_up_bar_layer1_pos" unit="mm" x="0" 
-                              y="-target_dim_y/2 + trigger_bar_dy*(layer_index - 0.5) + trigger_pad_bar_gap*(layer_index - 1) + trigger_pad_offset" 
-                              z="trigger_pad_up_z - trigger_pad_bar_thickness/2 - trigger_pad_bar_gap/2 -490" />
-							  
-                </physvol>
-                <physvol copynumber="2*layer_index - 1">
-                    <volumeref ref="trigger_bar_volume" />
-                    <position name="trigger_pad_up_bar_layer2_pos" unit="mm" x="0" 
-                              y="-target_dim_y/2 + trigger_bar_dy*layer_index + trigger_pad_bar_gap*(layer_index - 1) + trigger_pad_offset" 
-                              z="trigger_pad_up_z + trigger_pad_bar_thickness/2 + trigger_pad_bar_gap/2 -490 " />
-                </physvol>
-        </loop>
-			
+        &trigger_physvol;
+
         <auxiliary auxtype="Region" auxvalue="CalorimeterRegion"/>
         <auxiliary auxtype="VisAttributes" auxvalue="HcalVis"/>
         <auxiliary auxtype="DetElem" auxvalue="Hcal"/>

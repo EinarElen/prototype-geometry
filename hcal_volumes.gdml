@@ -36,10 +36,3 @@
   <auxiliary auxtype="Color" auxvalue="Blue"/>
   <auxiliary auxtype="VisAttributes" auxvalue="HcalVis"/>
 </volume>
-<volume name="trigger_bar_volume">
-	<materialref ref="Polyvinyltoluene"/>
-	<solidref ref="trigger_bar_box"/>
-	<!-- <auxiliary auxtype="SensDet" auxvalue="TriggerPadUpSD"/> -->
-	<!-- <auxiliary auxtype="VisAttributes" auxvalue="TriggerPadVis"/> -->
-	<!-- <auxiliary auxtype="DetElem" auxvalue="TriggerPad"/> -->
-</volume>
