@@ -3,7 +3,6 @@
 <!ENTITY materials SYSTEM "materials.gdml">
 <!ENTITY userinfo SYSTEM "userinfo.gdml">
 <!ENTITY hcal_solids SYSTEM "hcal_solids.gdml">
-<!-- <!ENTITY trigger SYSTEM "trigger.gdml"> -->
 <!ENTITY hcal_volumes SYSTEM "hcal_volumes.gdml">
 <!ENTITY hcal_physvol SYSTEM "hcal_physvol.gdml">
 ]>
