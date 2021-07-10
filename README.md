@@ -38,7 +38,9 @@ The geometry is divided into several files to make working with it easier.
 -   [hcal_solids.gdml](./hcal_solids.gdml) Contains definitions of the absorber, scintillator, and parent boxes
 -   [hcal_volumes.gdml](./hcal_volumes.gdml) Contains the definition of the scintillator and absorber logical volumes, see [Logical volumes](#logical_volumes).
 -   [hcal_physvol.gdml](./hcal_physvol.gdml) Contains the Hcal physical volumes, see [Physical volumes](#physical_volumes)
-
+-   [trigger_solids.gdml](./trigger_solids.gdml) Contains definitions of the trigger boxes
+-   [trigger_volumes.gdml](./trigger_volumes.gdml) Contains the definition of the trigger logical volumes, see [Logical volumes](#logical_volumes).
+-   [trigger_physvol.gdml](./trigger_physvol.gdml) Contains the trigger physical volumes, see [Physical volumes](#physical_volumes)
 
 <a id="reference"></a>
 
