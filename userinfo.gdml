@@ -14,6 +14,13 @@
       <auxiliary auxtype="Verbose" auxvalue="0"/>
     </auxiliary>
 
+	<auxiliary auxtype="SensDet" auxvalue="TriggerPadUpSD">
+		<auxiliary auxtype="SensDetType" auxvalue="TrigScintSD"/>
+		<auxiliary auxtype="HitsCollection" auxvalue="TriggerPadUpSimHits"/>
+		<auxiliary auxtype="SubdetID" auxvalue="2"/>
+		<auxiliary auxtype="LayerDepth" auxvalue="1"/>
+		<auxiliary auxtype="Verbose" auxvalue="0"/>
+	</auxiliary> 
 
     <!-- define regions -->
     <auxiliary auxtype="Region" auxvalue="CalorimeterRegion">
