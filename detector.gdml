@@ -3,25 +3,17 @@
 <!ENTITY materials SYSTEM "materials.gdml">
 <!ENTITY userinfo SYSTEM "userinfo.gdml">
 <!ENTITY hcal_solids SYSTEM "hcal_solids.gdml">
-
-
-<!ENTITY trigger SYSTEM "trigger.gdml">
-
-
+<!-- <!ENTITY trigger SYSTEM "trigger.gdml"> -->
 <!ENTITY hcal_volumes SYSTEM "hcal_volumes.gdml">
 <!ENTITY hcal_physvol SYSTEM "hcal_physvol.gdml">
-
 ]>
 <gdml xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://service-spi.web.cern.ch/service-spi/app/releases/GDML/schema/gdml.xsd">
 
   <define>
 
     <!-- loop variables - must be defined here -->
-
-
-	<variable name="x" value="1"/>
-
     <variable name="layer_index"  value="1"/>
+	<variable name="x" value="1"/>
 
 
     &constants;
@@ -37,6 +29,7 @@
     &hcal_solids;
     <!-- - - - - - - - - Parent Solids - - - - - - - -->
     <box lunit="mm" name="prototype_box" x="dx" y="dy" z="dz+100"/> <!-- z gets an extra 100 mm  to accomodate the trigger. -->
+ 
     <box lunit="mm" name="world_box" x="world_dim" y="world_dim" z="world_dim"/>
   </solids>
 
@@ -53,25 +46,7 @@
 
         <solidref    ref="prototype_box"/>
         &hcal_physvol;
-
-
-		<!-- <loop for="x" from="1" to="number_of_bars" step="1"> -->
-                <!-- <physvol copynumber="2*x-2"> -->
-                    <!-- <volumeref ref="trigger_bar_volume" /> -->
-                    <!-- <position name="trigger_pad_up_bar_layer1_pos" unit="mm" x="0"  -->
-                              <!-- y="-target_dim_y/2 + trigger_bar_dy*(x - 0.5) + trigger_pad_bar_gap*(x - 1) + trigger_pad_offset"  -->
-                              <!-- z="trigger_pad_up_z - trigger_pad_bar_thickness/2 - trigger_pad_bar_gap/2 -470 " /> -->
-							  
-                    <!-- <rotationref ref="identity" /> -->
-                <!-- </physvol> -->
-                <!-- <physvol copynumber="2*x - 1"> -->
-                    <!-- <volumeref ref="trigger_bar_volume" /> -->
-                    <!-- <position name="trigger_pad_up_bar_layer2_pos" unit="mm" x="0"  -->
-                              <!-- y="-target_dim_y/2 + trigger_bar_dy*x + trigger_pad_bar_gap*(x - 1) + trigger_pad_offset"  -->
-                              <!-- z="trigger_pad_up_z + trigger_pad_bar_thickness/2 + trigger_pad_bar_gap/2 -470 " /> -->
-                    <!-- <rotationref ref="identity" /> -->
-                <!-- </physvol> -->
-        <!-- </loop> -->		
+	
 		<loop for="x" from="1" to="number_of_bars" step="1">
                 <physvol copynumber="2*x-2">
                     <volumeref ref="trigger_bar_volume" />
@@ -103,12 +78,6 @@
           <volumeref ref="prototype_volume"/>
           <positionref ref="hadron_calorimeter_pos"/>
         </physvol>
-		
-		<!-- <physvol copynumber="2"> -->
-                <!-- <file name="trigger.gdml"  /> -->
-                <!-- <positionref ref="center" /> -->
-                <!-- <rotationref ref="identity"   />  -->
-        <!-- </physvol> -->
 
       <auxiliary auxtype="DetElem" auxvalue="Top"/>
     </volume>
