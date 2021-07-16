@@ -85,6 +85,11 @@ The following is a list of all the variables defined in the protoype geometry de
 -   `dx` and `dy`, the width and height of the prototype respectively are both set to **3000 mm**
 -   `dz` is the depth of the prototype and is defined as `num_layers * layer_thickness` which correpsonds to **931 mm**
 
+- `trigger_bar_gap` is the gap between individual trigger bars. It is **0.3 mm**
+- `trigger_bar_dx` (40 mm), `trigger_bar_dy` (3 mm), and `trigger_bar_dz` (2 mm) are the dimensions of a trigger bar.  
+- There are two trigger layers, and each layer includes 6 bars, as set in `number_of_bars` (=6). This means that the detector has 12 bars in total
+- `trigger_layer_distance_from_detector` defines the distance (the exact length of the empty space) between the trigger layer and the detector. 
+
 
 <a id="solids"></a>
 
@@ -107,7 +112,7 @@ or a more complicated geometry
 -   `air_box` is the a box representing a single air layer and has width `dx` (3000 mm), height `dy` (3000 mm), and depth `air_thickness` (2 mm)
 -   `prototype_box` is the parent volume for the prototype and is defined as a box with width `dx` (3000 mm), height `dy` (3000 mm), and depth `dz` (931 mm)
 -   `world_box` is the parent volume for all the other parts of the geometry and is defined as a box with all sides having length `world_dim` (10 m)
-
+-   `trigger_bar_box` represents an individual trigger bars. `trigger_bar_dx` (40 mm), `trigger_bar_dy` (3 mm), and `trigger_bar_dz` (2 mm) are the dimensions of a trigger bar.
 
 <a id="logical_volumes"></a>
 
@@ -156,6 +161,10 @@ Furthermore, each logical volume has a name as part of the `<volume>` tag which 
     -   &ldquo;Color&rdquo;: &ldquo;Blue&rdquo;
     -   &ldquo;VisAttributes&rdquo;: &ldquo;HcalVis&rdquo;
 
+-   `trigger_bar_volume` represents one layer of the steel absorber and is defined in [hcal_volumes.gdml](./hcal_volumes.gdml)
+    -   Material: `Polyvinyltoluene`
+    -   Solid: `trigger_bar_box`
+    -   Auxiliary information: &ldquo;SensDet&rdquo;: &ldquo;TriggerPadUpSD&rdquo; (meaning that the simulation will consider it a sensitive detector region, and will categorize its measurements under &ldquo;TriggerPadUpSD&rdquo in the output root file.
 
 <a id="physical_volumes"></a>
 
@@ -213,8 +222,20 @@ A physical volume is a logical volume with a position and, optionally, a name an
         -   y: **0 mm**
         -   z: `scint_back_horizontal_first_layer_zpos`, i.e. **61.5 mm**
     -   Distance (z) to subsequent layer: `2 * layer_thickness`, i.e. **98 mm**
-
-
+-   `trigger_physvol`: There are 12 physical volumes representing the trigger bats
+    -   Logical volume: `trigger_bar_volume`
+    -   Mother volume: `prototype_volume`
+    -   CopyNumbers: [1 .. 12]
+    -   Position of the first layer:
+        -   x: `0`, i.e. **0 mm**
+        -   y: `0`, i.e. **0 mm** (correct this soon)
+        -   z: `-trigger_bar_dz - trigger_bar_gap  -dz/2 -trigger_layer_distance_from_detector`, i.e. ** -767.8 mm**
+    -   Position of the second layer:
+        -   x: `0`, i.e. **0 mm**
+        -   y: `0`, i.e. **0 mm** (correct this soon)
+        -   z: `-dz/2 -trigger_layer_distance_from_detector`, i.e. ** -765.5 mm**
+    -   Distance (y) between bars in the same layer: `trigger_bar_dy + trigger_bar_gap`, i.e. **3.3 mm**
+    -   Distance (z) between the two layers: `trigger_bar_dz + trigger_bar_gap`, i.e. **2.3 mm**
 <a id="copy_numbers"></a>
 
 ### Notes on the CopyNumber
