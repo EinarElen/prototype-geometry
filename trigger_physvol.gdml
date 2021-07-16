@@ -2,13 +2,13 @@
 		<physvol copynumber="2*layer_index-2">
 			<volumeref ref="trigger_bar_volume" />
 			<position name="trigger_pad_up_bar_layer1_pos" unit="mm" x="0" 
-					  y="trigger_bar_dy*(layer_index - 0.5) + trigger_pad_bar_gap*(layer_index - 1) + trigger_pad_offset-50" 
+					  y="trigger_bar_dy*(layer_index - 0.5) + trigger_pad_bar_gap*(layer_index - 1)" 
 					  z="-490" />
 		</physvol>
 		<physvol copynumber="2*layer_index - 1">
 			<volumeref ref="trigger_bar_volume" />
 			<position name="trigger_pad_up_bar_layer2_pos" unit="mm" x="0" 
-					  y="trigger_bar_dy*layer_index + trigger_pad_bar_gap*(layer_index - 1) + trigger_pad_offset-50" 
+					  y="trigger_bar_dy*layer_index + trigger_pad_bar_gap*(layer_index - 1)" 
 					  z="trigger_pad_bar_thickness + trigger_pad_bar_gap -490 " />
 		</physvol>
 </loop>
