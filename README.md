@@ -222,8 +222,20 @@ A physical volume is a logical volume with a position and, optionally, a name an
         -   y: **0 mm**
         -   z: `scint_back_horizontal_first_layer_zpos`, i.e. **61.5 mm**
     -   Distance (z) to subsequent layer: `2 * layer_thickness`, i.e. **98 mm**
-
-
+-   `trigger_physvol`: There are 12 physical volumes representing the trigger bats
+    -   Logical volume: `trigger_bar_volume`
+    -   Mother volume: `prototype_volume`
+    -   CopyNumbers: [1 .. 12]
+    -   Position of the first layer:
+        -   x: `0`, i.e. **0 mm**
+        -   y: `0`, i.e. **0 mm** (correct this soon)
+        -   z: `-trigger_bar_dz - trigger_bar_gap  -dz/2 -trigger_layer_distance_from_detector`, i.e. ** -767.8 mm**
+    -   Position of the second layer:
+        -   x: `0`, i.e. **0 mm**
+        -   y: `0`, i.e. **0 mm** (correct this soon)
+        -   z: `-dz/2 -trigger_layer_distance_from_detector`, i.e. ** -765.5 mm**
+    -   Distance (y) between bars in the same layer: `trigger_bar_dy + trigger_bar_gap`, i.e. **3.3 mm**
+    -   Distance (z) between the two layers: `trigger_bar_dz + trigger_bar_gap`, i.e. **2.3 mm**
 <a id="copy_numbers"></a>
 
 ### Notes on the CopyNumber
