@@ -116,9 +116,5 @@
 <constant name="trigger_pad_down_z"
           value="target_z + (target_thickness/2) + (trigger_pad_thickness/2) + clearance" />
 
-<constant name="target_area_envelope_x" value="magnet_gap_x - 5" />
-<constant name="target_area_envelope_y" value="magnet_gap_y - 5" />
-<constant name="target_area_envelope_z" value="2*(target_thickness/2 + 2*clearance + trigger_pad_thickness)" />
-
 
 
