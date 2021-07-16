@@ -32,7 +32,7 @@
     &hcal_solids;
     &trigger_solids;
     <!-- - - - - - - - - Parent Solids - - - - - - - -->
-    <box lunit="mm" name="prototype_box" x="dx" y="dy" z="dz+100"/> <!-- z gets an extra 100 mm  to accomodate the trigger. -->
+    <box lunit="mm" name="prototype_box" x="dx" y="dy" z="dz+(trigger_layer_distance_from_detector + trigger_bar_dz + trigger_bar_gap)*2"/> <!-- extra space in z to accomodate the trigger. -->
  
     <box lunit="mm" name="world_box" x="world_dim" y="world_dim" z="world_dim"/>
   </solids>

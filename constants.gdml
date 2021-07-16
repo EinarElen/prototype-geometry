@@ -61,19 +61,17 @@
     <variable name="scint_back_horizontal_first_layer_zpos"  value="layer_thickness + scint_back_vertical_first_layer_zpos"/>
 
 
-
-
 <!--
     Trigger Scintillator
 -->
 
 <!-- Trigger scintillator positions -->
-<constant name="trigger_pad_bar_thickness"  value="2*mm" />
-<constant name="trigger_pad_bar_gap"        value="0.3*mm" />
-<constant name="trigger_bar_dx"             value="40*mm"/>
-<constant name="trigger_bar_dy"             value="3*mm"/>
-<constant name="trigger_bar_dz"             value="2*mm"/>
-<constant name="number_of_bars"             value="6"/>
+<constant name="trigger_bar_gap"        value="0.3*mm" />
+<constant name="trigger_bar_dx"         value="40*mm"/>
+<constant name="trigger_bar_dy"         value="3*mm"/>
+<constant name="trigger_bar_dz"         value="2*mm"/>
+<constant name="number_of_bars"         value="6"/>
+<constant name="trigger_layer_distance_from_detector"         value="30*cm"/>
 
 
 
