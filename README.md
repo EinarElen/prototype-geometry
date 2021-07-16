@@ -112,7 +112,7 @@ or a more complicated geometry
 -   `air_box` is the a box representing a single air layer and has width `dx` (3000 mm), height `dy` (3000 mm), and depth `air_thickness` (2 mm)
 -   `prototype_box` is the parent volume for the prototype and is defined as a box with width `dx` (3000 mm), height `dy` (3000 mm), and depth `dz` (931 mm)
 -   `world_box` is the parent volume for all the other parts of the geometry and is defined as a box with all sides having length `world_dim` (10 m)
-
+-   `trigger_bar_box` represents an individual trigger bars. `trigger_bar_dx` (40 mm), `trigger_bar_dy` (3 mm), and `trigger_bar_dz` (2 mm) are the dimensions of a trigger bar.
 
 <a id="logical_volumes"></a>
 
@@ -161,6 +161,10 @@ Furthermore, each logical volume has a name as part of the `<volume>` tag which 
     -   &ldquo;Color&rdquo;: &ldquo;Blue&rdquo;
     -   &ldquo;VisAttributes&rdquo;: &ldquo;HcalVis&rdquo;
 
+-   `trigger_bar_volume` represents one layer of the steel absorber and is defined in [hcal_volumes.gdml](./hcal_volumes.gdml)
+    -   Material: `Polyvinyltoluene`
+    -   Solid: `trigger_bar_box`
+    -   Auxiliary information: &ldquo;SensDet&rdquo;: &ldquo;TriggerPadUpSD&rdquo; (meaning that the simulation will consider it a sensitive detector region, and will categorize its measurements under &ldquo;TriggerPadUpSD&rdquo in the output root file.
 
 <a id="physical_volumes"></a>
 
