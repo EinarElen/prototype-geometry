@@ -228,11 +228,11 @@ A physical volume is a logical volume with a position and, optionally, a name an
     -   CopyNumbers: [1 .. 12]
     -   Position of the first layer:
         -   x: `0`, i.e. **0 mm**
-        -   y: `0`, i.e. **0 mm** (correct this soon)
+        -   y: `-trigger_bar_dy/2`, i.e. **-1.5 mm**
         -   z: `-trigger_bar_dz - trigger_bar_gap  -dz/2 -trigger_layer_distance_from_detector`, i.e. ** -767.8 mm**
     -   Position of the second layer:
         -   x: `0`, i.e. **0 mm**
-        -   y: `0`, i.e. **0 mm** (correct this soon)
+        -   y: `0`, i.e. **0 mm**
         -   z: `-dz/2 -trigger_layer_distance_from_detector`, i.e. ** -765.5 mm**
     -   Distance (y) between bars in the same layer: `trigger_bar_dy + trigger_bar_gap`, i.e. **3.3 mm**
     -   Distance (z) between the two layers: `trigger_bar_dz + trigger_bar_gap`, i.e. **2.3 mm**
