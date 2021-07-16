@@ -244,7 +244,7 @@ For the hadronic calorimeter, the CopyNumber encodes the layer number and the se
 
 The layers of the protoype are numbered from 1 to 19 (note the non-zero based indexing). The layer number is derived from the CopyNumber by dividing the CopyNumber with **1000** and taking the remainder.
 
-TODO: @PeterGy, document the CopyNumber requirements for the trigger scintillator.
+The bars of the trigger are numbered from 0 to 11 (note the zero based indexing), with the first (the one closer to the origin of the beam) layer having even CopyNumbers and the second layer having odd ones. 
 
 Furthermore, the rotation of the layer is determined by the layer number, which in turn depends on the CopyNumber. An even CopyNumber means a vertical layer (length of the bars is along the y-axis) while an odd CopyNumber
 
