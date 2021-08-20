@@ -39,6 +39,12 @@ scint_back_horizontal_y=num_bars_back * scint_bar_width
 dx=3000.
 dy=3000.
 dz=num_layers * layer_thickness
+trigger_bar_gap=0.3
+trigger_bar_dx=40
+trigger_bar_dy=3
+trigger_bar_dz=2
+number_of_bars = 6
+trigger_layer_distance_from_detector=300
 
 # Solids
 front_vertical_scint_box = {"width": scint_front_vertical_x, "height": scint_front_vertical_y}
@@ -48,6 +54,7 @@ back_horizontal_scint_box = {"width": scint_back_horizontal_x, "height": scint_b
 air_box = {"width": dx, "height": dy, "depth": air_thickness}
 prototype_box={"width": dx, "height": dy, "depth": dz}
 world_box={"width": world_dim, "height": world_dim, "depth": world_dim}
+trigger_bar_box={"width":trigger_bar_dx , "height": trigger_bar_dy, "depth":trigger_bar_dz}
 
 class physical_volume:
     def __init__(self, position, name="", CopyNumber=None):
@@ -60,46 +67,67 @@ class physical_volume:
         return str(self.__dict__)
 
 # Physical volumes
-absorber_first_layer_zpos= np.array([-absorber_width/2, -absorber_width/2, -dz/2])
-scint_front_horizontal_first_layer_zpos = np.array([0.,0., -dz/2 + absorber_thickness + air_thickness + scint_thickness/2 ])
-scint_front_vertical_first_layer_zpos = scint_front_horizontal_first_layer_zpos + [0., 0., layer_thickness]
-scint_back_vertical_first_layer_zpos =  scint_front_horizontal_first_layer_zpos + [0., 0., back_start]
-scint_back_horizontal_first_layer_zpos = scint_back_vertical_first_layer_zpos + [0., 0., layer_thickness]
+absorber_first_layer_pos= np.array([-absorber_width/2, -absorber_width/2, -dz/2])
+scint_front_horizontal_first_layer_pos = np.array([0.,0., -dz/2 + absorber_thickness + air_thickness + scint_thickness/2 ])
+scint_front_vertical_first_layer_pos = scint_front_horizontal_first_layer_pos + [0., 0., layer_thickness]
+scint_back_vertical_first_layer_pos =  scint_front_horizontal_first_layer_pos + [0., 0., back_start]
+scint_back_horizontal_first_layer_pos = scint_back_vertical_first_layer_pos + [0., 0., layer_thickness]
+
+trigger_first_layer_even_pos  = np.array([0, 
+        trigger_bar_dy*(1 - 0.5 - number_of_bars/2) + trigger_bar_gap*(1 - 1 - number_of_bars/2), 
+        -trigger_bar_dz - trigger_bar_gap  -dz/2 -trigger_layer_distance_from_detector ])
+trigger_first_layer_odd_pos = np.array([0, 
+        trigger_bar_dy*(1 - 0   - number_of_bars/2) + trigger_bar_gap*(1 - 1 - number_of_bars/2), 
+        -dz/2 -trigger_layer_distance_from_detector ])
 
 distance_to_subsequent_absorber_layer = np.array([0.,0., layer_thickness])
 distance_to_subsequent_scint_layer=np.array([0., 0., 2. * layer_thickness])
+distance_to_subsequent_trigger_layer=np.array([0., trigger_bar_dy + trigger_bar_gap, 0])
 
-first_absorber = physical_volume(absorber_first_layer_zpos)
+first_absorber = physical_volume(absorber_first_layer_pos)
 absorber_physvols=[
-    physical_volume(position=absorber_first_layer_zpos + distance_to_subsequent_absorber_layer * i ,
+    physical_volume(position=absorber_first_layer_pos + distance_to_subsequent_absorber_layer * i ,
                     name="absorber_physvol", CopyNumber=i)
     for i in range(1, num_layers + 1)
 ]
 front_horizontal_scint_physvols=[
-    physical_volume(position=scint_front_horizontal_first_layer_zpos + (i - 1) * distance_to_subsequent_scint_layer,
+    physical_volume(position=scint_front_horizontal_first_layer_pos + (i - 1) * distance_to_subsequent_scint_layer,
                     name="front_horizontal_scint_physvol", CopyNumber=2*i - 1
                     )
     for i in range(1,num_layers_front_horizontal + 1)
 ]
 front_vertical_scint_physvols=[
-    physical_volume(position=scint_front_vertical_first_layer_zpos + (i - 1) * distance_to_subsequent_scint_layer,
+    physical_volume(position=scint_front_vertical_first_layer_pos + (i - 1) * distance_to_subsequent_scint_layer,
                     name="front_vertical_scint_physvol", CopyNumber=2*i
                     )
     for i in range(1,num_layers_front_vertical + 1)
 ]
 back_vertical_scint_physvols=[
-    physical_volume(position=scint_back_vertical_first_layer_zpos + (i - 1) * distance_to_subsequent_scint_layer,
+    physical_volume(position=scint_back_vertical_first_layer_pos + (i - 1) * distance_to_subsequent_scint_layer,
                     name="back_vertical_scint_physvol", CopyNumber=2*i + num_layers_front - 1
                     )
     for i in range(1,num_layers_back_vertical+ 1)
 ]
 
 back_horizontal_scint_physvols=[
-    physical_volume(position=scint_back_horizontal_first_layer_zpos + (i - 1) * distance_to_subsequent_scint_layer,
+    physical_volume(position=scint_back_horizontal_first_layer_pos + (i - 1) * distance_to_subsequent_scint_layer,
                     name="back_horizontal_scint_physvol", CopyNumber=2*i + num_layers_front
                     )
     for i in range(1,num_layers_back_horizontal+ 1)
 ]
+
+
+trigger_physvols=["placeholder" for i in range(1,number_of_bars*2)]
+for i in range(1,number_of_bars): 
+    trigger_physvols[i*2-2]= physical_volume(position=trigger_first_layer_even_pos + (i - 1) * distance_to_subsequent_trigger_layer,
+                             name="trigger_physvol", CopyNumber=2*i-2
+                             )  
+    trigger_physvols[i*2-1]= physical_volume(position=trigger_first_layer_odd_pos + (i - 1) * distance_to_subsequent_trigger_layer,
+                             name="trigger_physvol", CopyNumber=2*i-1
+                             )
+                       
+
+
 
 def absorber_copynumbers():
     return [absorber_physvols[i].CopyNumber  for i in range(0, num_layers)]
@@ -115,7 +143,9 @@ def back_horizontal_copynumbers():
 
 def back_vertical_copynumbers():
     return [back_vertical_scint_physvols[i].CopyNumber  for i in range(0, num_layers_back_vertical)]
-
+    
+def trigger_copynumbers():
+    return [trigger_physvols[i].CopyNumber  for i in range(0, number_of_bars*2)]
 
 def front_horizontal_depths():
     return [front_horizontal_scint_physvols[i].depth  for i in range(0, num_layers_front_horizontal)]
@@ -128,3 +158,6 @@ def back_horizontal_depths():
 
 def back_vertical_depths():
     return [back_vertical_scint_physvols[i].depth  for i in range(0, num_layers_back_vertical)]
+
+def trigger_depths():
+    return [trigger_physvols[i].depth  for i in range(0, number_of_bars*2)]
