@@ -5,6 +5,20 @@
   <auxiliary auxtype="VisAttributes" auxvalue="HcalVis"/>
 </volume>
 
+<volume name="vertical_bar_mounting_plate_volume">
+  <materialref ref="Steel"/>
+  <solidref    ref="vertical_bar_mounting_plate_box"/>
+  <auxiliary auxtype="Color" auxvalue="Red"/>
+  <auxiliary auxtype="VisAttributes" auxvalue="HcalVis"/>
+</volume>
+
+<volume name="horizontal_bar_mounting_plate_volume">
+  <materialref ref="Steel"/>
+  <solidref    ref="horizontal_bar_mounting_plate_box"/>
+  <auxiliary auxtype="Color" auxvalue="Red"/>
+  <auxiliary auxtype="VisAttributes" auxvalue="HcalVis"/>
+</volume>
+
 <volume name="front_vertical_scint_box_volume">
   <materialref ref="Scintillator"/>
   <solidref    ref="front_vertical_scint_box"/>

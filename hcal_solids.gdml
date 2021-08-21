@@ -1,19 +1,22 @@
     <!-- - - - - - - - - HCal solids - - - - - - - -  -->
-    <!--<box lunit="mm" name="absorber_box"    x="absorber_width"          y="absorber_width"          z="absorber_thickness"/>-->
-    <!-- <box lunit="mm" name="absorber_box"    x="absorber_width"          y="absorber_width"          z="absorber_thickness"/> -->
+    <box lunit="mm" name="absorber_box"    x="absorber_width"          y="absorber_height"          z="absorber_thickness"/>
     
-	<xtru name = "absorber_box" lunit= "mm" >
-		 <twoDimVertex x="absorber_ears" y="0" /> 
-		 <twoDimVertex x="absorber_width-absorber_ears" y="0" />
-		 <twoDimVertex x="absorber_width-absorber_ears" y="absorber_width-absorber_ears" />
-		 <twoDimVertex x="absorber_width" y="absorber_width-absorber_ears" />
-		 <twoDimVertex x="absorber_width" y="absorber_width" />
-		 <twoDimVertex x="0" y="absorber_width" />
-		 <twoDimVertex x="0" y="absorber_width-absorber_ears" />
-		 <twoDimVertex x="absorber_ears" y="absorber_width-absorber_ears" />
-		 <section zOrder="1" zPosition="0" xOffset="0" yOffset="0" scalingFactor="1" />
-		 <section zOrder="2" zPosition="absorber_thickness" xOffset="0" yOffset="0" scalingFactor="1" />
-	</xtru>
+    
+	<!-- <xtru name = "absorber_box" lunit= "mm" > -->
+		 <!-- <twoDimVertex x="absorber_ears" y="0" />  -->
+		 <!-- <twoDimVertex x="absorber_width-absorber_ears" y="0" /> -->
+		 <!-- <twoDimVertex x="absorber_width-absorber_ears" y="absorber_width-absorber_ears" /> -->
+		 <!-- <twoDimVertex x="absorber_width" y="absorber_width-absorber_ears" /> -->
+		 <!-- <twoDimVertex x="absorber_width" y="absorber_width" /> -->
+		 <!-- <twoDimVertex x="0" y="absorber_width" /> -->
+		 <!-- <twoDimVertex x="0" y="absorber_width-absorber_ears" /> -->
+		 <!-- <twoDimVertex x="absorber_ears" y="absorber_width-absorber_ears" /> -->
+		 <!-- <section zOrder="1" zPosition="0" xOffset="0" yOffset="0" scalingFactor="1" /> -->
+		 <!-- <section zOrder="2" zPosition="absorber_thickness" xOffset="0" yOffset="0" scalingFactor="1" /> -->
+	<!-- </xtru> -->
+	
+	<box lunit="mm" name="vertical_bar_mounting_plate_box"    x="scint_back_vertical_x"          y="scint_back_vertical_y"          z="bar_mounting_plate_thickness"/>
+	<box lunit="mm" name="horizontal_bar_mounting_plate_box"  x="scint_back_horizontal_x"        y="scint_back_horizontal_y"        z="bar_mounting_plate_thickness"/>
 	
     <box lunit="mm" name="front_vertical_scint_box"    x="scint_front_vertical_x"          y="scint_front_vertical_y"          z="scint_thickness"/>
     <box lunit="mm" name="front_horizontal_scint_box"    x="scint_front_horizontal_x"          y="scint_front_horizontal_y"          z="scint_thickness"/>
