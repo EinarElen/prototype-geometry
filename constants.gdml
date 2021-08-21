@@ -18,7 +18,7 @@
     <variable name="scint_bar_width"  value="50."/>
     <variable name="scint_bar_length"       value="2000."/>
 
-    <variable name="layer_thickness"   value="absorber_thickness + scint_thickness + 2.0*air_thickness"/>
+    <variable name="layer_thickness"   value="absorber_thickness + scint_thickness + bar_mounting_plate_thickness + 2.0*air_thickness"/>
 
     <variable name="num_bars_front" value="8"/>
     <variable name="num_bars_back" value="12"/>
@@ -41,17 +41,34 @@
     <!-- Absorber layers -->
     <variable name="absorber_first_layer_zpos"
               value="-dz/2"/>
+			  
+    <!-- Front Layer, horizontal plates -->
+    <variable name="bar_mounting_plate_horizontal_x"   value="scint_bar_length"/>
+    <variable name="bar_mounting_plate_horizontal_y"   value="num_bars_back * scint_bar_width"/>
+    <variable name="bar_mounting_plate_horizontal_first_layer_zpos"
+              value="absorber_first_layer_zpos + absorber_thickness/2.0 + bar_mounting_plate_thickness/2.0"/>
+
+    <!-- Front Layer, vertical plates -->
+    <variable name="bar_mounting_plate_vertical_x"   value="num_bars_back * scint_bar_width"/>
+    <variable name="bar_mounting_plate_vertical_y"   value="scint_bar_length"/>
+    <variable name="bar_mounting_plate_vertical_first_layer_zpos"
+              value="layer_thickness + bar_mounting_plate_horizontal_first_layer_zpos "/>
+              <!-- value="layer_thickness + scint_front_horizontal_first_layer_zpos + bar_mounting_plate_thickness"/> -->
+              <!-- value="layer_thickness + scint_front_horizontal_first_layer_zpos - bar_mounting_plate_thickness"/> -->
+			  
     <!-- Front Layer, horizontal bars -->
     <variable name="scint_front_horizontal_x"   value="scint_bar_length"/>
     <variable name="scint_front_horizontal_y"   value="num_bars_front * scint_bar_width"/>
     <variable name="scint_front_horizontal_first_layer_zpos"
-              value="absorber_first_layer_zpos + absorber_thickness + air_thickness + scint_thickness/2.0"/>
+              value="bar_mounting_plate_horizontal_first_layer_zpos + bar_mounting_plate_thickness/2.0 + scint_thickness/2.0"/>
+              <!-- value="absorber_first_layer_zpos + absorber_thickness + air_thickness + scint_thickness/2.0"/> -->
 
     <!-- Front Layer, vertical bars -->
     <variable name="scint_front_vertical_x"   value="num_bars_front * scint_bar_width"/>
     <variable name="scint_front_vertical_y"   value="scint_bar_length"/>
     <variable name="scint_front_vertical_first_layer_zpos"
-              value="layer_thickness + scint_front_horizontal_first_layer_zpos"/>
+              value="bar_mounting_plate_vertical_first_layer_zpos + bar_mounting_plate_thickness/2.0 + scint_thickness/2.0"/>
+              <!-- value="layer_thickness + scint_front_horizontal_first_layer_zpos"/> -->
 
     <!-- Back Layer, vertical bars -->
     <variable name="scint_back_vertical_x"   value="num_bars_back * scint_bar_width"/>
