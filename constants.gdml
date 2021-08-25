@@ -10,8 +10,10 @@
     <variable name="air_thickness"         value="2."/>
     <variable name="absorber_width"       value="665"/>
     <variable name="absorber_height"       value="700"/>
-    <!-- <variable name="absorber_ears"       value="50"/> -->
     <variable name="absorber_thickness"       value="20."/>
+    <variable name="absorber_hole_radius"       value="6.5"/>
+    <variable name="absorber_hole_distance_from_edge"       value="16."/>
+		
     <variable name="bar_mounting_plate_thickness"       value="3."/>
 	
     <variable name="scint_thickness"       value="20."/>
