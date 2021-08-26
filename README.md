@@ -65,7 +65,7 @@ The following is a list of all the variables defined in the protoype geometry de
 -   `scint_thickness` is the thickness of a scintillator bar layer (&Delta; z<sub>scintillator</sub>). This is equivalent to the thickness of an individual scintillator bar and is set to **20 mm**
 -   `scint_bar_width` is the width of an individual scintillator bar, it is set to **50 mm**.
 -   `scint_bar_length` is the length of an individual scintillator bar. In horizontal layers, this is equivalent to the width (&Delta; x<sub>scintillator</sub>) of the layer while in vertical layers it is equivalent to the height (&Delta; y<sub>scintillator</sub>) of the layer. It is set to **2000 mm**.
--   `layer_thickness` is the combined thickness of a layer (&Delta; z<sub>layer</sub>). It consists of one layer of absorber, `absorber_thickness`, one layer of scintillators, and *two* layers of air, `air_thickness`. The resulting layer thickness is thus given by `absorber_thickness + scint_thickness + 2 * air_thickness`, **49 mm**
+-   `layer_thickness` is the combined thickness of a layer (&Delta; z<sub>layer</sub>). It consists of one layer of absorber, `absorber_thickness`, one layer of scintillator bar mounting plates, `bar_mounting_plate_thickness`, one layer of scintillators, `scint_thickness`, and on layer of air, `air_thickness`. The resulting layer thickness is thus given by `absorber_thickness + bar_mounting_plate_thickness + scint_thickness + air_thickness`, **45 mm**
 -   `num_bars_front` is the number of scintillator bars in the front region. It is set to **8**
 -   `num_bars_back` is the number of scintillator bars in the back region. It is set to **12**
 -   `num_layers_front` is the total number of layers in the front region of the prototype and is set to **9**
@@ -73,7 +73,7 @@ The following is a list of all the variables defined in the protoype geometry de
 -   `num_layers_back_vertical` and `num_layers_back_horizontal` are the number of horizontal or vertical layers in the back region. They are both set to **5** 
 -   `num_layer_back` is the total number of layers in the back region of the prototype and is set to **10**
 -   `num_layers` is the total number of layers. It is set to **19** and corresponds to `num_layers_front + num_layers_back`
--   `back_start` is the location of the first layer in the back region. It is set to `num_layers_front * layer_thickness`, i.e. **441 mm**
+-   `back_start` is the location of the first layer in the back region. It is set to `num_layers_front * layer_thickness`, i.e. **405 mm**
 -   The length of the sides of the various scintillator layers are defined as
     -   Front vertical layers have `scint_front_vertical_x` which is **400 mm**, `scint_front_vertical_y` which is the bar length, **2000 mm**. The 400 mm corresponds to 8 bars each having a width of **50 mm**, `num_bars_front * scint_bar_width`
     -   Front horizontal layers have `scint_front_horizontal_y` which is **400 mm**, `scint_front_horizontal_x` which is the bar length, **2000 mm**. The 400 mm corresponds to 8 bars each having a width of **50 mm**, `num_bars_front * scint_bar_width`
@@ -83,19 +83,22 @@ The following is a list of all the variables defined in the protoype geometry de
     -   Vertical layers have `bar_mounting_plate_vertical_x` which is **600 mm**, `bar_mounting_plate_vertical_y` which is the bar length, **2000 mm**. The 600 mm corresponds to the width of 12 **50 mm** bars, `num_bars_back * scint_bar_width`
     -   Horizontal layers have `bar_mounting_plate_horizontal_y` which is **600 mm**, `bar_mounting_plate_vertical_x` which is the bar length, **2000 mm**. The 600 mm corresponds to the width of 12 **50 mm** bars, `num_bars_back * scint_bar_width`
 
--   The location (in z) of the first absorber layer is given by `absorber_first_layer_zpos` which is defined as `-dz/2`, corresponding to **-465.5 mm**
--   The location (in z) of the first layer of each scintillator group are given by
-    - `scint_front_horizontal_first_layer_zpos` which is placed in the middle of the bar after one absorber layer and one air layer at `absorber_first_layer_zpos + absorber_thickness + air_thickness + scint_thickness/2`, corresponding to **-428.5 mm**
-    - `scint_front_vertical_first_layer_zpos` which is placed one `layer_thickness` after the first horizontal layer at `layer_thickness + scint_front_horizontal_first_layer_zpos`, corresponding to **-379.5 mm**
-    - `scint_back_vertical_first_layer_zpos` which is placed at the start of the back region at a distance `back_start` from the first scintillator layer at `back_start + scint_front_horizontal_layer_zpos`, corresponding to **12.5 mm**
-    - `scint_back_vertical_first_layer_zpos` which is placed one `layer_thickness` after the first horizontal layer in the back region at `layer_thickness + scint_back_vertical_first_layer_zpos`, corresponding to **61.5 mm**
 
+### Positions
+### Dimensions
+
+-   The location (in z) of the first absorber layer is given by `absorber_first_layer_zpos` which is defined as `-dz/2`, corresponding to **-? mm**
+-   The location (in z) of the first layer of each scintillator group are given by
+    - `scint_front_horizontal_first_layer_zpos` which is placed in the middle of the bar after one absorber layer and one air layer at `absorber_first_layer_zpos + absorber_thickness + air_thickness + scint_thickness/2`, corresponding to **-? mm**
+    - `scint_front_vertical_first_layer_zpos` which is placed one `layer_thickness` after the first horizontal layer at `layer_thickness + scint_front_horizontal_first_layer_zpos`, corresponding to **-? mm**
+    - `scint_back_vertical_first_layer_zpos` which is placed at the start of the back region at a distance `back_start` from the first scintillator layer at `back_start + scint_front_horizontal_layer_zpos`, corresponding to **? mm**
+    - `scint_back_vertical_first_layer_zpos` which is placed one `layer_thickness` after the first horizontal layer in the back region at `layer_thickness + scint_back_vertical_first_layer_zpos`, corresponding to **? mm**
 -   The location (in z) of the first layer of each scintillator bar mounting plate group are given by
     - `bar_mounting_plate_horizontal_first_layer_zpos` which is placed in the middle of the plate after one absorber and behind one bar layer `absorber_first_layer_zpos + absorber_thickness/2.0 + bar_mounting_plate_thickness/2.0`, corresponding to **? mm**
     - `bar_mounting_plate_vertical_first_layer_zpos` which is placed one `layer_thickness` after the first horizontal layer at `layer_thickness + bar_mounting_plate_horizontal_first_layer_zpos`, corresponding to **? mm**
 
 -   `dx` and `dy`, the width and height of the prototype respectively are both set to **3000 mm**
--   `dz` is the depth of the prototype and is defined as `num_layers * layer_thickness` which correpsonds to **931 mm**
+-   `dz` is the depth of the prototype and is defined as `num_layers * layer_thickness` which correpsonds to **855 mm**
 
 - `trigger_bar_gap` is the gap between individual trigger bars. It is **0.3 mm**
 - `trigger_bar_dx` (40 mm), `trigger_bar_dy` (3 mm), and `trigger_bar_dz` (2 mm) are the dimensions of a trigger bar.  
@@ -128,7 +131,7 @@ or a more complicated geometry
     -   `back_vertical_scint_box` has width `scint_back_vertical_x` (600 mm) and height `scint_back_vertical_y` (2000 mm)
     -   `back_horizontal_scint_box` has width `scint_back_horizontal_x` (2000 mm) and height `scint_back_horizontal_y` (600 mm)
 -   `air_box` is the a box representing a single air layer and has width `dx` (3000 mm), height `dy` (3000 mm), and depth `air_thickness` (2 mm)
--   `prototype_box` is the parent volume for the prototype and is defined as a box with width `dx` (3000 mm), height `dy` (3000 mm), and depth `dz` (931 mm)
+-   `prototype_box` is the parent volume for the prototype and is defined as a box with width `dx` (3000 mm), height `dy` (3000 mm), and depth `dz` (855 mm)
 -   `world_box` is the parent volume for all the other parts of the geometry and is defined as a box with all sides having length `world_dim` (10 m)
 -   `trigger_bar_box` represents an individual trigger bars. `trigger_bar_dx` (40 mm), `trigger_bar_dy` (3 mm), and `trigger_bar_dz` (2 mm) are the dimensions of a trigger bar.
 
