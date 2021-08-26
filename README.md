@@ -56,9 +56,12 @@ The following is a list of all the variables defined in the protoype geometry de
 -   `center`, `identity`, and `hadron_calorimeter_pos` are positions that are all defined as **(x,y,z) = (0,0,0)**. `hadron_calorimeter_pos` is used to place the `prototype_volume` physical volume within the `World` volume.
 -   `world_dim` is the size of the sides of the &ldquo;world_box&rdquo; box, set to **10 m**
 -   `air_thickness` is the thickness (&Delta; z<sub>air</sub>) of the layers of air in between the absorber and scintillator bars. The thickness of each region is set to **2 mm**, which contributes twice to the thickness of an individual layer.
--   `absorber_width` is the width (&Delta; x<sub>absorber</sub>,&Delta; y<sub>absorber</sub>) of an absorber layer, set to **800 mm**
--   `absorber_ears`, TODO: Document this, set to **50 mm**
--   `absorber_thickness` is the thickness (&Delta; z<sub>absorber</sub>) of an absorber layer, set to **25 mm**
+-   `absorber_width` is the width (&Delta; x<sub>absorber</sub>) of an absorber layer, set to **665 mm**
+-   `absorber_height` is the height (&Delta; y<sub>absorber</sub>) of an absorber layer, set to **700 mm**
+-   `absorber_thickness` is the thickness (&Delta; z<sub>absorber</sub>) of an absorber layer, set to **20 mm**
+-   `absorber_radius` is the radius of the two holes on the absorber plate, set to **6.5 mm**
+-   `absorber_radius` is the distance of each hole's center from the edges of the absorber plate, set to **16. mm**
+-   `bar_mounting_plate_thickness` is the thickness of the plates upon which the bars are mounted, set to **3. mm**
 -   `scint_thickness` is the thickness of a scintillator bar layer (&Delta; z<sub>scintillator</sub>). This is equivalent to the thickness of an individual scintillator bar and is set to **20 mm**
 -   `scint_bar_width` is the width of an individual scintillator bar, it is set to **50 mm**.
 -   `scint_bar_length` is the length of an individual scintillator bar. In horizontal layers, this is equivalent to the width (&Delta; x<sub>scintillator</sub>) of the layer while in vertical layers it is equivalent to the height (&Delta; y<sub>scintillator</sub>) of the layer. It is set to **2000 mm**.
