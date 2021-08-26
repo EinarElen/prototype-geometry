@@ -60,7 +60,7 @@ The following is a list of all the variables defined in the protoype geometry de
 -   `absorber_height` is the height (&Delta; y<sub>absorber</sub>) of an absorber layer, set to **700 mm**
 -   `absorber_thickness` is the thickness (&Delta; z<sub>absorber</sub>) of an absorber layer, set to **20 mm**
 -   `absorber_radius` is the radius of the two holes on the absorber plate, set to **6.5 mm**
--   `absorber_radius` is the distance of each hole's center from the edges of the absorber plate, set to **16. mm**
+-   `absorber_hole_distance_from_edge` is the distance of each hole's center from the edges of the absorber plate, set to **16. mm**
 -   `bar_mounting_plate_thickness` is the thickness of the plates upon which the bars are mounted, set to **3. mm**
 -   `scint_thickness` is the thickness of a scintillator bar layer (&Delta; z<sub>scintillator</sub>). This is equivalent to the thickness of an individual scintillator bar and is set to **20 mm**
 -   `scint_bar_width` is the width of an individual scintillator bar, it is set to **50 mm**.
@@ -79,6 +79,10 @@ The following is a list of all the variables defined in the protoype geometry de
     -   Front horizontal layers have `scint_front_horizontal_y` which is **400 mm**, `scint_front_horizontal_x` which is the bar length, **2000 mm**. The 400 mm corresponds to 8 bars each having a width of **50 mm**, `num_bars_front * scint_bar_width`
     -   Back vertical layers have `scint_back_vertical_x` which is **600 mm**, `scint_back_vertical_y` which is the bar length, **2000 mm**. The 600 mm corresponds to 12 bars each having a width of **50 mm**, `num_bars_back* scint_bar_width` 
     -   Back horizontal layers have `scint_back_horizontal_y` which is **600 mm**, `scint_back_horizontal_x` which is the bar length, **2000 mm**. The 600 mm corresponds to 12 bars each having a width of **50 mm**, `num_bars_back* scint_bar_width` 
+-   The length of the sides of the two scintillator bar mounting plates are defined as
+    -   Vertical layers have `bar_mounting_plate_vertical_x` which is **600 mm**, `bar_mounting_plate_vertical_y` which is the bar length, **2000 mm**. The 600 mm corresponds to the width of 12 **50 mm** bars, `num_bars_back * scint_bar_width`
+    -   Horizontal layers have `bar_mounting_plate_horizontal_y` which is **600 mm**, `bar_mounting_plate_vertical_x` which is the bar length, **2000 mm**. The 600 mm corresponds to the width of 12 **50 mm** bars, `num_bars_back * scint_bar_width`
+
 -   The location (in z) of the first absorber layer is given by `absorber_first_layer_zpos` which is defined as `-dz/2`, corresponding to **-465.5 mm**
 -   The location (in z) of the first layer of each scintillator group are given by
     - `scint_front_horizontal_first_layer_zpos` which is placed in the middle of the bar after one absorber layer and one air layer at `absorber_first_layer_zpos + absorber_thickness + air_thickness + scint_thickness/2`, corresponding to **-428.5 mm**
@@ -101,11 +105,17 @@ The following is a list of all the variables defined in the protoype geometry de
 Solids are objects with purely geometrical properties such as a box, a sphere,
 or a more complicated geometry
 
--   `absorberBox` is the solid that represents the absorber layer. It has a shape according to the image: ![Image](https://files.slack.com/files-pri/T12GGHQSK-F0271BXAZB5/absorber_plate.png "absorber"). Within Geant4, it is described as an extruded solid. The outline of the solid is described by 8 vertices, starting at the bottom left and going counterclockwise until the shape shown in the image is obtained. It is then extruded outwards by a measure of `absorber_thickness` (25 mm). Its description uses three constants: 
-    -   `absorber_width` is the overall width and height of the absorber plate. It is 800 mm.
-    -   `absorber_ears` is the dimension of the two "ears" that are at the top left and top right of the image. It is 50 mm.
-    -   `absorber_thickness` is the thickness of the absorber plate, i.e. the length that the beam travels through the material. It is 25 mm (subject to change).
-    -   TODO: Did I describe it right?
+-   `absorber` is the solid that represents the absorber layer. It is a plate with a small hole drilled near the top left edge and another small hole drilled near the top right edge.  Within Geant4, it is described as a box with two tubes subtracted from it. Its description uses these constants: 
+    -   `absorber_width` is the overall width of the absorber plate. It is 665 mm.
+    -   `absorber_height` is the overall height of the absorber plate. It is 700 mm.
+    -   `absorber_thickness` is the thickness of the absorber plate, i.e. the length that the beam travels through the material. It is 20 mm.
+    -   `absorber_hole_radius` is the radius of the two holes on the absorber plate, set to **6.5 mm**
+    -   `absorber_hole_distance_from_edge`  is the distance of each hole's center from the edges of the absorber plate, set to **16. mm**
+-   There are two boxes representing the two different types of scintillator bar mounting plates (vertical, horizontal). These are defined using the corresponding width/height from
+    [Constants](#constants), e.g. 
+    -   `horizontal_bar_mounting_plate_box` has width `bar_mounting_plate_horizontal_x` (2000 mm) and height `bar_mounting_plate_horizontal_y` (600 mm)
+    -   `vertical_bar_mounting_plate_box` has width `bar_mounting_plate_vertical_x` (600 mm) and height `bar_mounting_plate_vertical_y` (2000 mm)
+    -   For both, their thickness is defined by `bar_mounting_plate_thickness`, set to **3. mm**.
 -   There are four boxes representing the four different types of scintillator layers (front vertical, front horizontal, back vertical, back horizontal). These are defined using the corresponding width/height from
     [Constants](#constants), e.g.
     -   `front_vertical_scint_box` has width `scint_front_vertical_x` (400 mm) and height `scint_front_vertical_y` (2000 mm)
