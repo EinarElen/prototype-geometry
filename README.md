@@ -89,6 +89,11 @@ The following is a list of all the variables defined in the protoype geometry de
     - `scint_front_vertical_first_layer_zpos` which is placed one `layer_thickness` after the first horizontal layer at `layer_thickness + scint_front_horizontal_first_layer_zpos`, corresponding to **-379.5 mm**
     - `scint_back_vertical_first_layer_zpos` which is placed at the start of the back region at a distance `back_start` from the first scintillator layer at `back_start + scint_front_horizontal_layer_zpos`, corresponding to **12.5 mm**
     - `scint_back_vertical_first_layer_zpos` which is placed one `layer_thickness` after the first horizontal layer in the back region at `layer_thickness + scint_back_vertical_first_layer_zpos`, corresponding to **61.5 mm**
+
+-   The location (in z) of the first layer of each scintillator bar mounting plate group are given by
+    - `bar_mounting_plate_horizontal_first_layer_zpos` which is placed in the middle of the plate after one absorber and behind one bar layer `absorber_first_layer_zpos + absorber_thickness/2.0 + bar_mounting_plate_thickness/2.0`, corresponding to **? mm**
+    - `bar_mounting_plate_vertical_first_layer_zpos` which is placed one `layer_thickness` after the first horizontal layer at `layer_thickness + bar_mounting_plate_horizontal_first_layer_zpos`, corresponding to **? mm**
+
 -   `dx` and `dy`, the width and height of the prototype respectively are both set to **3000 mm**
 -   `dz` is the depth of the prototype and is defined as `num_layers * layer_thickness` which correpsonds to **931 mm**
 
