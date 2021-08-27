@@ -176,13 +176,21 @@ Furthermore, each logical volume has a name as part of the `<volume>` tag which 
     -   Auxiliary information:
         -   &ldquo;Color&rdquo;: &ldquo;Red&rdquo;
         -   &ldquo;VisAttributes&rdquo;: &ldquo;HcalVis&rdquo;
+        
+-   There are two volumes representing each of the two different types of scintillator bar mounting plate layers called `vertical_bar_mounting_plate_volume`, and `horizontal_bar_mounting_plate_volume`, all defined in [hcal_volumes.gdml](./hcal_volumes.gdml). They differ in name and which corresponding solid they make use of
+    -   Material: `Steel`
+    -   Solid: One of `vertical_bar_mounting_plate_box`, and `horizontal_bar_mounting_plate_box`
+    -   Auxiliary information:
+        -   &ldquo;Color&rdquo;: &ldquo;Red&rdquo;
+        -   &ldquo;VisAttributes&rdquo;: &ldquo;HcalVis&rdquo;
+
 -   There are four volumes representing each of the four different types of scintillator layers called `front_vertical_scint_box_volume`, `front_horizontal_scint_box_volume`, `back_vertical_scint_box_volume`, and `back_horizontal_scint_box_volume`, all defined in [hcal_volumes.gdml](./hcal_volumes.gdml). They differ in name and which corresponding solid they make use of
--   Material: &ldquo;Scintillator&rdquo;
--   Solid: One of `front_vertical_scint_box`, `front_horizontal_scint_box`, `back_vertical_scint_box`, and `back_horizontal_scint_box`
--   Auxiliary information:
-    -   &ldquo;SensDet&rdquo;: &ldquo;HcalSD&rdquo;
-    -   &ldquo;Color&rdquo;: &ldquo;Blue&rdquo;
-    -   &ldquo;VisAttributes&rdquo;: &ldquo;HcalVis&rdquo;
+    -   Material: &ldquo;Scintillator&rdquo;
+    -   Solid: One of `front_vertical_scint_box`, `front_horizontal_scint_box`, `back_vertical_scint_box`, and `back_horizontal_scint_box`
+    -   Auxiliary information:
+        -   &ldquo;SensDet&rdquo;: &ldquo;HcalSD&rdquo;
+        -   &ldquo;Color&rdquo;: &ldquo;Blue&rdquo;
+        -   &ldquo;VisAttributes&rdquo;: &ldquo;HcalVis&rdquo;
 
 -   `trigger_bar_volume` represents one layer of the steel absorber and is defined in [hcal_volumes.gdml](./hcal_volumes.gdml)
     -   Material: `Polyvinyltoluene`
