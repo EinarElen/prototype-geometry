@@ -39,7 +39,9 @@
     <variable name="dz"          value="num_layers * layer_thickness"/>
 
 
-
+	<!-- Positional constants -->
+	
+	
     <!-- Absorber layers -->
     <variable name="absorber_first_layer_zpos"
               value="-dz/2"/>

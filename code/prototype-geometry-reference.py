@@ -68,8 +68,12 @@ class physical_volume:
         return str(self.__dict__)
 
 # Physical volumes
-absorber_first_layer_pos= np.array([-absorber_width/2, -absorber_width/2, -dz/2])
-scint_front_horizontal_first_layer_pos = np.array([0.,0., -dz/2 + absorber_thickness + air_thickness + scint_thickness/2 ])
+absorber_first_layer_pos= np.array([0, 0, -dz/2])
+bar_mounting_plate_horizontal_first_layer_pos = np.array([0, 0, absorber_first_layer_pos[2] + absorber_thickness/2.0 + bar_mounting_plate_thickness/2.0])
+bar_mounting_plate_vertical_first_layer_pos = np.array([0, 0, layer_thickness + bar_mounting_plate_horizontal_first_layer_pos[2]])
+
+
+scint_front_horizontal_first_layer_pos = np.array([0.,0., bar_mounting_plate_horizontal_first_layer_pos[2] + bar_mounting_plate_thickness/2.0 + scint_thickness/2.0 ])
 scint_front_vertical_first_layer_pos = scint_front_horizontal_first_layer_pos + [0., 0., layer_thickness]
 scint_back_vertical_first_layer_pos =  scint_front_horizontal_first_layer_pos + [0., 0., back_start]
 scint_back_horizontal_first_layer_pos = scint_back_vertical_first_layer_pos + [0., 0., layer_thickness]
