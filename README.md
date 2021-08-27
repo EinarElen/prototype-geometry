@@ -94,14 +94,15 @@ The following is a list of all the variables defined in the protoype geometry de
 
 -   `center`, `identity`, and `hadron_calorimeter_pos` are positions that are all defined as **(x,y,z) = (0,0,0)**. `hadron_calorimeter_pos` is used to place the `prototype_volume` physical volume within the `World` volume.
 -   The location (in z) of the first absorber layer is given by `absorber_first_layer_zpos` which is defined as `-dz/2`, corresponding to **-427.5 mm**
--   The location (in z) of the first layer of each scintillator group are given by
-    - `scint_front_horizontal_first_layer_zpos` which is placed in the middle of the bar after one absorber layer and one air layer at `absorber_first_layer_zpos + absorber_thickness + air_thickness + scint_thickness/2`, corresponding to **-? mm**
-    - `scint_front_vertical_first_layer_zpos` which is placed one `layer_thickness` after the first horizontal layer at `layer_thickness + scint_front_horizontal_first_layer_zpos`, corresponding to **-? mm**
-    - `scint_back_vertical_first_layer_zpos` which is placed at the start of the back region at a distance `back_start` from the first scintillator layer at `back_start + scint_front_horizontal_layer_zpos`, corresponding to **? mm**
-    - `scint_back_vertical_first_layer_zpos` which is placed one `layer_thickness` after the first horizontal layer in the back region at `layer_thickness + scint_back_vertical_first_layer_zpos`, corresponding to **? mm**
 -   The location (in z) of the first layer of each scintillator bar mounting plate group are given by
-    - `bar_mounting_plate_horizontal_first_layer_zpos` which is placed in the middle of the plate after one absorber and behind one bar layer `absorber_first_layer_zpos + absorber_thickness/2.0 + bar_mounting_plate_thickness/2.0`, corresponding to **? mm**
-    - `bar_mounting_plate_vertical_first_layer_zpos` which is placed one `layer_thickness` after the first horizontal layer at `layer_thickness + bar_mounting_plate_horizontal_first_layer_zpos`, corresponding to **? mm**
+    - `bar_mounting_plate_horizontal_first_layer_zpos` which is placed in the middle of the plate after one absorber and behind one bar layer `absorber_first_layer_zpos + absorber_thickness/2.0 + bar_mounting_plate_thickness/2.0`, corresponding to **-416 mm**
+    - `bar_mounting_plate_vertical_first_layer_zpos` which is placed one `layer_thickness` after the first horizontal layer at `layer_thickness + bar_mounting_plate_horizontal_first_layer_zpos`, corresponding to **-371 mm**
+-   The location (in z) of the first layer of each scintillator group are given by
+    - `scint_front_horizontal_first_layer_zpos` which is placed in the middle of the bar after one absorber layer and one air layer at `absorber_first_layer_zpos + absorber_thickness + air_thickness + scint_thickness/2`, corresponding to **-404.5 mm**
+    - `scint_front_vertical_first_layer_zpos` which is placed one `layer_thickness` after the first horizontal layer at `layer_thickness + scint_front_horizontal_first_layer_zpos`, corresponding to **-359.5 mm**
+    - `scint_back_vertical_first_layer_zpos` which is placed at the start of the back region at a distance `back_start` from the first scintillator layer at `back_start + scint_front_horizontal_layer_zpos`, corresponding to **0.5 mm**
+    - `scint_back_vertical_first_layer_zpos` which is placed one `layer_thickness` after the first horizontal layer in the back region at `layer_thickness + scint_back_vertical_first_layer_zpos`, corresponding to **45.5 mm**
+
 
 
 - `trigger_layer_distance_from_detector` defines the distance (the exact length of the empty space) between the trigger layer and the detector. 
