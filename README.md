@@ -93,7 +93,7 @@ The following is a list of all the variables defined in the protoype geometry de
 ### Position constants
 
 -   `center`, `identity`, and `hadron_calorimeter_pos` are positions that are all defined as **(x,y,z) = (0,0,0)**. `hadron_calorimeter_pos` is used to place the `prototype_volume` physical volume within the `World` volume.
--   The location (in z) of the first absorber layer is given by `absorber_first_layer_zpos` which is defined as `-dz/2`, corresponding to **427.5 mm**
+-   The location (in z) of the first absorber layer is given by `absorber_first_layer_zpos` which is defined as `-dz/2`, corresponding to **-427.5 mm**
 -   The location (in z) of the first layer of each scintillator group are given by
     - `scint_front_horizontal_first_layer_zpos` which is placed in the middle of the bar after one absorber layer and one air layer at `absorber_first_layer_zpos + absorber_thickness + air_thickness + scint_thickness/2`, corresponding to **-? mm**
     - `scint_front_vertical_first_layer_zpos` which is placed one `layer_thickness` after the first horizontal layer at `layer_thickness + scint_front_horizontal_first_layer_zpos`, corresponding to **-? mm**
