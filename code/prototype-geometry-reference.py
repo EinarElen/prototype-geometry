@@ -13,10 +13,11 @@ world_dim=10000.
 air_thickness=2.
 absorber_width=800.
 absorber_ears=50.
-absorber_thickness=25
+absorber_thickness=20
+bar_mounting_plate_thickness=3
 scint_thickness=20.
 scint_bar_length=2000.
-layer_thickness = absorber_thickness + scint_thickness + 2 * air_thickness
+layer_thickness = absorber_thickness + scint_thickness + bar_mounting_plate_thickness + air_thickness
 num_layers_front_vertical = 4
 num_layers_front_horizontal = 5
 num_layers_front=num_layers_front_vertical + num_layers_front_horizontal
@@ -72,6 +73,8 @@ scint_front_horizontal_first_layer_pos = np.array([0.,0., -dz/2 + absorber_thick
 scint_front_vertical_first_layer_pos = scint_front_horizontal_first_layer_pos + [0., 0., layer_thickness]
 scint_back_vertical_first_layer_pos =  scint_front_horizontal_first_layer_pos + [0., 0., back_start]
 scint_back_horizontal_first_layer_pos = scint_back_vertical_first_layer_pos + [0., 0., layer_thickness]
+
+
 
 trigger_first_layer_even_pos  = np.array([0, 
         trigger_bar_dy*(1 - 0.5 - number_of_bars/2) + trigger_bar_gap*(1 - 1 - number_of_bars/2), 
@@ -161,3 +164,6 @@ def back_vertical_depths():
 
 def trigger_depths():
     return [trigger_physvols[i].depth  for i in range(0, number_of_bars*2)]
+    
+from pdb import *
+set_trace()    

@@ -20,7 +20,7 @@
     <variable name="scint_bar_width"  value="50."/>
     <variable name="scint_bar_length"       value="2000."/>
 
-    <variable name="layer_thickness"   value="absorber_thickness + scint_thickness + bar_mounting_plate_thickness + 2.0*air_thickness"/>
+    <variable name="layer_thickness"   value="absorber_thickness + scint_thickness + bar_mounting_plate_thickness + air_thickness"/>
 
     <variable name="num_bars_front" value="8"/>
     <variable name="num_bars_back" value="12"/>
