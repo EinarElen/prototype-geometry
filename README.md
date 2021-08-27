@@ -213,10 +213,28 @@ A physical volume is a logical volume with a position and, optionally, a name an
     -   Mother volume: `prototype_volume`
     -   CopyNumbers: [1 .. 19]
     -   Position of the first layer:
-        -   x: `-absorber_width/2`, i.e. **-400 mm**
-        -   y: `-absorber_width/2`, i.e. **-400 mm**
-        -   z: `absorber_first_layer_zpos`, i.e. **-465.5 mm**
-    -   Distance (z) to subsequent layer: `layer_thickness`, i.e. **49 mm**
+        -   x: **0 mm**
+        -   y: **0 mm**
+        -   z: `absorber_first_layer_zpos`, i.e. **-427.5 mm**
+    -   Distance (z) to subsequent layer: `layer_thickness`, i.e. **45 mm**
+-   `horizontal_bar_mounting_plate_physvol`: There are 10 physical volumes representing the horizontal scintillator bar mounting plate layers. They all have odd CopyNumbers.
+    -   Logical volume: `front_horizontal_scint_box_volume`
+    -   Mother volume: `prototype_volume`
+    -   CopyNumbers: [1,3,5,7,9,11,13,15,17,19]
+    -   Position of the first layer:
+        -   x: **0 mm**
+        -   y: **0 mm**
+        -   z: `bar_mounting_plate_horizontal_first_layer_zpos`, i.e. **-416 mm**
+    -   Distance (z) to subsequent layer: `2 * layer_thickness`, i.e. **90 mm**
+-   `vertical_bar_mounting_plate_physvol`: There are 9 physical volumes representing the horizontal scintillator bar mounting plate layers. They all have even CopyNumbers.
+    -   Logical volume: `front_horizontal_scint_box_volume`
+    -   Mother volume: `prototype_volume`
+    -   CopyNumbers: [2,4,6,8,10,12,14,16,18]
+    -   Position of the first layer:
+        -   x: **0 mm**
+        -   y: **0 mm**
+        -   z: `bar_mounting_plate_horizontal_first_layer_zpos`, i.e. **-371 mm**
+    -   Distance (z) to subsequent layer: `2 * layer_thickness`, i.e. **90 mm**
 -   `front_horizontal_scint_physvol`: There are 5 physical volumes representing the horizontal scintillator layers in the front region. They all have odd CopyNumbers.
     -   Logical volume: `front_horizontal_scint_box_volume`
     -   Mother volume: `prototype_volume`
@@ -224,8 +242,8 @@ A physical volume is a logical volume with a position and, optionally, a name an
     -   Position of the first layer:
         -   x: **0 mm**
         -   y: **0 mm**
-        -   z: `scint_front_horizontal_first_layer_zpos`, i.e. **-428.5 mm**
-    -   Distance (z) to subsequent layer: `2 * layer_thickness`, i.e. **98 mm**
+        -   z: `scint_front_horizontal_first_layer_zpos`, i.e. **-404.5 mm**
+    -   Distance (z) to subsequent layer: `2 * layer_thickness`, i.e. **90 mm**
 -   `front_vertical_scint_physvol`: There are 4 physical volumes representing the vertical scintillator layers in the front region. They all have even CopyNumbers.
     -   Logical volume: `front_vertical_scint_box_volume`
     -   Mother volume: `prototype_volume`
@@ -233,8 +251,8 @@ A physical volume is a logical volume with a position and, optionally, a name an
     -   Position of the first layer:
         -   x: **0 mm**
         -   y: **0 mm**
-        -   z: `scint_front_vertical_first_layer_zpos`, i.e. **-379.5 mm**
-    -   Distance (z) to subsequent layer: `2 * layer_thickness`, i.e. **98 mm**
+        -   z: `scint_front_vertical_first_layer_zpos`, i.e. **-359.5 mm**
+    -   Distance (z) to subsequent layer: `2 * layer_thickness`, i.e. **90 mm**
 -   `back_vertical_scint_physvol`: There are 5 physical volumes representing the vertical scintillator layers in the back region. They all have even CopyNumbers.
     -   Logical volume: `back_vertical_scint_box_volume`
     -   Mother volume: `prototype_volume`
@@ -242,8 +260,8 @@ A physical volume is a logical volume with a position and, optionally, a name an
     -   Position of the first layer:
         -   x: **0 mm**
         -   y: **0 mm**
-        -   z: `scint_back_vertical_first_layer_zpos`, i.e. **12.5 mm**
-    -   Distance (z) to subsequent layer: `2 * layer_thickness`, i.e. **98 mm**
+        -   z: `scint_back_vertical_first_layer_zpos`, i.e. **0.5 mm**
+    -   Distance (z) to subsequent layer: `2 * layer_thickness`, i.e. **90 mm**
 -   `back_horizontal_scint_physvol`: There are 5 physical volumes representing the horizontal scintillator layers in the back region. They all have odd CopyNumbers.
     -   Logical volume: `back_horizontal_scint_box_volume`
     -   Mother volume: `prototype_volume`
@@ -251,8 +269,8 @@ A physical volume is a logical volume with a position and, optionally, a name an
     -   Position of the first layer:
         -   x: **0 mm**
         -   y: **0 mm**
-        -   z: `scint_back_horizontal_first_layer_zpos`, i.e. **61.5 mm**
-    -   Distance (z) to subsequent layer: `2 * layer_thickness`, i.e. **98 mm**
+        -   z: `scint_back_horizontal_first_layer_zpos`, i.e. **45.5 mm**
+    -   Distance (z) to subsequent layer: `2 * layer_thickness`, i.e. **90 mm**
 -   `trigger_physvol`: There are 12 physical volumes representing the trigger bats
     -   Logical volume: `trigger_bar_volume`
     -   Mother volume: `prototype_volume`
@@ -260,11 +278,11 @@ A physical volume is a logical volume with a position and, optionally, a name an
     -   Position of the first layer:
         -   x: `0`, i.e. **0 mm**
         -   y: `-trigger_bar_dy/2`, i.e. **-1.5 mm**
-        -   z: `-trigger_bar_dz - trigger_bar_gap  -dz/2 -trigger_layer_distance_from_detector`, i.e. ** -767.8 mm**
+        -   z: `-trigger_bar_dz - trigger_bar_gap  -dz/2 -trigger_layer_distance_from_detector`, i.e. ** -? mm**
     -   Position of the second layer:
         -   x: `0`, i.e. **0 mm**
         -   y: `0`, i.e. **0 mm**
-        -   z: `-dz/2 -trigger_layer_distance_from_detector`, i.e. ** -765.5 mm**
+        -   z: `-dz/2 -trigger_layer_distance_from_detector`, i.e. ** -? mm**
     -   Distance (y) between bars in the same layer: `trigger_bar_dy + trigger_bar_gap`, i.e. **3.3 mm**
     -   Distance (z) between the two layers: `trigger_bar_dz + trigger_bar_gap`, i.e. **2.3 mm**
 <a id="copy_numbers"></a>
