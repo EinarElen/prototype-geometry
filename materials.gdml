@@ -110,7 +110,7 @@
       </element>
 	  <material name="Aluminum" state="solid">
          <T unit="K" value="293.15"/>
-         <D unit="g/cm3" value="2.70"/>
+         <D unit="g/cm3" value="2.6989"/>
          <fraction n="1" ref="Al"/>
       </material>	  
       <material name="Scintillator" state="solid">
