@@ -112,6 +112,13 @@
          <T unit="K" value="293.15"/>
          <D unit="g/cm3" value="2.6989"/>
          <fraction n="1" ref="Al"/>
+      </material>
+	  <material name="Aluminum3003" state="solid">
+         <T unit="K" value="293.15"/>
+         <D unit="g/cm3" value="2.6989"/>
+         <fraction n="0.99" ref="Al"/>
+         <fraction n="0.01" ref="Mn"/>
+		 
       </material>	  
       <material name="Scintillator" state="solid">
          <T unit="K" value="293.15"/>
