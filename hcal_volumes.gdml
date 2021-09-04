@@ -19,6 +19,36 @@
   <auxiliary auxtype="VisAttributes" auxvalue="HcalVis"/>
 </volume>
 
+<!-- adhesives -->
+<volume name="front_vertical_scint_box_adhesive_volume">
+  <materialref ref="Adhesive"/>
+  <solidref    ref="front_vertical_scint_box_adhesive"/>
+  <auxiliary auxtype="Color" auxvalue="Red"/>
+  <auxiliary auxtype="VisAttributes" auxvalue="HcalVis"/>
+</volume>
+
+<volume name="front_horizontal_scint_box_adhesive_volume">
+  <materialref ref="Adhesive"/>
+  <solidref    ref="front_horizontal_scint_box_adhesive"/>
+  <auxiliary auxtype="Color" auxvalue="Red"/>
+  <auxiliary auxtype="VisAttributes" auxvalue="HcalVis"/>
+</volume>
+
+<volume name="back_vertical_scint_box_adhesive_volume">
+  <materialref ref="Adhesive"/>
+  <solidref    ref="back_vertical_scint_box_adhesive"/>
+  <auxiliary auxtype="Color" auxvalue="Red"/>
+  <auxiliary auxtype="VisAttributes" auxvalue="HcalVis"/>
+</volume>
+
+<volume name="back_horizontal_scint_box_adhesive_volume">
+  <materialref ref="Adhesive"/>
+  <solidref    ref="back_horizontal_scint_box_adhesive"/>
+  <auxiliary auxtype="Color" auxvalue="Red"/>
+  <auxiliary auxtype="VisAttributes" auxvalue="HcalVis"/>
+</volume>
+
+<!-- scint bars -->
 <volume name="front_vertical_scint_box_volume">
   <materialref ref="Scintillator"/>
   <solidref    ref="front_vertical_scint_box"/>
@@ -51,6 +81,34 @@
   <auxiliary auxtype="VisAttributes" auxvalue="HcalVis"/>
 </volume>
 
+<!-- covers -->
+<volume name="front_vertical_scint_box_cover_volume">
+  <materialref ref="Aluminum3003"/>
+  <solidref    ref="front_vertical_scint_box_cover"/>
+  <auxiliary auxtype="Color" auxvalue="Red"/>
+  <auxiliary auxtype="VisAttributes" auxvalue="HcalVis"/>
+</volume>
+
+<volume name="front_horizontal_scint_box_cover_volume">
+  <materialref ref="Aluminum3003"/>
+  <solidref    ref="front_horizontal_scint_box_cover"/>
+  <auxiliary auxtype="Color" auxvalue="Red"/>
+  <auxiliary auxtype="VisAttributes" auxvalue="HcalVis"/>
+</volume>
+
+<volume name="back_vertical_scint_box_cover_volume">
+  <materialref ref="Aluminum3003"/>
+  <solidref    ref="back_vertical_scint_box_cover"/>
+  <auxiliary auxtype="Color" auxvalue="Red"/>
+  <auxiliary auxtype="VisAttributes" auxvalue="HcalVis"/>
+</volume>
+
+<volume name="back_horizontal_scint_box_cover_volume">
+  <materialref ref="Aluminum3003"/>
+  <solidref    ref="back_horizontal_scint_box_cover"/>
+  <auxiliary auxtype="Color" auxvalue="Red"/>
+  <auxiliary auxtype="VisAttributes" auxvalue="HcalVis"/>
+</volume>
 
 <!-- Frame volumes -->
 

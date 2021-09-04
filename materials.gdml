@@ -117,9 +117,17 @@
          <T unit="K" value="293.15"/>
          <D unit="g/cm3" value="2.6989"/>
          <fraction n="0.99" ref="Al"/>
-         <fraction n="0.01" ref="Mn"/>
-		 
-      </material>	  
+         <fraction n="0.01" ref="Mn"/>		 
+      </material>
+	  <!-- placeholder adhesive material composition-->
+      <material name="Adhesive" state="solid">
+         <T unit="K" value="293.15"/>
+         <D unit="g/cm3" value="0.00120479"/>
+         <fraction n="0.000124000124000124" ref="C"/>
+         <fraction n="0.755267755267755" ref="N"/>
+         <fraction n="0.231781231781232" ref="O"/>
+         <fraction n="0.0128270128270128" ref="Ar"/> 
+      </material>
       <material name="Scintillator" state="solid">
          <T unit="K" value="293.15"/>
          <MEE unit="eV" value="64.7494480275643"/>

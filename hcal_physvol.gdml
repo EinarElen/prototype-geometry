@@ -36,6 +36,10 @@
         <volumeref ref="front_horizontal_scint_box_volume"/>
         <position name="front_horizontal_scint_pos" unit="mm" x="0" y="0" z="(layer_index-1)*2.0*layer_thickness + scint_front_horizontal_first_layer_zpos"  />
     </physvol>
+	<physvol name="front_horizontal_scint_cover_physvol"  copynumber="2*layer_index - 1">
+        <volumeref ref="front_horizontal_scint_box_cover_volume"/>
+        <position name="front_horizontal_scint_cover_pos" unit="mm" x="0" y="0" z="(layer_index-1)*2.0*layer_thickness + scint_front_horizontal_first_layer_zpos + scint_thickness"  />
+    </physvol>
 </loop>
 
 <!-- Front Vertical Layers-->
@@ -43,6 +47,10 @@
     <physvol name="front_vertical_scint_physvol"  copynumber="2*layer_index">
         <volumeref ref="front_vertical_scint_box_volume"/>
         <position name="front_vertical_scint_pos" unit="mm" x="0" y="0" z="(layer_index-1)*2.0*layer_thickness + scint_front_vertical_first_layer_zpos"/>
+    </physvol>
+	<physvol name="front_vertical_scint_cover_physvol"  copynumber="2*layer_index">
+        <volumeref ref="front_vertical_scint_box_cover_volume"/>
+        <position name="front_vertical_scint_cover_pos" unit="mm" x="0" y="0" z="(layer_index-1)*2.0*layer_thickness + scint_front_vertical_first_layer_zpos + scint_thickness"/>
     </physvol>
 </loop>
 
@@ -53,6 +61,10 @@
         <volumeref ref="back_vertical_scint_box_volume"/>
         <position name="back_vertical_scint_pos" unit="mm" x="0" y="0" z="(layer_index-1)*2.0*layer_thickness + scint_back_vertical_first_layer_zpos"/>
     </physvol>
+    <physvol name="back_vertical_scint_cover_physvol" copynumber="num_layers_front + 2*layer_index - 1">
+        <volumeref ref="back_vertical_scint_box_cover_volume"/>
+        <position name="back_vertical_scint_cover_pos" unit="mm" x="0" y="0" z="(layer_index-1)*2.0*layer_thickness + scint_back_vertical_first_layer_zpos + scint_thickness"/>
+    </physvol>	
 </loop>
 
 <!-- Back Horizontal Layers-->
@@ -61,7 +73,14 @@
         <volumeref ref="back_horizontal_scint_box_volume"/>
         <position name="back_horizontal_scint_pos" unit="mm" x="0" y="0" z="(layer_index-1)*2.0*layer_thickness + scint_back_horizontal_first_layer_zpos"/>
     </physvol>
+    <physvol name="back_vertical_scint_cover_physvol" copynumber="num_layers_front + 2*layer_index - 1">
+        <volumeref ref="back_vertical_scint_box_cover_volume"/>
+        <position name="back_vertical_scint_cover_pos" unit="mm" x="0" y="0" z="(layer_index-1)*2.0*layer_thickness + scint_back_vertical_first_layer_zpos + scint_thickness"/>
+    </physvol>	
 </loop>
+
+
+
 
 
 <!-- Frame solids -->

@@ -15,15 +15,26 @@
 	
 	<box lunit="mm" name="vertical_bar_mounting_plate_box"    x="bar_mounting_plate_vertical_x"          y="bar_mounting_plate_vertical_y"          z="bar_mounting_plate_thickness"/>
 	<box lunit="mm" name="horizontal_bar_mounting_plate_box"  x="bar_mounting_plate_horizontal_x"        y="bar_mounting_plate_horizontal_y"        z="bar_mounting_plate_thickness"/>
+
+
+    <box lunit="mm" name="front_vertical_scint_box_adhesive"    x="scint_front_vertical_x"          y="scint_front_vertical_y"          z="scint_adhesive_thickness"/>
+    <box lunit="mm" name="front_horizontal_scint_box_adhesive"    x="scint_front_horizontal_x"          y="scint_front_horizontal_y"          z="scint_adhesive_thickness"/>
+    <box lunit="mm" name="back_vertical_scint_box_adhesive"    x="scint_back_vertical_x"          y="scint_back_vertical_y"          z="scint_adhesive_thickness"/>
+    <box lunit="mm" name="back_horizontal_scint_box_adhesive"    x="scint_back_horizontal_x"          y="scint_back_horizontal_y"          z="scint_adhesive_thickness"/>
 	
     <box lunit="mm" name="front_vertical_scint_box"    x="scint_front_vertical_x"          y="scint_front_vertical_y"          z="scint_thickness"/>
     <box lunit="mm" name="front_horizontal_scint_box"    x="scint_front_horizontal_x"          y="scint_front_horizontal_y"          z="scint_thickness"/>
     <box lunit="mm" name="back_vertical_scint_box"    x="scint_back_vertical_x"          y="scint_back_vertical_y"          z="scint_thickness"/>
     <box lunit="mm" name="back_horizontal_scint_box"    x="scint_back_horizontal_x"          y="scint_back_horizontal_y"          z="scint_thickness"/>
-    <box lunit="mm" name="air_box"      x="dx"          y="dy"          z="air_thickness"/>
+    
+
+	<box lunit="mm" name="front_vertical_scint_box_cover"    x="scint_front_vertical_x"          y="scint_front_vertical_y"          z="scint_bar_cover_thickness"/>
+    <box lunit="mm" name="front_horizontal_scint_box_cover"    x="scint_front_horizontal_x"          y="scint_front_horizontal_y"          z="scint_bar_cover_thickness"/>
+    <box lunit="mm" name="back_vertical_scint_box_cover"    x="scint_back_vertical_x"          y="scint_back_vertical_y"          z="scint_bar_cover_thickness"/>
+    <box lunit="mm" name="back_horizontal_scint_box_cover"    x="scint_back_horizontal_x"          y="scint_back_horizontal_y"          z="scint_bar_cover_thickness"/>
 
 
-
+	<box lunit="mm" name="air_box"      x="dx"          y="dy"          z="air_thickness"/>
 <!-- Frame solids -->
 
 <tube name="hole" z="frame_length_z*2+1" rmax="6.81/2" deltaphi="6.28318531" aunit="rad" lunit="mm"/>

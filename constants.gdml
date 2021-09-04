@@ -19,7 +19,9 @@
     <variable name="scint_thickness"       value="20."/>
     <variable name="scint_bar_width"  value="50."/>
     <variable name="scint_bar_length"       value="2000."/>
-
+    <variable name="scint_bar_cover_thickness"   value="0.5"/>
+    <variable name="scint_adhesive_thickness"   value="0.5"/>
+	
     <variable name="layer_thickness"   value="absorber_thickness + scint_thickness + bar_mounting_plate_thickness + air_thickness"/>
 
     <variable name="num_bars_front" value="8"/>
