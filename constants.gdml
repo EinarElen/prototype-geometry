@@ -20,6 +20,7 @@
     <variable name="scint_bar_width"  value="50."/>
     <variable name="scint_bar_length"       value="2000."/>
     <variable name="scint_bar_cover_thickness"   value="0.5"/>
+    <!-- <variable name="scint_adhesive_thickness"   value="0.5"/> -->
     <variable name="scint_adhesive_thickness"   value="0.5"/>
 	
     <!-- <variable name="layer_thickness"   value="absorber_thickness + scint_thickness + bar_mounting_plate_thickness + air_thickness"/> -->
@@ -46,6 +47,11 @@
 	<!-- Positional constants -->
 
     <variable name="first_layer_zpos" value="-dz/2"/>	
+    <variable name="first_back_layer_zpos" value="first_layer_zpos+back_start"/>	
+    <!-- <variable name="second_layer_zpos" value="first_front_layer_zpos+layer_thickness"/> -->
+    <!-- <variable name="first_back_layer_zpos" value="first_front_layer_zpos+layer_thickness"/> -->
+
+	
 	
     <!-- Absorber layers -->
     <variable name="absorber_first_layer_zpos"
