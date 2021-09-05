@@ -7,7 +7,7 @@
     <position name="hadron_calorimeter_pos" x="0.0" y="0.0" z="0.0"/>
 
     <!--common varibles -->
-    <variable name="air_thickness"         value="2."/>
+    
     <variable name="absorber_width"       value="665"/>
     <variable name="absorber_height"       value="700"/>
     <variable name="absorber_thickness"       value="20."/>
@@ -22,7 +22,9 @@
     <variable name="scint_bar_cover_thickness"   value="0.5"/>
     <variable name="scint_adhesive_thickness"   value="0.5"/>
 	
-    <variable name="layer_thickness"   value="absorber_thickness + scint_thickness + bar_mounting_plate_thickness + air_thickness"/>
+    <!-- <variable name="layer_thickness"   value="absorber_thickness + scint_thickness + bar_mounting_plate_thickness + air_thickness"/> -->
+    <variable name="layer_thickness"   value="45."/>
+	<variable name="air_thickness"         value="layer_thickness - (absorber_thickness + bar_mounting_plate_thickness + scint_adhesive_thickness + scint_thickness + scint_bar_cover_thickness) "/>
 
     <variable name="num_bars_front" value="8"/>
     <variable name="num_bars_back" value="12"/>
@@ -42,7 +44,8 @@
 
 
 	<!-- Positional constants -->
-	
+
+    <variable name="first_layer_zpos" value="-dz/2"/>	
 	
     <!-- Absorber layers -->
     <variable name="absorber_first_layer_zpos"
