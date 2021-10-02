@@ -6,18 +6,14 @@
 	<!-- <auxiliary auxtype="DetElem" auxvalue="TriggerPad"/> -->
 </volume>
 
-<volume name="LYSO_bar_volume">
-	<materialref ref="LYSO"/>
-	<solidref ref="LSYO_bar_box"/>
+<volume name="lyso_bar_volume">
+	<materialref ref="lyso"/>
+	<solidref ref="lyso_bar_box"/>
 	<!-- <auxiliary auxtype="SensDet" auxvalue="TriggerPadUpSD"/> -->
-	<!-- <auxiliary auxtype="VisAttributes" auxvalue="TriggerPadVis"/> -->
-	<!-- <auxiliary auxtype="DetElem" auxvalue="TriggerPad"/> -->
 </volume>
 
-<volume name="LYSO_plate_volume">
-	<materialref ref="LYSO"/>
-	<solidref ref="LSYO_plate_box"/>
+<volume name="lyso_plate_volume">
+	<materialref ref="lyso"/>
+	<solidref ref="lyso_plate_box"/>
 	<!-- <auxiliary auxtype="SensDet" auxvalue="TriggerPadUpSD"/> -->
-	<!-- <auxiliary auxtype="VisAttributes" auxvalue="TriggerPadVis"/> -->
-	<!-- <auxiliary auxtype="DetElem" auxvalue="TriggerPad"/> -->
 </volume>

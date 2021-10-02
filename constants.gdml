@@ -123,13 +123,13 @@
 <constant name="number_of_bars"         value="6"/>
 <constant name="trigger_layer_distance_from_detector"         value="30*cm"/>
 
-<constant name="LYSO_bar_dx"         value="30*mm"/>
-<constant name="LYSO_bar_dy"         value="2.1*mm"/>
-<constant name="LYSO_bar_dz"         value="0.6*mm"/>
+<constant name="lyso_bar_dx"         value="30*mm"/>
+<constant name="lyso_bar_dy"         value="2.1*mm"/>
+<constant name="lyso_bar_dz"         value="0.6*mm"/>
 
-<constant name="LYSO_plate_dx"         value="30*mm"/>
-<constant name="LYSO_plate_dy"         value="20*mm"/>
-<constant name="LYSO_plate_dz"         value="1.2*mm"/>
+<constant name="lyso_plate_dx"         value="30*mm"/>
+<constant name="lyso_plate_dy"         value="20*mm"/>
+<constant name="lyso_plate_dz"         value="1.2*mm"/>
 
 
 
