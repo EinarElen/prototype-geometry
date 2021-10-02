@@ -152,3 +152,10 @@
             <composite n="30" ref="H"/>
         </material>
 		
+		<!-- Temporary LYSO -->
+        <material name="LYSO">
+            <D type="density" value="1.023" unit="g/cm3"/>
+            <composite n="27" ref="C"/>
+            <composite n="30" ref="H"/>
+        </material>
+		

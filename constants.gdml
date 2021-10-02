@@ -96,17 +96,8 @@
     <variable name="scint_back_horizontal_first_layer_zpos"  value="layer_thickness + scint_back_vertical_first_layer_zpos"/>
 
 
-<!--
-    Trigger Scintillator
--->
 
-<!-- Trigger scintillator positions -->
-<constant name="trigger_bar_gap"        value="0.3*mm" />
-<constant name="trigger_bar_dx"         value="40*mm"/>
-<constant name="trigger_bar_dy"         value="3*mm"/>
-<constant name="trigger_bar_dz"         value="2*mm"/>
-<constant name="number_of_bars"         value="6"/>
-<constant name="trigger_layer_distance_from_detector"         value="30*cm"/>
+
 
 <!-- Frame description variables-->
 <quantity name="d1" type="length" value="4.32" unit="mm"/>
@@ -120,6 +111,25 @@
 <rotation name="no_rotation" y="0" unit="deg"/>
 
 
+<!--
+    Trigger Scintillator
+-->
+
+<!-- Trigger scintillator positions -->
+<constant name="trigger_bar_gap"        value="0.3*mm" />
+<constant name="trigger_bar_dx"         value="40*mm"/>
+<constant name="trigger_bar_dy"         value="3*mm"/>
+<constant name="trigger_bar_dz"         value="2*mm"/>
+<constant name="number_of_bars"         value="6"/>
+<constant name="trigger_layer_distance_from_detector"         value="30*cm"/>
+
+<constant name="LYSO_bar_dx"         value="30*mm"/>
+<constant name="LYSO_bar_dy"         value="2.1*mm"/>
+<constant name="LYSO_bar_dz"         value="0.6*mm"/>
+
+<constant name="LYSO_plate_dx"         value="30*mm"/>
+<constant name="LYSO_plate_dy"         value="20*mm"/>
+<constant name="LYSO_plate_dz"         value="1.2*mm"/>
 
 
 

@@ -1,4 +1,6 @@
 <box lunit="mm" name="trigger_bar_box" x="trigger_bar_dx" y="trigger_bar_dy" z="trigger_bar_dz" /> 
+<box lunit="mm" name="LSYO_bar_box" x="LSYO_bar_dx" y="LSYO_bar_dy" z="LSYO_bar_dz" /> 
+<box lunit="mm" name="LYSO_plate_box" x="LYSO_plate_dx" y="LYSO_plate_dy" z="LYSO_plate_dz" /> 
 
 
 
