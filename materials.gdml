@@ -153,9 +153,11 @@
         </material>
 		
 		<!-- Temporary LYSO -->
-        <material name="lyso">
-            <D type="density" value="1.023" unit="g/cm3"/>
-            <composite n="27" ref="C"/>
-            <composite n="30" ref="H"/>
+        <material formula="L1.86Y0.14Si05" name="LYSO" >
+            <D value="7.4" unit="g/cm3"   />
+            <fraction n="0.7297" ref="Lu" />
+            <fraction n="0.0279" ref="Y"  />
+            <fraction n="0.0630" ref="Si" />
+            <fraction n="0.1794" ref="O"  />
         </material>
 		

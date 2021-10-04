@@ -189,6 +189,3 @@
  <volumeref ref="frame_4080_vol"/>
  <position name="frame_z6" unit="mm" x="-(310+60)" y="440-40" z="0"/>
 </physvol>   
-
-
-<!-- the simulation runs fine with z frames, but not with x or y frames. The roation seems to be the issue -->

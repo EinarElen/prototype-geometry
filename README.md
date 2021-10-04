@@ -88,7 +88,7 @@ The following is a list of all the variables defined in the protoype geometry de
 
 - `trigger_bar_gap` is the gap between individual trigger bars. It is **0.3 mm**
 - `trigger_bar_dx` (40 mm), `trigger_bar_dy` (3 mm), and `trigger_bar_dz` (2 mm) are the dimensions of a trigger bar.  
-- There are two trigger layers, and each layer includes 6 bars, as set in `number_of_bars` (=6). This means that the detector has 12 bars in total
+- There are two trigger layers, and each layer includes 6 bars, as set in `number_of_trigger_bars` (=6). This means that the detector has 12 bars in total
 
 ### Position constants
 
