@@ -52,8 +52,8 @@
         <materialref ref="G4_AIR"/>
 
         <solidref    ref="prototype_box"/>
-        <!-- &hcal_physvol; -->
-        &trigger_physvol;
+        &hcal_physvol;
+        <!-- &trigger_physvol; -->
 
         <auxiliary auxtype="Region" auxvalue="CalorimeterRegion"/>
         <auxiliary auxtype="VisAttributes" auxvalue="HcalVis"/>
