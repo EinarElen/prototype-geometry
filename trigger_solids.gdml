@@ -3,4 +3,12 @@
 <box lunit="mm" name="lyso_plate_box" x="lyso_plate_dx" y="lyso_plate_dy" z="lyso_plate_dz" /> 
 
 
+<box lunit="mm" name="SiPM_frame" x="1" y="2.4" z="2.4" /> 
+<box lunit="mm" name="SiPM_sensor" x="1.5" y="2" z="2" /> 
+
+<union name="SiPM_solid">
+	<first ref="SiPM_frame"/> <second ref="SiPM_sensor"/>
+	<position  name="eh" x="0" y="0" z="0"/> 
+</union>
+
 

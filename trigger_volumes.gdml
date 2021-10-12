@@ -17,3 +17,9 @@
 	<solidref ref="lyso_plate_box"/>
 	<!-- <auxiliary auxtype="SensDet" auxvalue="TriggerPadUpSD"/> -->
 </volume>
+
+<volume name="SiPM_volume">
+	<materialref ref="LYSO"/>
+	<solidref ref="SiPM_solid"/>
+	<!-- <auxiliary auxtype="SensDet" auxvalue="TriggerPadUpSD"/> -->
+</volume>
