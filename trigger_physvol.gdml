@@ -33,7 +33,7 @@
 	<physvol name="SiPM_physvol" copynumber="2*layer_index-2">
 		<volumeref ref="SiPM_volume" />
 		<position name="lyso_bar_layer1_pos" unit="mm" x="0" 
-				  y="3.1*(layer_index - 3) - 3.1/2" 
+				  y="3.1*(layer_index - 3)" 
 				  z="0" />
 	</physvol>
 	
@@ -41,46 +41,46 @@
 	
 </loop>
 
-<loop for="layer_index" from="1" to="3" step="1">
+<loop for="layer_index" from="1" to="6" step="1">
 	<physvol name="trigger_physvol" copynumber="2*layer_index-2">
 		<volumeref ref="trigger_bar_volume" />
 		<position name="trigger_bar_layer1_pos" unit="mm" x="0" 
 				  y="3.1*(layer_index - 3)" 
 				  z="-3.1" />
 	</physvol>
-	<physvol name="trigger_physvol" copynumber="2*layer_index - 1">
-		<volumeref ref="trigger_bar_volume" />
-		<position name="trigger_bar_layer2_pos" unit="mm" x="0" 
-				  y="3.1*(layer_index - 3) - 3.1/2" 
-				  z="0" />
-	</physvol>
+	<!-- <physvol name="trigger_physvol" copynumber="2*layer_index - 1"> -->
+		<!-- <volumeref ref="trigger_bar_volume" /> -->
+		<!-- <position name="trigger_bar_layer2_pos" unit="mm" x="0"  -->
+				  <!-- y="3.1*(layer_index - 3) - 3.1/2"  -->
+				  <!-- z="0" /> -->
+	<!-- </physvol> -->
 </loop>
 
-<loop for="layer_index" from="1" to="4" step="1">
-	<physvol name="lyso_bar_physvol" copynumber="2*layer_index-2">
-		<volumeref ref="lyso_bar_volume" />
-		<position name="lyso_bar_layer1_pos" unit="mm" x="0" 
-				  y="9.3 +0.1 -  (layer_index-1)*(lyso_bar_dy+lyso_bar_gap) " 
-				  z="-lyso_bar_dz/2- lyso_bar_gap/2 -3.1" />
-	</physvol>
+<loop for="layer_index" from="1" to="8" step="1">
+	<!-- <physvol name="lyso_bar_physvol" copynumber="2*layer_index-2"> -->
+		<!-- <volumeref ref="lyso_bar_volume" /> -->
+		<!-- <position name="lyso_bar_layer1_pos" unit="mm" x="0"  -->
+				  <!-- y="9.3 +0.1 -  (layer_index-1)*(lyso_bar_dy+lyso_bar_gap) "  -->
+				  <!-- z="-lyso_bar_dz/2- lyso_bar_gap/2 -3.1" /> -->
+	<!-- </physvol> -->
 		<physvol name="lyso_bar_physvol" copynumber="2*layer_index-2">
 		<volumeref ref="lyso_bar_volume" />
 		<position name="lyso_bar_layer1_pos" unit="mm" x="0" 
-				  y="9.3 +0.1 -  (layer_index-1)*(lyso_bar_dy+lyso_bar_gap) - 3.1/2" 
+				  y="9.3 +0.1 -  (layer_index-1)*(lyso_bar_dy+lyso_bar_gap)" 
 				  z="-lyso_bar_dz/2- lyso_bar_gap/2" />
 	</physvol>
 </loop>	
-<loop for="layer_index" from="2" to="4" step="1">	
-	<physvol name="lyso_bar_physvol" copynumber="2*layer_index-1">
-		<volumeref ref="lyso_bar_volume" />
-		<position name="lyso_bar_layer2_pos" unit="mm" x="0" 
-				  y="9.3 +0.1 -  (layer_index-1.5)*(lyso_bar_dy+lyso_bar_gap) "  
-				  z="lyso_bar_dz/2+ lyso_bar_gap/2 -3.1" />
-	</physvol>	
+<loop for="layer_index" from="1" to="8" step="1">	
+	<!-- <physvol name="lyso_bar_physvol" copynumber="2*layer_index-1"> -->
+		<!-- <volumeref ref="lyso_bar_volume" /> -->
+		<!-- <position name="lyso_bar_layer2_pos" unit="mm" x="0"  -->
+				  <!-- y="9.3 +0.1 -  (layer_index-1.5)*(lyso_bar_dy+lyso_bar_gap) "   -->
+				  <!-- z="lyso_bar_dz/2+ lyso_bar_gap/2 -3.1" /> -->
+	<!-- </physvol>	 -->
 		<physvol name="lyso_bar_physvol" copynumber="2*layer_index-1">
 		<volumeref ref="lyso_bar_volume" />
 		<position name="lyso_bar_layer2_pos" unit="mm" x="0" 
-				  y="9.3 +0.1 -  (layer_index-1.5)*(lyso_bar_dy+lyso_bar_gap) - 3.1/2" 
+				  y="9.3 +0.1 -  (layer_index-1.5)*(lyso_bar_dy+lyso_bar_gap)" 
 				  z="lyso_bar_dz/2+ lyso_bar_gap/2" />
 	</physvol>
 </loop>
