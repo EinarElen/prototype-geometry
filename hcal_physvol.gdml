@@ -162,7 +162,7 @@
 </physvol>   
 <physvol>
  <volumeref ref="frame_8080_vol"/>
- <position name="frame_y4" unit="mm" x="(310+40)" y="-310" z="(frame_length_z/2+40)"/>
+ <position name="frame_y4" unit="mm" x="-(310+40)" y="-310" z="(frame_length_z/2+40)"/>
  <rotationref ref="vertical_rotation"/>
 </physvol>       
 
