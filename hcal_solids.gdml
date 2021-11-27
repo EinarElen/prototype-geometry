@@ -4,11 +4,19 @@
 	
 	<subtraction name="sub1">
 	   <first ref="absorber_box"/> <second ref="absorber_hole"/>
-	   <position  x="absorber_width/2-absorber_hole_distance_from_edge" y="absorber_height/2-absorber_hole_distance_from_edge" /> 
+	   <position  x="(absorber_width/2-absorber_hole_distance_from_edge)" y="(absorber_height/2-absorber_hole_distance_from_edge)" /> 
 	</subtraction>
+	<subtraction name="sub2">
+		<first ref="sub1"/> <second ref="absorber_hole"/>
+		<position  x="-(absorber_width/2-absorber_hole_distance_from_edge)" y="(absorber_height/2-absorber_hole_distance_from_edge)" /> 
+	 </subtraction>
+	 <subtraction name="sub3">
+		<first ref="sub2"/> <second ref="absorber_hole"/>
+		<position  x="(absorber_width/2-absorber_hole_distance_from_edge)" y="-(absorber_height/2-absorber_hole_distance_from_edge)" /> 
+	 </subtraction>
 	<subtraction name="absorber">
-	   <first ref="sub1"/> <second ref="absorber_hole"/>
-	   <position  x="-absorber_width/2+absorber_hole_distance_from_edge" y="absorber_height/2-absorber_hole_distance_from_edge" /> 
+	   <first ref="sub3"/> <second ref="absorber_hole"/>
+	   <position  x="-(absorber_width/2-absorber_hole_distance_from_edge)" y="-(absorber_height/2-absorber_hole_distance_from_edge)" /> 
 	</subtraction>
     
 
