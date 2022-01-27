@@ -14,6 +14,8 @@
     <variable name="scint_thickness"       value="20."/>
     <variable name="scint_bar_width"  value="50."/>
     <variable name="scint_bar_length"       value="2000."/>
+    <!-- Template variables -->
+    <variable name="scint_bar_horizontal_shift" value="$scint_bar_horizontal_shift"/>
 
     <variable name="layer_thickness"   value="absorber_thickness + scint_thickness + 2.0*air_thickness"/>
 
