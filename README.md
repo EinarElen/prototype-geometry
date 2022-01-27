@@ -4,7 +4,8 @@
 1.  [The prototype geometry](#geometry)
 2.  [Structure of the geometry description](#structure)
 3.  [Reference](#reference)
-    1.  [Constants](#constants)
+    1.  [Template parameters](#templates)
+    2.  [Constants](#constants)
     2.  [Solids](#solids)
     3.  [Logical volumes](#logical_volumes)
     4.  [Physical volumes](#physical_volumes)
@@ -49,6 +50,15 @@ The geometry is divided into several files to make working with it easier.
 The following is a list of all the variables defined in the protoype geometry description.
 
 
+<a id="templates"><a/> 
+
+## Template parameters
+Some parameters of the geometry are expected to be configured at runtime. These
+parameters can be configured in the LDMX-sw configuration script or they can be
+left to the default value that is provided in LDMX-sw. Any file containing
+templated parameters will end in `.gdml.in` rather than the default `.gdml`
+suffix. Templated parameter values can be distinguished in the GDML sources from
+regular variables by being prefixed with a `$`. 
 <a id="constants"></a>
 
 ## Constants
