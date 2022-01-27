@@ -59,6 +59,8 @@ left to the default value that is provided in LDMX-sw. Any file containing
 templated parameters will end in `.gdml.in` rather than the default `.gdml`
 suffix. Templated parameter values can be distinguished in the GDML sources from
 regular variables by being prefixed with a `$`. 
+-   `scint_bar_horizontal_shift`
+
 <a id="constants"></a>
 
 ## Constants
