@@ -8,6 +8,7 @@
 
     <!--common varibles -->
     
+    <variable name="bar_x_displacement"       value="0"/>
     <variable name="absorber_width"       value="665"/>
     <variable name="absorber_height"       value="700"/>
     <variable name="absorber_thickness"       value="20."/>

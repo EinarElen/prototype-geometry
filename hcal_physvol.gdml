@@ -13,22 +13,17 @@
 <loop for="layer_index" from="1" to="num_layers_front_horizontal" step="1">
 	<physvol name="horizontal_bar_mounting_plate_physvol"  copynumber="2*layer_index - 1">
         <volumeref ref="horizontal_bar_mounting_plate_volume"/>
-        <position name="horizontal_bar_mounting_plate_pos" unit="mm" x="0" y="0" 
+        <position name="horizontal_bar_mounting_plate_pos" unit="mm" x="bar_x_displacement" y="0" 
 		z="(layer_index-1)*2.0*layer_thickness + first_layer_zpos + absorber_thickness + bar_mounting_plate_thickness/2" />
-    </physvol>
-    <physvol name="front_horizontal_scint_adhesive_physvol"  copynumber="2*layer_index - 1">
-        <volumeref ref="front_horizontal_scint_box_adhesive_volume"/>
-        <position name="front_horizontal_scint_adhesive_pos" unit="mm" x="0" y="0" 
-		z="(layer_index-1)*2.0*layer_thickness + first_layer_zpos + absorber_thickness + bar_mounting_plate_thickness + scint_adhesive_thickness/2"  />
     </physvol>
     <physvol name="front_horizontal_scint_physvol"  copynumber="2*layer_index - 1">
         <volumeref ref="front_horizontal_scint_box_volume"/>
-        <position name="front_horizontal_scint_pos" unit="mm" x="0" y="0" 
+        <position name="front_horizontal_scint_pos" unit="mm" x="bar_x_displacement" y="0" 
 		z="(layer_index-1)*2.0*layer_thickness + first_layer_zpos + absorber_thickness + bar_mounting_plate_thickness + scint_adhesive_thickness + scint_thickness/2"   />
     </physvol>
 	<physvol name="front_horizontal_scint_cover_physvol"  copynumber="2*layer_index - 1">
         <volumeref ref="front_horizontal_scint_box_cover_volume"/>
-        <position name="front_horizontal_scint_cover_pos" unit="mm" x="0" y="0" 
+        <position name="front_horizontal_scint_cover_pos" unit="mm" x="bar_x_displacement" y="0" 
 		z="(layer_index-1)*2.0*layer_thickness + first_layer_zpos + absorber_thickness + bar_mounting_plate_thickness + scint_adhesive_thickness + scint_thickness + scint_bar_cover_thickness/2"  />
     </physvol>
 </loop>
@@ -40,11 +35,6 @@
         <position name="vertical_bar_mounting_plate_pos" unit="mm" x="0" y="0" 
 		z="(layer_index-1)*2.0*layer_thickness + layer_thickness + first_layer_zpos + absorber_thickness + bar_mounting_plate_thickness/2" />
     </physvol>
-    <physvol name="front_vertical_scint_adhesive_physvol"  copynumber="2*layer_index">
-        <volumeref ref="front_vertical_scint_box_adhesive_volume"/>
-        <position name="front_vertical_scint_adhesive_pos" unit="mm" x="0" y="0" 
-		z="(layer_index-1)*2.0*layer_thickness + layer_thickness + first_layer_zpos + absorber_thickness + bar_mounting_plate_thickness + scint_adhesive_thickness/2"  />
-    </physvol> 
 	<physvol name="front_vertical_scint_physvol"  copynumber="2*layer_index">
         <volumeref ref="front_vertical_scint_box_volume"/>
         <position name="front_vertical_scint_pos" unit="mm" x="0" y="0" 
@@ -65,11 +55,6 @@
         <position name="vertical_bar_mounting_plate_pos" unit="mm" x="0" y="0" 
 		z="(layer_index-1)*2.0*layer_thickness + first_layer_zpos + back_start + absorber_thickness + bar_mounting_plate_thickness/2" />
     </physvol>
-	<physvol name="back_vertical_scint_adhesive_physvol" copynumber="num_layers_front + 2*layer_index - 1">
-        <volumeref ref="back_vertical_scint_box_adhesive_volume"/>
-        <position name="back_vertical_scint_adhesive_pos" unit="mm" x="0" y="0" 
-		z="(layer_index-1)*2.0*layer_thickness + first_layer_zpos + back_start + absorber_thickness + bar_mounting_plate_thickness + scint_adhesive_thickness/2"   />
-    </physvol>
     <physvol name="back_vertical_scint_physvol" copynumber="num_layers_front + 2*layer_index - 1">
         <volumeref ref="back_vertical_scint_box_volume"/>
         <position name="back_vertical_scint_pos" unit="mm" x="0" y="0" 
@@ -87,22 +72,17 @@
 <loop for="layer_index" from="1" to="num_layers_back_horizontal" step="1">
     <physvol name="horizontal_bar_mounting_plate_physvol"  copynumber="2*layer_index - 1">
         <volumeref ref="horizontal_bar_mounting_plate_volume"/>
-        <position name="horizontal_bar_mounting_plate_pos" unit="mm" x="0" y="0" 
+        <position name="horizontal_bar_mounting_plate_pos" unit="mm" x="bar_x_displacement" y="0" 
 		z="(layer_index-1)*2.0*layer_thickness + layer_thickness + first_layer_zpos + back_start + absorber_thickness + bar_mounting_plate_thickness/2" />
-    </physvol>
-    <physvol name="back_horizontal_scint_adhesive_physvol"  copynumber="num_layers_front + 2*layer_index">
-        <volumeref ref="back_horizontal_scint_box_adhesive_volume"/>
-        <position name="back_horizontal_scint_adhesive_pos" unit="mm" x="0" y="0" 
-		z="(layer_index-1)*2.0*layer_thickness + layer_thickness + first_layer_zpos + back_start + absorber_thickness + bar_mounting_plate_thickness + scint_adhesive_thickness/2"  />
     </physvol>
     <physvol name="back_horizontal_scint_physvol"  copynumber="num_layers_front + 2*layer_index">
         <volumeref ref="back_horizontal_scint_box_volume"/>
-        <position name="back_horizontal_scint_pos" unit="mm" x="0" y="0" 
+        <position name="back_horizontal_scint_pos" unit="mm" x="bar_x_displacement" y="0" 
 		z="(layer_index-1)*2.0*layer_thickness + layer_thickness + first_layer_zpos + back_start + absorber_thickness + bar_mounting_plate_thickness + scint_adhesive_thickness + scint_thickness/2"   />
     </physvol>
     <physvol name="back_horizontal_scint_cover_physvol" copynumber="num_layers_front + 2*layer_index - 1">
         <volumeref ref="back_horizontal_scint_box_cover_volume"/>
-        <position name="back_horizontal_scint_cover_pos" unit="mm" x="0" y="0" 
+        <position name="back_horizontal_scint_cover_pos" unit="mm" x="bar_x_displacement" y="0" 
 		z="(layer_index-1)*2.0*layer_thickness + layer_thickness + first_layer_zpos + back_start + absorber_thickness + bar_mounting_plate_thickness + scint_adhesive_thickness + scint_thickness + scint_bar_cover_thickness/2"  />
     </physvol>	
 </loop>
