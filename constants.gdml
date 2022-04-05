@@ -54,13 +54,12 @@
     <!-- Back Layer, horizontal bars -->
     <variable name="scint_back_horizontal_x"   value="scint_bar_length"/>
     <variable name="scint_back_horizontal_y"   value="num_bars_back * scint_bar_width"/>
-    <variable name="scint_back_horizontal_first_layer_zpos"  value="layer_thickness + scint_back_vertical_first_layer_zpos"/>
+    <variable name="scint_back_horizontal_first_layer_zpos"  value="back_start + scint_front_vertical_first_layer_zpos"/>
 
     <!-- Back Layer, vertical bars -->
     <variable name="scint_back_vertical_x"   value="num_bars_back * scint_bar_width"/>
     <variable name="scint_back_vertical_y"   value="scint_bar_length"/>
-    <variable name="scint_back_vertical_first_layer_zpos"  value="back_start + scint_front_horizontal_first_layer_zpos"/>
-
+    <variable name="scint_back_vertical_first_layer_zpos"  value="layer_thickness + scint_back_horizontal_first_layer_zpos"/>
 
 
 <!--
