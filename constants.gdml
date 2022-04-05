@@ -49,7 +49,7 @@
     <variable name="scint_front_horizontal_x"   value="scint_bar_length"/>
     <variable name="scint_front_horizontal_y"   value="num_bars_front * scint_bar_width"/>
     <variable name="scint_front_horizontal_first_layer_zpos"
-              value="absorber_first_layer_zpos + absorber_thickness + air_thickness + scint_thickness/2.0"/>
+              value="layer_thickness + scint_front_vertical_first_layer_zpos"/>
 
     <!-- Back Layer, horizontal bars -->
     <variable name="scint_back_horizontal_x"   value="scint_bar_length"/>
