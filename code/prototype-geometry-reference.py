@@ -17,8 +17,8 @@ absorber_thickness=25
 scint_thickness=20.
 scint_bar_length=2000.
 layer_thickness = absorber_thickness + scint_thickness + 2 * air_thickness
-num_layers_front_vertical = 4
-num_layers_front_horizontal = 5
+num_layers_front_vertical = 5
+num_layers_front_horizontal = 4
 num_layers_front=num_layers_front_vertical + num_layers_front_horizontal
 num_layers_back_vertical = 5
 num_layers_back_horizontal = 5
@@ -68,10 +68,10 @@ class physical_volume:
 
 # Physical volumes
 absorber_first_layer_pos= np.array([-absorber_width/2, -absorber_width/2, -dz/2])
-scint_front_horizontal_first_layer_pos = np.array([0.,0., -dz/2 + absorber_thickness + air_thickness + scint_thickness/2 ])
-scint_front_vertical_first_layer_pos = scint_front_horizontal_first_layer_pos + [0., 0., layer_thickness]
-scint_back_vertical_first_layer_pos =  scint_front_horizontal_first_layer_pos + [0., 0., back_start]
-scint_back_horizontal_first_layer_pos = scint_back_vertical_first_layer_pos + [0., 0., layer_thickness]
+scint_front_vertical_first_layer_pos = np.array([0.,0., -dz/2 + absorber_thickness + air_thickness + scint_thickness/2 ])
+scint_front_horizontal_first_layer_pos = scint_front_vertical_first_layer_pos + [0., 0., layer_thickness]
+scint_back_horizontal_first_layer_pos =  scint_front_vertical_first_layer_pos + [0., 0., back_start]
+scint_back_vertical_first_layer_pos = scint_back_horizontal_first_layer_pos + [0., 0., layer_thickness]
 
 trigger_first_layer_even_pos  = np.array([0, 
         trigger_bar_dy*(1 - 0.5 - number_of_bars/2) + trigger_bar_gap*(1 - 1 - number_of_bars/2), 
@@ -90,32 +90,32 @@ absorber_physvols=[
                     name="absorber_physvol", CopyNumber=i)
     for i in range(1, num_layers + 1)
 ]
-front_horizontal_scint_physvols=[
-    physical_volume(position=scint_front_horizontal_first_layer_pos + (i - 1) * distance_to_subsequent_scint_layer,
-                    name="front_horizontal_scint_physvol", CopyNumber=2*i - 1
-                    )
-    for i in range(1,num_layers_front_horizontal + 1)
-]
 front_vertical_scint_physvols=[
     physical_volume(position=scint_front_vertical_first_layer_pos + (i - 1) * distance_to_subsequent_scint_layer,
-                    name="front_vertical_scint_physvol", CopyNumber=2*i
+                    name="front_vertical_scint_physvol", CopyNumber=2*i - 1
                     )
     for i in range(1,num_layers_front_vertical + 1)
 ]
-back_vertical_scint_physvols=[
-    physical_volume(position=scint_back_vertical_first_layer_pos + (i - 1) * distance_to_subsequent_scint_layer,
-                    name="back_vertical_scint_physvol", CopyNumber=2*i + num_layers_front - 1
+front_horizontal_scint_physvols=[
+    physical_volume(position=scint_front_horizontal_first_layer_pos + (i - 1) * distance_to_subsequent_scint_layer,
+                    name="front_horizontal_scint_physvol", CopyNumber=2*i
                     )
-    for i in range(1,num_layers_back_vertical+ 1)
+    for i in range(1,num_layers_front_horizontal + 1)
 ]
 
 back_horizontal_scint_physvols=[
     physical_volume(position=scint_back_horizontal_first_layer_pos + (i - 1) * distance_to_subsequent_scint_layer,
-                    name="back_horizontal_scint_physvol", CopyNumber=2*i + num_layers_front
+                    name="back_horizontal_scint_physvol", CopyNumber=2*i - 1  + num_layers_front
                     )
     for i in range(1,num_layers_back_horizontal+ 1)
 ]
 
+back_vertical_scint_physvols=[
+    physical_volume(position=scint_back_vertical_first_layer_pos + (i - 1) * distance_to_subsequent_scint_layer,
+                    name="back_vertical_scint_physvol", CopyNumber=2*i  + num_layers_front
+                    )
+    for i in range(1,num_layers_back_vertical+ 1)
+]
 
 trigger_physvols=["placeholder" for i in range(1,number_of_bars*2)]
 for i in range(1,number_of_bars): 
