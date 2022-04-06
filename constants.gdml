@@ -99,10 +99,10 @@
 
 
 <!-- Frame description variables-->
-<quantity name="d1" type="length" value="4.32" unit="mm"/>
-<quantity name="d2" type="length" value="12.3" unit="mm"/>
-<quantity name="w1" type="length" value="20-20.57/2" unit="mm"/>
-<quantity name="w2" type="length" value="20-8.13/2" unit="mm"/>
+<quantity name="d1" type="length" value="4.32" unit="mm" description="see figure"/>
+<quantity name="d2" type="length" value="12.3" unit="mm" description="see figure"/>
+<quantity name="w1" type="length" value="20-20.57/2" unit="mm" description="see figure"/>
+<quantity name="w2" type="length" value="20-8.13/2" unit="mm" description="see figure"/>
 <quantity name="frame_length_z" type="length" value="1500" unit="mm"/>
 <quantity name="frame_length_x" type="length" value="620" unit="mm"/>
 <rotation name="crosswise_rotation" y="90" unit="deg"/>

@@ -57,28 +57,28 @@
 <volume name="front_vertical_scint_box_cover_volume">
   <materialref ref="Aluminum3003"/>
   <solidref    ref="front_vertical_scint_box_cover"/>
-  <auxiliary auxtype="Color" auxvalue="Red"/>
+  <auxiliary auxtype="Color" auxvalue="White"/>
   <auxiliary auxtype="VisAttributes" auxvalue="HcalVis"/>
 </volume>
 
 <volume name="front_horizontal_scint_box_cover_volume">
   <materialref ref="Aluminum3003"/>
   <solidref    ref="front_horizontal_scint_box_cover"/>
-  <auxiliary auxtype="Color" auxvalue="Red"/>
+  <auxiliary auxtype="Color" auxvalue="White"/>
   <auxiliary auxtype="VisAttributes" auxvalue="HcalVis"/>
 </volume>
 
 <volume name="back_vertical_scint_box_cover_volume">
   <materialref ref="Aluminum3003"/>
   <solidref    ref="back_vertical_scint_box_cover"/>
-  <auxiliary auxtype="Color" auxvalue="Red"/>
+  <auxiliary auxtype="Color" auxvalue="White"/>
   <auxiliary auxtype="VisAttributes" auxvalue="HcalVis"/>
 </volume>
 
 <volume name="back_horizontal_scint_box_cover_volume">
   <materialref ref="Aluminum3003"/>
   <solidref    ref="back_horizontal_scint_box_cover"/>
-  <auxiliary auxtype="Color" auxvalue="Red"/>
+  <auxiliary auxtype="Color" auxvalue="White"/>
   <auxiliary auxtype="VisAttributes" auxvalue="HcalVis"/>
 </volume>
 
@@ -87,16 +87,24 @@
 <volume name="frame_8080_vol">
 	<materialref ref="Aluminum"/>
 	<solidref ref="frame_8080"/>
+  <auxiliary auxtype="Color" auxvalue="White"/>
+  <auxiliary auxtype="VisAttributes" auxvalue="HcalVis"/>
 </volume>
 <volume name="frame_8080_short_vol">
 	<materialref ref="Aluminum"/>
 	<solidref ref="frame_8080_short"/>
+  <auxiliary auxtype="Color" auxvalue="White"/>
+  <auxiliary auxtype="VisAttributes" auxvalue="HcalVis"/>
 </volume>
 <volume name="frame_4080_vol">
 	<materialref ref="Aluminum"/>
 	<solidref ref="frame_4080"/>
+  <auxiliary auxtype="Color" auxvalue="White"/>
+  <auxiliary auxtype="VisAttributes" auxvalue="HcalVis"/>
 </volume>
 <volume name="frame_4080_short_vol">
 	<materialref ref="Aluminum"/>
 	<solidref ref="frame_4080_short"/>
+  <auxiliary auxtype="Color" auxvalue="White"/>
+  <auxiliary auxtype="VisAttributes" auxvalue="HcalVis"/>
 </volume>
