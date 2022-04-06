@@ -1,6 +1,6 @@
 
 <!-- Absorber layers -->
-<loop for="layer_index" from="1" to="num_layers+1" step="1">
+<loop for="layer_index" from="1" to="num_absorbers" step="1">
     <physvol name="absorber_physvol" copynumber="layer_index" >
         <volumeref ref="absorber_volume"/>
         <position name="absorber_pos" unit="mm" x="0" y="0" z="                     (layer_index-1)*layer_thickness    + first_layer_zpos + absorber_thickness/2 "/>
