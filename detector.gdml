@@ -33,7 +33,7 @@
     &trigger_solids;
     <!-- - - - - - - - - Parent Solids - - - - - - - -->
 	<!-- extra space in z to accomodate the trigger and frame. -->
-    <box lunit="mm" name="prototype_box" x="dx" y="dy" z="dz+(trigger_layer_distance_from_detector + trigger_bar_dz + trigger_bar_gap)*2+1000"/> 
+    <box lunit="mm" name="prototype_box" x="dx" y="dy" z="prototype_box_dz"/> 
 
  
     <box lunit="mm" name="world_box" x="world_dim" y="world_dim" z="world_dim"/>

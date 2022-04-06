@@ -42,6 +42,7 @@
     <variable name="dz"          value="num_layers * layer_thickness"/>
 
 
+
 	<!-- Positional constants -->
 
     <variable name="first_layer_zpos" value="-dz/2"/>	
@@ -132,5 +133,6 @@
 <constant name="lyso_plate_dz"         value="1.2*mm"/>
 
 
+<variable name="prototype_box_dz"    value="dz+(trigger_layer_distance_from_detector + trigger_bar_dz + trigger_bar_gap)*2+1000"/>
 
 
