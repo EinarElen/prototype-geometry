@@ -1,6 +1,6 @@
 <!-- - - - - - - - - HCal solids - - - - - - - -  -->
 <box lunit="mm" name="absorber_box"    x="absorber_width"          y="absorber_height"          z="absorber_thickness"/>
-<tube lunit="mm" name="absorber_hole" z="absorber_thickness" rmax="absorber_hole_radius" deltaphi="6.28318531" aunit="rad" />
+<tube lunit="mm" name="absorber_hole" z="absorber_thickness" rmax="absorber_hole_radius" deltaphi="2*pi" aunit="rad" />
 
 <!-- Subtracting 4 holes from the absorber plate -->
 <subtraction name="sub1">
