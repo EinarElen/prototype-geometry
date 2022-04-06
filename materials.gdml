@@ -143,7 +143,7 @@
             <composite n="30" ref="H"/>
         </material>
 		
-		<!-- Temporary LYSO -->
+		<!-- awaiting confirmation for LYSO mateial accuracy -->
         <material formula="L1.86Y0.14Si05" name="LYSO" >
             <D value="7.4" unit="g/cm3"   />
             <fraction n="0.7297" ref="Lu" />
