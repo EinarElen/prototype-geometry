@@ -3,8 +3,6 @@
 <tube name="hole" z="frame_length_z*2+1" rmax="6.81/2" deltaphi="6.28318531" aunit="rad" lunit="mm"/>
 <box name="frame_shortening_box" x="80+1" y="80+1" z="frame_length_z" lunit="mm"/>
 
-
-
 <xtru name = "frame_8080_filled" lunit= "mm" >
 	<twoDimVertex x="0-40" y="0-40" /> 
 	<twoDimVertex x="0+w2-40" y="0-40" />
