@@ -168,6 +168,3 @@ def back_vertical_depths():
 
 def trigger_depths():
     return [trigger_physvols[i].depth  for i in range(0, number_of_bars*2)]
-    
-from pdb import *
-set_trace()    
