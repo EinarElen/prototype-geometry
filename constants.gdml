@@ -58,13 +58,6 @@
 <!-- Absorber layers -->
 <variable name="absorber_first_layer_zpos"  value="first_layer_zpos"/>
             
-<!-- Horizontal mounting plates -->
-<variable name="bar_mounting_plate_horizontal_x"   value="scint_bar_length"/>
-<variable name="bar_mounting_plate_horizontal_y"   value="num_bars_back * scint_bar_width"/>
-
-<!-- Vertical mounting plates -->
-<variable name="bar_mounting_plate_vertical_x"   value="num_bars_back * scint_bar_width"/>
-<variable name="bar_mounting_plate_vertical_y"   value="scint_bar_length"/>
 
 <!-- Front Layer, horizontal bars -->
 <variable name="scint_front_horizontal_x"   value="scint_bar_length"/>
@@ -82,6 +75,13 @@
 <variable name="scint_back_horizontal_x"   value="scint_bar_length"/>
 <variable name="scint_back_horizontal_y"   value="num_bars_back * scint_bar_width"/>
 
+<!-- Horizontal mounting plates -->
+<variable name="bar_mounting_plate_horizontal_x"   value="scint_back_horizontal_x"/>
+<variable name="bar_mounting_plate_horizontal_y"   value="scint_back_horizontal_y"/>
+
+<!-- Vertical mounting plates -->
+<variable name="bar_mounting_plate_vertical_x"   value="scint_back_vertical_x"/>
+<variable name="bar_mounting_plate_vertical_y"   value="scint_back_vertical_y"/>
 
 
 
