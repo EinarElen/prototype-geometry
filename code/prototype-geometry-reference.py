@@ -112,21 +112,52 @@ lyso_plate_dz = 1.2
 
 
 prototype_extra_space = 1000.
-trigger_dz = trigger_layer_distance_from_detector + \
+trigger_scintillator_extra_dz = trigger_layer_distance_from_detector + \
     trigger_bar_dz + \
     trigger_bar_gap
 
-prototype_box_dz = dz + 2 * trigger_dz + prototype_extra_space
+prototype_box_dz = dz + \
+    2 * trigger_scintillator_extra_dz + \
+    prototype_extra_space
 
 # Solids
+absorber_box = {"width": absorber_width,
+                "height": absorber_height,
+                "depth": absorber_thickness}
+vertical_bar_mounting_plate_box = {"width": bar_mounting_plate_vertical_x,
+                                   "height": bar_mounting_plate_vertical_y,
+                                   "depth": bar_mounting_plate_thickness}
+horizontal_bar_mounting_plate_box = {"width": bar_mounting_plate_horizontal_x,
+                                   "height": bar_mounting_plate_horizontal_y,
+                                   "depth": bar_mounting_plate_thickness}
 front_vertical_scint_box = {"width": scint_front_vertical_x,
-                            "height": scint_front_vertical_y}
+                            "height": scint_front_vertical_y,
+                            "depth": scint_thickness}
 front_horizontal_scint_box = {"width": scint_front_horizontal_x,
-                              "height": scint_front_horizontal_y}
+                              "height": scint_front_horizontal_y,
+                              "depth": scint_thickness}
 back_vertical_scint_box = {"width": scint_back_vertical_x,
-                           "height": scint_back_vertical_y}
+                           "height": scint_back_vertical_y,
+                           "depth": scint_thickness}
 back_horizontal_scint_box = {"width": scint_back_horizontal_x,
-                             "height": scint_back_horizontal_y}
+                             "height": scint_back_horizontal_y,
+                             "depth": scint_thickness}
+
+front_vertical_scint_cover_box = {"width": scint_front_vertical_x,
+                                  "height": scint_front_vertical_y,
+                                  "depth": scint_bar_cover_thickness}
+front_horizontal_scint_cover_box = {"width": scint_front_horizontal_x,
+                                    "height": scint_front_horizontal_y,
+                                    "depth": scint_bar_cover_thickness}
+back_vertical_scint_cover_box = {"width": scint_back_vertical_x,
+                                 "height": scint_back_vertical_y,
+                                 "depth": scint_bar_cover_thickness}
+back_horizontal_scint_cover_box = {"width": scint_back_horizontal_x,
+                                   "height": scint_back_horizontal_y,
+                                   "depth": scint_bar_cover_thickness
+                                   }
+
+
 air_box = {"width": dx,
            "height": dy,
            "depth": air_thickness}
