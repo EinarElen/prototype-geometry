@@ -56,14 +56,13 @@
 
 
 <!-- Absorber layers -->
-<variable name="absorber_first_layer_zpos"
-            value="-dz/2"/>
+<variable name="absorber_first_layer_zpos"  value="first_layer_zpos"/>
             
-<!-- Front Layer, horizontal plates -->
+<!-- Front Layer, horizontal mounting plates -->
 <variable name="bar_mounting_plate_horizontal_x"   value="scint_bar_length"/>
 <variable name="bar_mounting_plate_horizontal_y"   value="num_bars_back * scint_bar_width"/>
 
-<!-- Front Layer, vertical plates -->
+<!-- Front Layer, vertical mounting plates -->
 <variable name="bar_mounting_plate_vertical_x"   value="num_bars_back * scint_bar_width"/>
 <variable name="bar_mounting_plate_vertical_y"   value="scint_bar_length"/>
             
@@ -100,9 +99,7 @@
 <rotation name="no_rotation" y="0" unit="deg"/>
 
 
-<!--
-    Trigger Scintillator
--->
+<!-- Trigger Scintillator -->
 
 <!-- Trigger scintillator positions -->
 <constant name="trigger_bar_gap"        value="0.3*mm" />
