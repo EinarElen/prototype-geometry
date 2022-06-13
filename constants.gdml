@@ -55,11 +55,6 @@
 
 
 
-<!-- <variable name="second_layer_zpos" value="first_front_layer_zpos+layer_thickness"/> -->
-<!-- <variable name="first_back_layer_zpos" value="first_front_layer_zpos+layer_thickness"/> -->
-
-
-
 <!-- Absorber layers -->
 <variable name="absorber_first_layer_zpos"
             value="-dz/2"/>
