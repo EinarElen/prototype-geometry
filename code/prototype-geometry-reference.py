@@ -184,15 +184,15 @@ scint_back_horizontal_first_layer_pos = (scint_back_vertical_first_layer_pos
 
 trigger_first_layer_even_pos = np.array(
     [0,
-     trigger_bar_dy*(1 - 0.5 - number_of_bars/2) +
-     trigger_bar_gap*(1 - 1 - number_of_bars/2),
+     trigger_bar_dy*(1 - 0.5 - number_of_trigger_bars/2) +
+     trigger_bar_gap*(1 - 1 - number_of_trigger_bars/2),
      - trigger_bar_dz - trigger_bar_gap - dz/2
      - trigger_layer_distance_from_detector])
 
 trigger_first_layer_odd_pos = np.array(
     [0,
-     trigger_bar_dy*(1 - 0 - number_of_bars/2) +
-     trigger_bar_gap*(1 - 1 - number_of_bars/2),
+     trigger_bar_dy*(1 - 0 - number_of_trigger_bars/2) +
+     trigger_bar_gap*(1 - 1 - number_of_trigger_bars/2),
      -dz/2 - trigger_layer_distance_from_detector])
 
 distance_to_subsequent_absorber_layer = np.array(
@@ -248,8 +248,8 @@ back_horizontal_scint_physvols = [
 ]
 
 
-trigger_physvols = ["placeholder" for i in range(1,number_of_bars*2)]
-for i in range(1, number_of_bars):
+trigger_physvols = ["placeholder" for i in range(1, number_of_trigger_bars*2)]
+for i in range(1, number_of_trigger_bars):
     trigger_physvols[i*2-2] = physical_volume(
         position=trigger_first_layer_even_pos +
         (i - 1) * distance_to_subsequent_trigger_layer,
@@ -288,7 +288,7 @@ def back_vertical_copynumbers():
 
 def trigger_copynumbers():
     return [trigger_physvols[i].CopyNumber
-            for i in range(0, number_of_bars*2)]
+            for i in range(0, number_of_trigger_bars*2)]
 
 
 def front_horizontal_depths():
@@ -313,4 +313,4 @@ def back_vertical_depths():
 
 def trigger_depths():
     return [trigger_physvols[i].depth
-            for i in range(0, number_of_bars*2)]
+            for i in range(0, number_of_trigger_bars*2)]
