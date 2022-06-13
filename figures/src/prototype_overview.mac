@@ -32,13 +32,13 @@
 /vis/geometry/set/colour horizontal_bar_mounting_plate_volume -1 0.71 0.25 0.05 1
 
 /vis/geometry/set/colour front_horizontal_scint_box_volume -1 0.29 0.31 0.33 1
-/vis/geometry/set/colour front_horizontal_scint_box_cover_volume -1 0.29 0.31 0.33 1
+/vis/geometry/set/colour front_horizontal_scint_cover_box_volume -1 0.29 0.31 0.33 1
 /vis/geometry/set/colour front_vertical_scint_box_volume -1 0.29 0.31 0.33 1
-/vis/geometry/set/colour front_vertical_scint_box_cover_volume -1 0.29 0.31 0.33 1
+/vis/geometry/set/colour front_vertical_scint_cover_box_volume -1 0.29 0.31 0.33 1
 /vis/geometry/set/colour back_horizontal_scint_box_volume -1 0.29 0.31 0.33 1
-/vis/geometry/set/colour back_horizontal_scint_box_cover_volume -1 0.29 0.31 0.33 1
+/vis/geometry/set/colour back_horizontal_scint_cover_box_volume -1 0.29 0.31 0.33 1
 /vis/geometry/set/colour back_vertical_scint_box_volume -1 0.29 0.31 0.33 1
-/vis/geometry/set/colour back_vertical_scint_box_cover_volume -1 0.29 0.31 0.33 1
+/vis/geometry/set/colour back_vertical_scint_cover_box_volume -1 0.29 0.31 0.33 1
 
 /vis/geometry/set/colour frame_8080_vol -1 0.7647 0.7686 0.7725 1
 /vis/geometry/set/colour frame_8080_short_vol -1 0.7647 0.7686 0.7725 1
@@ -48,13 +48,13 @@
 /vis/viewer/set/background ! ! ! 0.
 
 # /vis/geometry/set/colour front_horizontal_scint_box_volume -1 0 1 0 1
-# /vis/geometry/set/colour front_horizontal_scint_box_cover_volume -1 0 1 0 1
+# /vis/geometry/set/colour front_horizontal_scint_cover_box_volume -1 0 1 0 1
 # /vis/geometry/set/colour front_vertical_scint_box_volume -1 1 1 0 1
-# /vis/geometry/set/colour front_vertical_scint_box_cover_volume -1 1 1 0 1
+# /vis/geometry/set/colour front_vertical_scint_cover_box_volume -1 1 1 0 1
 # /vis/geometry/set/colour back_horizontal_scint_box_volume -1 0 0 1 1
-# /vis/geometry/set/colour back_horizontal_scint_box_cover_volume -1 0 0 1 1
+# /vis/geometry/set/colour back_horizontal_scint_cover_box_volume -1 0 0 1 1
 # /vis/geometry/set/colour back_vertical_scint_box_volume -1 1 0 1 1
-# /vis/geometry/set/colour back_vertical_scint_box_cover_volume -1 1 0 1 1
+# /vis/geometry/set/colour back_vertical_scint_cover_box_volume -1 1 0 1 1
 
 /vis/geometry/set/colour trigger_bar_volume -1 red ! ! 1
 
