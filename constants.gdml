@@ -55,10 +55,6 @@
 
 
 
-<!-- Absorber layers -->
-<variable name="absorber_first_layer_zpos"  value="first_layer_zpos"/>
-            
-
 <!-- Front Layer, horizontal bars -->
 <variable name="scint_front_horizontal_x"   value="scint_bar_length"/>
 <variable name="scint_front_horizontal_y"   value="num_bars_front * scint_bar_width"/>
