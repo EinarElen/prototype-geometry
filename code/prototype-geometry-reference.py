@@ -171,6 +171,13 @@ world_box = {"width": world_dim,
 trigger_bar_box = {"width": trigger_bar_dx,
                    "height": trigger_bar_dy,
                    "depth": trigger_bar_dz}
+lyso_bar_box = {"width": lyso_bar_dx,
+                "height": lyso_bar_dy,
+                "depth": lyso_bar_dz}
+lyso_plate_box = {"width": lyso_plate_dx,
+                  "height": lyso_plate_dy,
+                  "depth": lyso_plate_dz}
+
 
 
 class physical_volume:
