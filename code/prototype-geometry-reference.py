@@ -132,7 +132,7 @@ air_box = {"width": dx,
            "depth": air_thickness}
 prototype_box = {"width": dx,
                  "height": dy,
-                 "depth": dz}
+                 "depth": prototype_box_dz}
 world_box = {"width": world_dim,
              "height": world_dim,
              "depth": world_dim}
