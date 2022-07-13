@@ -140,4 +140,3 @@
 <!-- Distances between layers -->
 <constant name="distance_to_subsequent_absorber_layer " value="layer_thickness"/>
 <constant name="distance_to_subsequent_scint_layer" value="2*layer_thickness"/>
-<constant name="distance_to_subsequent_trigger_layer" value="trigger_bar_dy + trigger_bar_gap"/>
