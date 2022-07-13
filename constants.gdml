@@ -26,8 +26,8 @@
 <variable name="num_bars_front" value="8"/>
 <variable name="num_bars_back" value="12"/>
 
-<variable name="num_layers_front_vertical"   value="4"/>
-<variable name="num_layers_front_horizontal"   value="5"/>
+<variable name="num_layers_front_vertical"   value="5"/>
+<variable name="num_layers_front_horizontal"   value="4"/>
 <variable name="num_layers_front"   value="num_layers_front_vertical + num_layers_front_horizontal"/>
 <variable name="num_layers_back_vertical"   value="5"/>
 <variable name="num_layers_back_horizontal"   value="5"/>
