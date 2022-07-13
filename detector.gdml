@@ -5,9 +5,9 @@
 <!ENTITY hcal_solids SYSTEM "hcal_solids.gdml">
 <!ENTITY hcal_volumes SYSTEM "hcal_volumes.gdml">
 <!ENTITY hcal_physvol SYSTEM "hcal_physvol.gdml">
-<!ENTITY trigger_solids SYSTEM "trigger_solids.gdml">
-<!ENTITY trigger_volumes SYSTEM "trigger_volumes.gdml">
-<!ENTITY trigger_physvol SYSTEM "trigger_physvol.gdml">
+<!ENTITY TS_solids SYSTEM "TS_solids.gdml">
+<!ENTITY TS_volumes SYSTEM "TS_volumes.gdml">
+<!ENTITY TS_physvol SYSTEM "TS_physvol.gdml">
 <!ENTITY frame_solids SYSTEM "frame_solids.gdml">
 <!ENTITY frame_volumes SYSTEM "frame_volumes.gdml">
 <!ENTITY frame_physvol SYSTEM "frame_physvol.gdml">
@@ -32,10 +32,10 @@
 
   <solids>
     &hcal_solids;
-    &trigger_solids;
+    &TS_solids;
     &frame_solids;
     <!-- - - - - - - - - Parent Solids - - - - - - - -->
-	<!-- extra space in z to accomodate the trigger and frame. -->
+	<!-- extra space in z to accomodate the TS and frame. -->
     <box lunit="mm" name="prototype_box" x="dx" y="dy" z="prototype_box_dz"/> 
 
  
@@ -46,7 +46,7 @@
 
 
     &hcal_volumes;
-    &trigger_volumes;
+    &TS_volumes;
     &frame_volumes;
 
 
@@ -57,7 +57,7 @@
 
         <solidref    ref="prototype_box"/>
         &hcal_physvol;
-        &trigger_physvol;
+        &TS_physvol;
         &frame_physvol;
 
         <auxiliary auxtype="Region" auxvalue="CalorimeterRegion"/>

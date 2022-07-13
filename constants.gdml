@@ -98,25 +98,44 @@
 <!-- Trigger Scintillator -->
 
 <!-- Trigger scintillator positions -->
-<constant name="trigger_bar_gap"        value="0.3*mm"/>
-<constant name="trigger_bar_dx"         value="40*mm"/>
-<constant name="trigger_bar_dy"         value="3*mm"/>
-<constant name="trigger_bar_dz"         value="2*mm"/>
-<constant name="number_of_trigger_bars"         value="6"/>
-<constant name="trigger_layer_distance_from_detector"         value="300 * mm"/>
+<constant name="TS_plastic_bar_gap"        value="0.3*mm" />
+<constant name="TS_plastic_bar_dx"         value="40*mm"/>
+<constant name="TS_plastic_bar_dy"         value="3*mm"/>
+<constant name="TS_plastic_bar_dz"         value="2*mm"/>
+<constant name="number_of_TS_plastic_bars"         value="6"/>
+<constant name="TS_layer_distance_from_detector"         value="300*mm"/>
 
-<constant name="lyso_bar_gap"         value="0.3*mm"/>
-<constant name="lyso_bar_dx"         value="30*mm"/>
-<constant name="lyso_bar_dy"         value="2.1*mm"/>
-<constant name="lyso_bar_dz"         value="0.6*mm"/>
-<constant name="number_of_lyso_bars"         value="8"/>
+<constant name="TS_LYSO_bar_gap"         value="0.3*mm"/>
+<constant name="TS_LYSO_bar_dx"         value="30*mm"/>
+<constant name="TS_LYSO_bar_dy"         value="2.1*mm"/>
+<constant name="TS_LYSO_bar_dz"         value="0.6*mm"/>
+<constant name="number_of_TS_LYSO_bars"         value="8"/>
 
-<constant name="lyso_plate_dx"         value="30*mm"/>
-<constant name="lyso_plate_dy"         value="20*mm"/>
-<constant name="lyso_plate_dz"         value="1.2*mm"/>
+<constant name="TS_LYSO_plate_dx"         value="30*mm"/>
+<constant name="TS_LYSO_plate_dy"         value="20*mm"/>
+<constant name="TS_LYSO_plate_dz"         value="1.2*mm"/>
 
-<constant name="trigger_scintillator_extra_dz" value="(trigger_layer_distance_from_detector + trigger_bar_dz + trigger_bar_gap)"/>
-<constant name="prototype_box_dz"    value="dz+trigger_scintillator_extra_dz*2+1000"/>
+
+<variable name="prototype_box_dz"    value="dz+(TS_layer_distance_from_detector + TS_plastic_bar_dz + TS_plastic_bar_gap)*2+1000"/>
+
+
+<!-- Trigger scintillator extra variables -->
+<variable name="TS_z_location"       value="-dz/2 -TS_layer_distance_from_detector"/>
+
+<variable name="TS_plastic_bar_layer_y_increment"       value="TS_plastic_bar_dy + TS_plastic_bar_gap"/>
+<variable name="TS_plastic_bar_layer1_y_start"       value="TS_plastic_bar_dy*(- 0.5 - number_of_TS_plastic_bars/2) + TS_plastic_bar_gap*( - 1 - number_of_TS_plastic_bars/2)"/>
+<variable name="TS_plastic_bar_layer2_y_start"       value="TS_plastic_bar_dy*(- 0 - number_of_TS_plastic_bars/2) + TS_plastic_bar_gap*( - 1 - number_of_TS_plastic_bars/2)"/>
+<variable name="TS_plastic_bar_layer1_z_pos"       value="-TS_plastic_bar_dz - TS_plastic_bar_gap + TS_z_location"/> 
+<variable name="TS_plastic_bar_layer2_z_pos"       value="TS_z_location"/>
+
+<variable name="TS_LYSO_bar_layer_y_increment"       value="TS_LYSO_bar_dy+TS_LYSO_bar_gap"/>
+<variable name="TS_LYSO_bar_layer1_y_start"       value="TS_plastic_bar_layer2_y_start"/>
+<variable name="TS_LYSO_bar_layer2_y_start"       value="TS_plastic_bar_layer2_y_start+ (TS_LYSO_bar_gap+TS_LYSO_bar_dy)/2"/>
+<variable name="TS_LYSO_bar_layer1_z_pos"       value="-TS_LYSO_bar_dz-TS_LYSO_bar_gap + TS_z_location"/>
+<variable name="TS_LYSO_bar_layer2_z_pos"       value="TS_z_location"/>
+
+<variable name="TS_LYSO_plate_z_pos"       value="TS_z_location"/>
+
 
 <!-- Distances between layers -->
 <constant name="distance_to_subsequent_absorber_layer " value="layer_thickness"/>
