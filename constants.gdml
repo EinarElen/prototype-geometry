@@ -36,7 +36,7 @@
 <variable name="num_absorbers"   value="num_layers+1"/>
 <variable name="back_start"   value="num_layers_front * layer_thickness"/>
 
-<variable name="dx"           value="3000."/>
+<variable name="dx"           value="3000. + 2*bar_x_displacement"/>
 <variable name="dy"           value="3000."/>
 <variable name="dz"          value="num_layers * layer_thickness"/>
 
