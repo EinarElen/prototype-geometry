@@ -125,27 +125,33 @@
 	<first ref="frame_8080_filled" />
 	<second ref="hole" />
 	<position name="hole1" x="-20" y="-20" />
-</subtraction><subtraction name="sub2_8080">
+</subtraction>
+<subtraction name="sub2_8080">
 	<first ref="sub1_8080" />
 	<second ref="hole" />
 	<position name="hole1" x="-20" y="20" />
-</subtraction><subtraction name="sub3_8080">
+</subtraction>
+<subtraction name="sub3_8080">
 	<first ref="sub2_8080" />
 	<second ref="hole" />
 	<position name="hole1" x="20" y="-20" />
-</subtraction><subtraction name="sub4_8080">
+</subtraction>
+<subtraction name="sub4_8080">
 	<first ref="sub3_8080" />
 	<second ref="hole" />
 	<position name="hole1" x="20" y="20" />
-</subtraction><subtraction name="frame_8080">
+</subtraction>
+<subtraction name="frame_8080">
 	<first ref="sub4_8080" />
 	<second ref="frame_8080_center_hole" />
 	<position name="hole_big" x="0" y="0" />
-</subtraction><subtraction name="sub5_8080">
+</subtraction>
+<subtraction name="sub5_8080">
 	<first ref="frame_8080" />
 	<second ref="frame_shortening_box" />
 	<position name="cut" x="0" y="0" z="(frame_length_x+frame_length_z)/2" />
-</subtraction><subtraction name="frame_8080_short">
+</subtraction>
+<subtraction name="frame_8080_short">
 	<first ref="sub5_8080" />
 	<second ref="frame_shortening_box" />
 	<position name="frame_short_pos" x="0" y="0" z="-(frame_length_x+frame_length_z)/2" />
