@@ -108,7 +108,7 @@
     </physvol>
     <physvol name="back_vertical_bar_mounting_plate_physvol"  copynumber="2*layer_index - 1">
         <volumeref ref="vertical_bar_mounting_plate_volume"/>
-        <position name="vertical_bar_mounting_plate_pos" unit="mm"
+        <position name="back_vertical_bar_mounting_plate_pos" unit="mm"
                   x="0"
                   y="0"
 		          z="(layer_index-1)*distance_to_subsequent_scint_layer + back_start + layer_thickness + first_layer_bar_mounting_plate_zpos" />
