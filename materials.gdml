@@ -127,13 +127,6 @@
    <fraction n="0.084878906" ref="H"/>
 </material>
 
-<material name="Tungsten" state="solid">
-   <MEE unit="eV" value="727"/>
-   <D unit="g/cm3" value="19.2999898451316"/>
-   <fraction n="1" ref="W"/>
-</material>
-
-
 <!-- Scintillator -->
 <material name="Polyvinyltoluene">
    <D type="density" value="1.023" unit="g/cm3"/>
