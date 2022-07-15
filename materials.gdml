@@ -117,7 +117,7 @@
    <T unit="K" value="293.15"/>
    <D unit="g/cm3" value="2.6989"/>
    <fraction n="0.99" ref="Al"/>
-   <fraction n="0.01" ref="Mn"/>		 
+   <fraction n="0.01" ref="Mn"/>
 </material>
 <material name="Scintillator" state="solid">
    <T unit="K" value="293.15"/>
@@ -126,7 +126,6 @@
    <fraction n="0.91512109" ref="C"/>
    <fraction n="0.084878906" ref="H"/>
 </material>
-
 
 
 <!-- Scintillator -->
@@ -172,11 +171,10 @@
 </element>
 
 
-<material formula="L1.86Y0.14Si05" name="LYSO" >
-   <D value="7.4" unit="g/cm3"   />
-   <fraction n="0.7297" ref="Lu" />
-   <fraction n="0.0279" ref="Y"  />
-   <fraction n="0.0630" ref="Si" />
-   <fraction n="0.1794" ref="O"  />
+<material formula="L1.86Y0.14Si05" name="LYSO">
+   <D value="7.4" unit="g/cm3"/>
+   <fraction n="0.7297" ref="Lu"/>
+   <fraction n="0.0279" ref="Y"/>
+   <fraction n="0.0630" ref="Si"/>
+   <fraction n="0.1794" ref="O"/>
 </material>
-
