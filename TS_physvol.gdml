@@ -42,7 +42,8 @@
 			y="(TS_LYSO_bar_layer_y_increment * layer_index) + TS_LYSO_bar_layer2_y_start" 
 			z="TS_LYSO_bar_layer2_z_pos" />
 	</physvol>
-</loop>	 -->
+</loop>
+-->
 
 
 
@@ -63,4 +64,5 @@
 	<position name="TS_LYSO_plate_pos" unit="mm" x="0" 
 			  y="0" 
 			  z="TS_LYSO_plate_z_pos" />
-</physvol> -->
+</physvol>
+-->

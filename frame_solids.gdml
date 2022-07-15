@@ -15,7 +15,7 @@
 	<twoDimVertex x="40 - w2 - 40" y="0 - 40" />
 	<twoDimVertex x="40 - 40" y="0 - 40" />
 
-	<twoDimVertex x="40 + w2 - 40" y="0 - 40" />
+
 	<twoDimVertex x="40 + w2 - 40" y="0 + d1 - 40" />
 	<twoDimVertex x="40 + w1 - 40" y="0 + d1 - 40" />
 	<twoDimVertex x="40 + w2 - 40" y="0 + d2 - 40" />
@@ -51,7 +51,6 @@
 	<twoDimVertex x="40 + w2 - 40" y="80 - d2 - 40" />
 	<twoDimVertex x="40 + w1 - 40" y="80 - d1 - 40" />
 	<twoDimVertex x="40 + w2 - 40" y="80 - d1 - 40" />
-	<twoDimVertex x="40 + w2 - 40" y="80 - 40" />
 	<twoDimVertex x="40 - 40" y="80 - 40" />
 
 	<twoDimVertex x="40 - w2 - 40" y="80 - 40" />
@@ -175,7 +174,6 @@
 	<twoDimVertex x="40 - d2 -20" y="40 - w2 - 40" />
 	<twoDimVertex x="40 - d1 -20" y="40 - w1 - 40" />
 	<twoDimVertex x="40 - d1 -20" y="40 - w2 - 40" />
-	<twoDimVertex x="40 - 20" y="40 - w2 - 40" />
 	<twoDimVertex x="40 - 20" y="40 - 40" />
 
 	<twoDimVertex x="40 - 20" y="40 + w2 - 40" />
