@@ -1,4 +1,4 @@
-<!-- define center position and identity rotation -->
+<!-- Center position -->
 <position name="center" x="0" y="0" z="0"/>
 
 <!-- Absorber -->
