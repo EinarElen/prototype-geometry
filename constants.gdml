@@ -110,9 +110,10 @@
 <constant name="TS_LYSO_plate_dy" value="20*mm"/>
 <constant name="TS_LYSO_plate_dz" value="1.2*mm"/>
 
+<variable name="TS_z_location"
+          value="-dz/2 -TS_layer_distance_from_detector"/>
 
-<!-- Trigger scintillator extra variables -->
-<variable name="TS_z_location" value="-dz/2 -TS_layer_distance_from_detector"/>
+<!-- Trigger scintillator variables -->
 
 <variable name="TS_plastic_bar_layer_y_increment" value="TS_plastic_bar_dy + TS_plastic_bar_gap"/>
 <variable name="TS_plastic_bar_layer1_y_start" value="TS_plastic_bar_dy*(- 0.5 - number_of_TS_plastic_bars/2) + TS_plastic_bar_gap*( - 1 - number_of_TS_plastic_bars/2)"/>
