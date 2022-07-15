@@ -38,9 +38,9 @@ The geometry is divided into several files to make working with it easier.
 -   [hcal_solids.gdml](./hcal_solids.gdml) Contains definitions of the absorber, scintillator, and parent boxes
 -   [hcal_volumes.gdml](./hcal_volumes.gdml) Contains the definition of the scintillator and absorber logical volumes, see [Logical volumes](#logical_volumes).
 -   [hcal_physvol.gdml](./hcal_physvol.gdml) Contains the Hcal physical volumes, see [Physical volumes](#physical_volumes)
--   [trigger_solids.gdml](./trigger_solids.gdml) Contains definitions of the trigger boxes
--   [trigger_volumes.gdml](./trigger_volumes.gdml) Contains the definition of the trigger logical volumes, see [Logical volumes](#logical_volumes).
--   [trigger_physvol.gdml](./trigger_physvol.gdml) Contains the trigger physical volumes, see [Physical volumes](#physical_volumes)
+-   [trigger_solids.gdml](./trigger_solids.gdml) Contains definitions of the trigger scintillator boxes
+-   [trigger_volumes.gdml](./trigger_volumes.gdml) Contains the definition of the trigger scintillator logical volumes, see [Logical volumes](#logical_volumes).
+-   [trigger_physvol.gdml](./trigger_physvol.gdml) Contains the trigger scintillator physical volumes, see [Physical volumes](#physical_volumes)
 
 <a id="reference"></a>
 
@@ -86,9 +86,9 @@ The following is a list of all the variables defined in the protoype geometry de
 -   `dx` and `dy`, the width and height of the prototype respectively are both set to **3000 mm**
 -   `dz` is the depth of the prototype and is defined as `num_layers * layer_thickness` which correpsonds to **855 mm**
 
-- `trigger_bar_gap` is the gap between individual trigger bars. It is **0.3 mm**
-- `trigger_bar_dx` (40 mm), `trigger_bar_dy` (3 mm), and `trigger_bar_dz` (2 mm) are the dimensions of a trigger bar.  
-- There are two trigger layers, and each layer includes 6 bars, as set in `number_of_trigger_bars` (=6). This means that the detector has 12 bars in total
+- `trigger_bar_gap` is the gap between individual trigger scintillator bars. It is **0.3 mm**
+- `trigger_bar_dx` (40 mm), `trigger_bar_dy` (3 mm), and `trigger_bar_dz` (2 mm) are the dimensions of a trigger scintillator bar.  
+- There are two trigger scintillator layers, and each layer includes 6 bars, as set in `number_of_trigger_bars` (=6). This means that the detector has 12 bars in total
 
 ### Position constants
 
@@ -105,7 +105,7 @@ The following is a list of all the variables defined in the protoype geometry de
 
 
 
-- `trigger_layer_distance_from_detector` defines the distance (the exact length of the empty space) between the trigger layer and the detector. 
+- `trigger_layer_distance_from_detector` defines the distance (the exact length of the empty space) between the trigger scintillator layer and the detector. 
 
 
 <a id="solids"></a>
@@ -135,7 +135,7 @@ or a more complicated geometry
 -   `air_box` is the a box representing a single air layer and has width `dx` (3000 mm), height `dy` (3000 mm), and depth `air_thickness` (2 mm)
 -   `prototype_box` is the parent volume for the prototype and is defined as a box with width `dx` (3000 mm), height `dy` (3000 mm), and depth `dz` (855 mm)
 -   `world_box` is the parent volume for all the other parts of the geometry and is defined as a box with all sides having length `world_dim` (10 m)
--   `trigger_bar_box` represents an individual trigger bars. `trigger_bar_dx` (40 mm), `trigger_bar_dy` (3 mm), and `trigger_bar_dz` (2 mm) are the dimensions of a trigger bar.
+-   `trigger_bar_box` represents an individual trigger scintillator bar. `trigger_bar_dx` (40 mm), `trigger_bar_dy` (3 mm), and `trigger_bar_dz` (2 mm) are the dimensions of a trigger scintillator bar.
 
 <a id="logical_volumes"></a>
 
@@ -192,7 +192,7 @@ Furthermore, each logical volume has a name as part of the `<volume>` tag which 
         -   &ldquo;Color&rdquo;: &ldquo;Blue&rdquo;
         -   &ldquo;VisAttributes&rdquo;: &ldquo;HcalVis&rdquo;
 
--   `trigger_bar_volume` represents one layer of the steel absorber and is defined in [hcal_volumes.gdml](./hcal_volumes.gdml)
+-   `trigger_bar_volume` represents a single trigger scintillator bar and is defined in [trigger_volumes.gdml](./trigger_volumes.gdml)
     -   Material: `Polyvinyltoluene`
     -   Solid: `trigger_bar_box`
     -   Auxiliary information: &ldquo;SensDet&rdquo;: &ldquo;TriggerPadUpSD&rdquo; (meaning that the simulation will consider it a sensitive detector region, and will categorize its measurements under &ldquo;TriggerPadUpSD&rdquo in the output root file.
@@ -271,7 +271,7 @@ A physical volume is a logical volume with a position and, optionally, a name an
         -   y: **0 mm**
         -   z: `scint_back_horizontal_first_layer_zpos`, i.e. **45.5 mm**
     -   Distance (z) to subsequent layer: `2 * layer_thickness`, i.e. **90 mm**
--   `trigger_physvol`: There are 12 physical volumes representing the trigger bats
+-   `trigger_physvol`: There are 12 physical volumes representing the trigger scintillator bars
     -   Logical volume: `trigger_bar_volume`
     -   Mother volume: `prototype_volume`
     -   CopyNumbers: [1 .. 12]
@@ -293,13 +293,9 @@ For the hadronic calorimeter, the CopyNumber encodes the layer number and the se
 
 The layers of the protoype are numbered from 1 to 19 (note the non-zero based indexing). The layer number is derived from the CopyNumber by dividing the CopyNumber with **1000** and taking the remainder.
 
+Furthermore, the rotation of the layer is determined by the layer number, which in turn depends on the CopyNumber. /This relationship differs between the current (April, 2022) mainline hcal geometry and the prototype geometry/.  An odd CopyNumber corresponds to a vertical layer (length of the bars is along the y-axis) while an odd CopyNumber corresponds to a horizontal layer (length of the bars is along the x-axis). 
 
-
-Furthermore, the rotation of the layer is determined by the layer number, which in turn depends on the CopyNumber. An even CopyNumber means a vertical layer (length of the bars is along the y-axis) while an odd CopyNumber
-
-
-The bars of the trigger are numbered from 0 to 11 (note the zero based indexing), in strictly increasing order as the y coordinate increases, with the first (the one closer to the origin of the beam) layer having even CopyNumbers and the second layer having odd ones. 
-The reasoning is that this scheme allows the simplest possible grouping of adjacent hits and subsequent tracking in a barID coordinate system, which in turn makes tracking equally effective regardless of whether the bars are in a vertical or horizontal direction.
+The bars of the trigger scintillator are numbered from 0 to 11 (note the zero based indexing), in strictly increasing order as the y coordinate increases, with the first (the one closer to the origin of the beam) layer having even CopyNumbers and the second layer having odd ones. The reasoning is that this scheme allows the simplest possible grouping of adjacent hits and subsequent tracking in a barID coordinate system, which in turn makes tracking equally effective regardless of whether the bars are in a vertical or horizontal direction.
 
 
 
