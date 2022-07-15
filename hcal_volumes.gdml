@@ -8,7 +8,7 @@
 </volume>
 
 
-<!-- mounting plates -->
+<!-- Mounting plates -->
 <volume name="vertical_bar_mounting_plate_volume">
   <materialref ref="Steel"/>
   <solidref ref="vertical_bar_mounting_plate_box"/>
