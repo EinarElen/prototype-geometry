@@ -1,3 +1,4 @@
+<!-- Absorber -->
 <volume name="absorber_volume">
   <materialref ref="Steel"/>
   <solidref    ref="absorber_box"/>
@@ -21,7 +22,8 @@
 </volume>
 
 
-<!-- scint bars -->
+<!-- Scintillators -->
+<!-- Front -->
 <volume name="front_vertical_scint_box_volume">
   <materialref ref="Scintillator"/>
   <solidref    ref="front_vertical_scint_box"/>
@@ -36,6 +38,7 @@
   <auxiliary auxtype="Color" auxvalue="Blue"/>
   <auxiliary auxtype="VisAttributes" auxvalue="HcalVis"/>
 </volume>
+<!-- Back -->
 <volume name="back_vertical_scint_box_volume">
   <materialref ref="Scintillator"/>
   <solidref    ref="back_vertical_scint_box"/>
@@ -51,7 +54,8 @@
   <auxiliary auxtype="VisAttributes" auxvalue="HcalVis"/>
 </volume>
 
-<!-- covers -->
+<!-- Scintillator covers -->
+<!-- Front -->
 <volume name="front_vertical_scint_cover_box_volume">
   <materialref ref="Aluminum3003"/>
   <solidref    ref="front_vertical_scint_cover_box"/>
@@ -64,6 +68,7 @@
   <auxiliary auxtype="Color" auxvalue="White"/>
   <auxiliary auxtype="VisAttributes" auxvalue="HcalVis"/>
 </volume>
+<!-- Back -->
 <volume name="back_vertical_scint_cover_box_volume">
   <materialref ref="Aluminum3003"/>
   <solidref    ref="back_vertical_scint_cover_box"/>
