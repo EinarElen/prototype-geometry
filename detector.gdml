@@ -1,5 +1,5 @@
 <!DOCTYPE gdml [
-<!ENTITY constants SYSTEM "constants.gdml">
+ <!ENTITY constants SYSTEM "constants.gdml">
 <!ENTITY materials SYSTEM "materials.gdml">
 <!ENTITY userinfo SYSTEM "userinfo.gdml">
 <!ENTITY hcal_solids SYSTEM "hcal_solids.gdml">
@@ -11,7 +11,6 @@
 <!ENTITY frame_solids SYSTEM "frame_solids.gdml">
 <!ENTITY frame_volumes SYSTEM "frame_volumes.gdml">
 <!ENTITY frame_physvol SYSTEM "frame_physvol.gdml">
-
 ]>
 <gdml xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://service-spi.web.cern.ch/service-spi/app/releases/GDML/schema/gdml.xsd">
 
@@ -27,7 +26,7 @@
 
 
   <materials>
-  &materials;
+    &materials;
   </materials>
 
   <solids>
@@ -35,10 +34,10 @@
     &TS_solids;
     &frame_solids;
     <!-- - - - - - - - - Parent Solids - - - - - - - -->
-	<!-- extra space in z to accomodate the TS and frame. -->
+    <!-- extra space in z to accomodate the TS and frame. -->
     <box lunit="mm" name="prototype_box" x="dx" y="dy" z="prototype_box_dz"/> 
 
- 
+
     <box lunit="mm" name="world_box" x="world_dim" y="world_dim" z="world_dim"/>
   </solids>
 
@@ -52,29 +51,29 @@
 
 
 
-     <volume name="prototype_volume">
-        <materialref ref="G4_AIR"/>
+    <volume name="prototype_volume">
+      <materialref ref="G4_AIR"/>
 
-        <solidref    ref="prototype_box"/>
-        &hcal_physvol;
-        &TS_physvol;
-        &frame_physvol;
+      <solidref    ref="prototype_box"/>
+      &hcal_physvol;
+      &TS_physvol;
+      &frame_physvol;
 
-        <auxiliary auxtype="Region" auxvalue="CalorimeterRegion"/>
-        <auxiliary auxtype="VisAttributes" auxvalue="HcalVis"/>
-        <auxiliary auxtype="DetElem" auxvalue="Hcal"/>
+      <auxiliary auxtype="Region" auxvalue="CalorimeterRegion"/>
+      <auxiliary auxtype="VisAttributes" auxvalue="HcalVis"/>
+      <auxiliary auxtype="DetElem" auxvalue="Hcal"/>
 
-     </volume>
+    </volume>
 
 
     <volume name="World">
       <materialref ref="G4_AIR"/>
       <solidref ref="world_box"/>
 
-        <physvol>
-          <volumeref ref="prototype_volume"/>
-          <positionref ref="hadron_calorimeter_pos"/>
-        </physvol>
+      <physvol>
+        <volumeref ref="prototype_volume"/>
+        <positionref ref="hadron_calorimeter_pos"/>
+      </physvol>
 
       <auxiliary auxtype="DetElem" auxvalue="Top"/>
     </volume>
